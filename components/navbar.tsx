@@ -181,3 +181,4 @@ export default function Navbar({ onDemoClick }: { onDemoClick: () => void }) {
     </motion.nav>
   );
 }
+ 
