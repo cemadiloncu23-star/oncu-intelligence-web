@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Disallow: /.next/
+Disallow: /api/
+Disallow: /_next/
+
+Sitemap: https://oncuintelligence.com/sitemap.xml
+
+# Crawler-specific rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2

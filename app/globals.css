@@ -3,29 +3,29 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ÖNCÜ Intelligence - Dark Mode Defense Dashboard */
+/* Satenergy / SolarMind user-panel — Eco Premium (light SaaS) */
 :root {
-  --background: #020617;
-  --foreground: #E2E8F0;
-  --card: rgba(15, 23, 42, 0.4);
-  --card-foreground: #E2E8F0;
-  --popover: #0F172A;
-  --popover-foreground: #E2E8F0;
-  --primary: #22D3EE;
-  --primary-foreground: #020617;
-  --secondary: #0F172A;
-  --secondary-foreground: #E2E8F0;
-  --muted: #1E293B;
-  --muted-foreground: #94A3B8;
-  --accent: #06B6D4;
-  --accent-foreground: #020617;
-  --destructive: #EF4444;
-  --destructive-foreground: #F1F5F9;
-  --border: rgba(34, 211, 238, 0.2);
-  --input: #1E293B;
-  --ring: #22D3EE;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #15803d;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #0f172a;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #4338ca;
+  --accent-foreground: #ffffff;
+  --destructive: #b91c1c;
+  --destructive-foreground: #fef2f2;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #15803d;
   --radius: 0.75rem;
-  --glow: 0 0 20px rgba(34, 211, 238, 0.3);
+  --glow: 0 4px 14px rgba(21, 128, 61, 0.25);
 
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -78,8 +78,8 @@
 }
 
 @theme inline {
-  --font-sans: 'Inter', 'Inter Fallback', sans-serif;
-  --font-mono: 'Roboto Mono', 'Roboto Mono Fallback', monospace;
+  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-roboto-mono), ui-monospace, monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -125,5 +125,16 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
