@@ -1,6 +1,7 @@
 /**
- * Ortak site ayarları. Panel adresi: projede `.env.local` içinde
- * NEXT_PUBLIC_PANEL_URL=http://localhost:5173  (ör. SolarMind user-panel)
+ * Ortak site ayarları. Panel adresi varsayılan olarak
+ * https://panel.oncuintelligence.com'dur. Override için `.env.local` içinde
+ * NEXT_PUBLIC_PANEL_URL tanımlayın (ör. geliştirme: http://localhost:5173).
  */
 
 export type PanelLinkConfig = {
@@ -10,27 +11,29 @@ export type PanelLinkConfig = {
   isConfigured: boolean;
 };
 
-const PANEL_MAILTO =
-  "mailto:iletisim@oncuintelligence.com?subject=Kurumsal%20panel%20eri%C5%9Fimi";
+/** Env tanımlı değilse kullanılacak production panel adresi. */
+const DEFAULT_PANEL_URL = "https://panel.oncuintelligence.com";
 
 function rawPanelUrl(): string {
-  return typeof process.env.NEXT_PUBLIC_PANEL_URL === "string"
-    ? process.env.NEXT_PUBLIC_PANEL_URL.trim()
-    : "";
+  const fromEnv =
+    typeof process.env.NEXT_PUBLIC_PANEL_URL === "string"
+      ? process.env.NEXT_PUBLIC_PANEL_URL.trim()
+      : "";
+  return fromEnv || DEFAULT_PANEL_URL;
 }
 
 /**
  * Navbar, footer ve kahraman CTA için tek kaynak.
- * URL yoksa: iletişim maili (panel erişimi konusuyla) — yine de “panel” sekmesi çalışır.
+ * Env ile özel bir adres verilmediyse production paneline (panel.oncuintelligence.com) yönlenir.
  */
 export function getPanelLink(): PanelLinkConfig {
   const raw = rawPanelUrl();
 
   if (!raw) {
     return {
-      href: PANEL_MAILTO,
-      openInNewTab: false,
-      isConfigured: false,
+      href: DEFAULT_PANEL_URL,
+      openInNewTab: true,
+      isConfigured: true,
     };
   }
 
