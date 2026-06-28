@@ -17,7 +17,7 @@ export default function PricingTiersPage() {
           </p>
           <Link
             href="/iletisim"
-            className="inline-flex rounded-xl bg-[#15803D] px-8 py-3.5 font-bold text-white shadow-md shadow-[#15803D]/30 transition-colors hover:bg-[#166534] dark:text-primary-foreground"
+            className="inline-flex rounded-sm bg-zinc-100 px-8 py-3.5 text-sm font-semibold uppercase tracking-wide text-zinc-900 transition-colors hover:bg-white"
           >
             Teklif / bilgi için yazın
           </Link>

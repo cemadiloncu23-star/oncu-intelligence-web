@@ -13,11 +13,11 @@ export default function ResourcesPage() {
           <a
             key={r.title}
             href={r.href}
-            className="block rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-sm transition-colors hover:border-[#15803D]/30 dark:border-border dark:bg-card"
+            className="block rounded-sm border border-zinc-800 bg-[#0e131f] p-6 transition-colors hover:border-zinc-700"
           >
-            <span className="text-[10px] font-bold uppercase tracking-wide text-[#4338CA] dark:text-indigo-400">{r.tag}</span>
-            <h2 className="mb-2 mt-1 text-lg font-bold text-[#0F172A] dark:text-foreground">{r.title}</h2>
-            <p className="text-sm leading-relaxed text-[#64748B] dark:text-muted-foreground">{r.description}</p>
+            <span className="font-mono text-[10px] font-semibold uppercase tracking-wide text-zinc-500">{r.tag}</span>
+            <h2 className="mb-2 mt-1 text-lg font-bold text-zinc-100">{r.title}</h2>
+            <p className="text-sm leading-relaxed text-zinc-400">{r.description}</p>
           </a>
         ))}
       </div>

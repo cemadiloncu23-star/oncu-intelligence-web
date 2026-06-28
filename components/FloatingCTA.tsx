@@ -41,16 +41,16 @@ export default function FloatingCTA() {
         >
           <Link
             href="/iletisim"
-            className="flex items-center justify-center gap-2 rounded-xl border border-[#E2E8F0] bg-white px-4 py-3 text-sm font-bold text-[#0F172A] shadow-lg transition-colors hover:border-[#15803D]/35 hover:bg-[#F8FAFC] motion-reduce:transition-none dark:border-border dark:bg-card dark:text-foreground dark:hover:bg-muted"
+            className="flex items-center justify-center gap-2 rounded-sm border border-zinc-700 bg-[#0e131f]/95 px-4 py-3 text-sm font-semibold uppercase tracking-wide text-zinc-200 shadow-lg backdrop-blur-md transition-colors hover:border-zinc-500 hover:text-white motion-reduce:transition-none"
           >
             İletişim
           </Link>
           <button
             type="button"
             onClick={openDemo}
-            className="flex items-center gap-2 rounded-xl bg-[#15803D] px-5 py-3 font-bold text-white shadow-lg shadow-[#15803D]/35 transition-all hover:bg-[#166534] motion-reduce:transition-none motion-reduce:hover:scale-100 hover:scale-105"
+            className="flex items-center gap-2 rounded-sm bg-zinc-100 px-5 py-3 text-sm font-semibold uppercase tracking-wide text-zinc-900 shadow-lg transition-colors hover:bg-white motion-reduce:transition-none"
           >
-            <Mail className="h-5 w-5" />
+            <Mail className="h-4 w-4" />
             Erişim talep et
           </button>
         </motion.div>

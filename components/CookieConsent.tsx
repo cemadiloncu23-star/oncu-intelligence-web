@@ -42,16 +42,16 @@ export default function CookieConsent() {
       aria-label="Çerez tercihleri"
       className="fixed bottom-0 left-0 right-0 z-[250] p-4 md:p-6 pointer-events-none"
     >
-      <div className="pointer-events-auto max-w-3xl mx-auto rounded-2xl border border-[#E2E8F0] bg-white shadow-[0_-8px_40px_rgba(15,23,42,0.12)] p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4">
-        <div className="flex-1 text-sm text-[#475569] leading-relaxed">
-          <p className="font-semibold text-[#0F172A] mb-1">Çerezler ve ölçüm</p>
+      <div className="pointer-events-auto max-w-3xl mx-auto rounded-sm border border-zinc-800 bg-[#0e131f]/95 backdrop-blur-md shadow-[0_-8px_40px_rgba(0,0,0,0.5)] p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4">
+        <div className="flex-1 text-sm text-zinc-400 leading-relaxed">
+          <p className="font-semibold text-zinc-100 mb-1">Çerezler ve ölçüm</p>
           <p>
             Siteyi iyileştirmek için çerezler ve isteğe bağlı analitik kullanıyoruz. Ayrıntılar için{" "}
-            <Link href="/gizlilik" className="text-[#15803D] font-semibold underline underline-offset-2">
+            <Link href="/gizlilik" className="text-zinc-200 font-semibold underline underline-offset-2 hover:text-white">
               gizlilik politikası
             </Link>{" "}
             ve{" "}
-            <Link href="/kvkk" className="text-[#15803D] font-semibold underline underline-offset-2">
+            <Link href="/kvkk" className="text-zinc-200 font-semibold underline underline-offset-2 hover:text-white">
               KVKK metni
             </Link>
             .
@@ -61,14 +61,14 @@ export default function CookieConsent() {
           <button
             type="button"
             onClick={() => save("essential")}
-            className="px-4 py-2.5 rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] text-[#475569] text-sm font-semibold hover:bg-[#F1F5F9] transition-colors"
+            className="px-4 py-2.5 rounded-sm border border-zinc-700 bg-transparent text-zinc-300 text-sm font-semibold uppercase tracking-wide hover:border-zinc-500 hover:text-zinc-100 transition-colors"
           >
             Yalnızca gerekli
           </button>
           <button
             type="button"
             onClick={() => save("all")}
-            className="px-4 py-2.5 rounded-xl bg-[#15803D] text-white text-sm font-bold hover:bg-[#166534] shadow-md shadow-[#15803D]/25 transition-colors"
+            className="px-4 py-2.5 rounded-sm bg-zinc-100 text-zinc-900 text-sm font-semibold uppercase tracking-wide hover:bg-white transition-colors"
           >
             Tümünü kabul et
           </button>

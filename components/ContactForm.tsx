@@ -107,7 +107,7 @@ export default function ContactForm({ turnstileSiteKey = "" }: Props) {
   }
 
   const input =
-    "w-full rounded-xl border border-[#E2E8F0] bg-[#FAFCFE] px-4 py-3 text-sm text-[#0F172A] outline-none focus:border-[#15803D]/50 focus:ring-[3px] focus:ring-[#15803D]/15 dark:border-border dark:bg-card dark:text-foreground";
+    "w-full rounded-sm border border-zinc-700 bg-[#0e131f] px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-600 outline-none transition-colors focus:border-zinc-500 focus:ring-[3px] focus:ring-white/10";
 
   return (
     <form onSubmit={onSubmit} className="max-w-lg space-y-5" autoComplete="on">
@@ -155,13 +155,13 @@ export default function ContactForm({ turnstileSiteKey = "" }: Props) {
       <button
         type="submit"
         disabled={pending}
-        className="w-full rounded-xl bg-[#15803D] px-8 py-3 font-bold text-white shadow-md shadow-[#15803D]/25 transition-colors hover:bg-[#166534] disabled:opacity-60 sm:w-auto dark:text-primary-foreground"
+        className="w-full rounded-sm bg-zinc-100 px-8 py-3 text-sm font-semibold uppercase tracking-wide text-zinc-900 transition-colors hover:bg-white disabled:opacity-60 sm:w-auto"
       >
         {pending ? "Gönderiliyor…" : "Gönder"}
       </button>
-      <p className="text-[11px] leading-relaxed text-[#64748B] dark:text-muted-foreground">
+      <p className="text-[11px] leading-relaxed text-zinc-500">
         İsterseniz doğrudan{" "}
-        <a href="mailto:iletisim@oncuintelligence.com" className="font-semibold text-[#15803D] underline dark:text-primary">
+        <a href="mailto:iletisim@oncuintelligence.com" className="font-semibold text-zinc-300 underline underline-offset-2 hover:text-white">
           iletisim@oncuintelligence.com
         </a>{" "}
         adresine de yazabilirsiniz.

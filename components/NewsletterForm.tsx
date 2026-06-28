@@ -39,11 +39,11 @@ export default function NewsletterForm() {
   }
 
   const input =
-    "min-w-0 flex-1 rounded-xl border border-[#E2E8F0] bg-white px-3 py-2.5 text-sm text-[#0F172A] outline-none focus:border-[#15803D]/40 dark:border-border dark:bg-card dark:text-foreground";
+    "min-w-0 flex-1 rounded-sm border border-zinc-700 bg-[#0e131f] px-3 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-600 outline-none transition-colors focus:border-zinc-500";
 
   return (
     <form onSubmit={onSubmit} className="relative mt-8 w-full max-w-md">
-      <p className="mb-3 text-[11px] font-bold uppercase tracking-wide text-[#15803D]">Bülten</p>
+      <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500">Bülten</p>
       <div className="absolute left-[-9999px] h-px w-px overflow-hidden opacity-0" aria-hidden tabIndex={-1}>
         <label htmlFor="nl_full_name">Tam ad</label>
         <input id="nl_full_name" name="full_name" tabIndex={-1} autoComplete="off" />
@@ -61,12 +61,12 @@ export default function NewsletterForm() {
         <button
           type="submit"
           disabled={pending}
-          className="shrink-0 rounded-xl bg-[#15803D] px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#166534] disabled:opacity-60 dark:text-primary-foreground"
+          className="shrink-0 rounded-sm bg-zinc-100 px-4 py-2.5 text-sm font-semibold uppercase tracking-wide text-zinc-900 transition-colors hover:bg-white disabled:opacity-60"
         >
           {pending ? "…" : "Abone ol"}
         </button>
       </div>
-      <p className="mt-2 text-[10px] text-[#64748B] dark:text-muted-foreground">İstediğiniz zaman abonelikten çıkabilirsiniz.</p>
+      <p className="mt-2 text-[10px] text-zinc-600">İstediğiniz zaman abonelikten çıkabilirsiniz.</p>
     </form>
   );
 }

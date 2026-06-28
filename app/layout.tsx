@@ -109,7 +109,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="tr" suppressHydrationWarning>
+    <html lang="tr" className="dark" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />

@@ -12,13 +12,27 @@ export default function InnerPageHeader({
   backLabel?: string;
 }) {
   return (
-    <header className="pt-28 pb-10 px-4 bg-[#F8FAFC] border-b border-[#E2E8F0] dark:border-border dark:bg-card">
-      <div className="max-w-3xl mx-auto">
-        <Link href={backHref} className="text-sm font-semibold text-[#15803D] hover:underline mb-4 inline-block dark:text-primary">
+    <header className="relative overflow-hidden border-b border-zinc-800 bg-[#070a13] px-4 pt-32 pb-12">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.07]"
+        aria-hidden
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.6) 1px, transparent 1px)",
+          backgroundSize: "64px 64px",
+        }}
+      />
+      <div className="relative mx-auto max-w-3xl">
+        <Link
+          href={backHref}
+          className="mb-4 inline-flex items-center gap-1 text-[12px] font-medium uppercase tracking-[0.14em] text-zinc-500 transition-colors hover:text-zinc-200"
+        >
           {backLabel}
         </Link>
-        <h1 className="text-3xl md:text-4xl font-bold text-[#0F172A] tracking-tight dark:text-foreground">{title}</h1>
-        {subtitle ? <p className="text-[#64748B] mt-3 leading-relaxed dark:text-muted-foreground">{subtitle}</p> : null}
+        <h1 className="font-[family-name:var(--font-inter)] text-3xl font-extrabold tracking-tight text-zinc-100 md:text-4xl">
+          {title}
+        </h1>
+        {subtitle ? <p className="mt-3 leading-relaxed text-zinc-400">{subtitle}</p> : null}
       </div>
     </header>
   );

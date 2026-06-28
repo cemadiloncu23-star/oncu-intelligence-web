@@ -15,13 +15,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   return (
     <>
       <InnerPageHeader title={post.title} subtitle={post.excerpt} />
-      <article className="max-w-3xl mx-auto px-4 py-12 pb-24 space-y-6 text-[#475569] leading-relaxed">
-        <p className="text-[11px] font-semibold text-[#64748B] uppercase tracking-wide">{post.date}</p>
+      <article className="max-w-3xl mx-auto px-4 py-12 pb-24 space-y-6 text-zinc-400 leading-relaxed">
+        <p className="text-[11px] font-semibold text-zinc-500 uppercase tracking-wide">{post.date}</p>
         {post.paragraphs.map((para, i) => (
           <p key={i}>{para}</p>
         ))}
         <p>
-          <Link href="/blog" className="font-bold text-[#15803D] hover:underline">
+          <Link href="/blog" className="font-semibold text-zinc-300 hover:text-white hover:underline">
             ← Blog listesi
           </Link>
         </p>

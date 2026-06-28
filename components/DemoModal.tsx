@@ -16,33 +16,33 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
       role="dialog"
       aria-modal="true"
       aria-label="Demo talep et"
-      className="fixed inset-0 z-50 flex items-center justify-center bg-[#0F172A]/50 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
-        className="w-full max-w-md rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-[0_24px_48px_rgba(15,23,42,0.12)] md:p-8 dark:border-border dark:bg-card"
+        className="w-full max-w-md rounded-sm border border-zinc-800 bg-[#0e131f] p-6 shadow-[0_24px_48px_rgba(0,0,0,0.5)] md:p-8"
         onClick={(e) => e.stopPropagation()}
       >
-        <h2 className="mb-2 text-xl font-bold text-[#0F172A] dark:text-foreground">Demo / Erişim Talebi</h2>
-        <p className="mb-6 text-sm leading-relaxed text-[#64748B] dark:text-muted-foreground">
+        <h2 className="mb-2 font-[family-name:var(--font-inter)] text-xl font-bold text-zinc-100">Demo / Erişim Talebi</h2>
+        <p className="mb-6 text-sm leading-relaxed text-zinc-400">
           Talebiniz şirket e-posta adresimize yönlendirilecek şekilde e-posta istemcinizi açar.
         </p>
-        <p className="mb-6 text-[11px] text-[#94A3B8] dark:text-slate-500">
+        <p className="mb-6 text-[11px] text-zinc-600">
           Mesaj sırasına göre yanıtlama yapılır; acil durumlarda iletişim formunu kullanabilirsiniz.
         </p>
 
         <a
           href={mailtoUrl}
-          className="mb-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[#15803D] px-4 py-3 font-bold text-white shadow-[0_4px_14px_rgba(21,128,61,0.35)] transition-colors hover:bg-[#166534] dark:text-primary-foreground"
+          className="mb-4 flex w-full items-center justify-center gap-2 rounded-sm bg-zinc-100 px-4 py-3 text-sm font-semibold uppercase tracking-wide text-zinc-900 transition-colors hover:bg-white"
         >
-          <Mail className="h-5 w-5" />
-          <span>E-posta ile talep ({COMPANY_EMAIL})</span>
+          <Mail className="h-4 w-4" />
+          <span className="normal-case tracking-normal">E-posta ile talep</span>
         </a>
 
         <button
           type="button"
           onClick={onClose}
-          className="w-full rounded-xl bg-[#F1F5F9] py-2.5 text-sm font-semibold text-[#475569] transition-colors hover:bg-[#E2E8F0] dark:bg-muted dark:text-muted-foreground dark:hover:bg-muted/80"
+          className="w-full rounded-sm border border-zinc-800 bg-transparent py-2.5 text-sm font-semibold uppercase tracking-wide text-zinc-400 transition-colors hover:border-zinc-600 hover:text-zinc-200"
         >
           Kapat
         </button>

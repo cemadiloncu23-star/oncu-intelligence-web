@@ -4,22 +4,24 @@ import MarketingShell from "@/components/MarketingShell";
 export default function NotFound() {
   return (
     <MarketingShell>
-      <main className="min-h-[55vh] flex flex-col items-center justify-center px-4 py-24 bg-[#F8FAFC] text-[#0F172A]">
-        <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#64748B] mb-2">404</p>
-        <h1 className="text-2xl md:text-3xl font-bold text-center mb-3">Sayfa bulunamadı</h1>
-        <p className="text-[#64748B] text-center max-w-md mb-8 leading-relaxed">
+      <main className="flex min-h-[60vh] flex-col items-center justify-center bg-[#070a13] px-4 py-32 text-zinc-100">
+        <p className="mb-2 font-mono text-[11px] font-semibold uppercase tracking-[0.3em] text-zinc-500">404</p>
+        <h1 className="mb-3 text-center font-[family-name:var(--font-inter)] text-2xl font-extrabold tracking-tight md:text-3xl">
+          Sayfa bulunamadı
+        </h1>
+        <p className="mb-8 max-w-md text-center leading-relaxed text-zinc-400">
           Aradığınız adres taşınmış veya silinmiş olabilir. Ana sayfadan devam edebilir veya iletişim formunu kullanabilirsiniz.
         </p>
-        <div className="flex flex-col sm:flex-row gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row">
           <Link
             href="/"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-[#15803D] text-white font-bold hover:bg-[#166534] shadow-md shadow-[#15803D]/25"
+            className="inline-flex items-center justify-center rounded-sm bg-zinc-100 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-zinc-900 transition-colors hover:bg-white"
           >
             Ana sayfa
           </Link>
           <Link
             href="/iletisim"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-xl border-2 border-[#4338CA]/25 bg-[#EEF2FF] text-[#3730a3] font-bold hover:bg-[#E0E7FF]"
+            className="inline-flex items-center justify-center rounded-sm border border-zinc-700 bg-transparent px-6 py-3 text-sm font-semibold uppercase tracking-wide text-zinc-300 transition-colors hover:border-zinc-500 hover:text-white"
           >
             İletişim
           </Link>

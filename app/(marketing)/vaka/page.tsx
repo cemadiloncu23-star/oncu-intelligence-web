@@ -11,24 +11,24 @@ export default function CasesIndexPage() {
       />
       <div className="mx-auto max-w-3xl space-y-6 px-4 py-12 pb-24">
         {caseStudies.length === 0 ? (
-          <p className="rounded-2xl border border-[#E2E8F0] bg-white p-8 text-center text-[#64748B] shadow-sm dark:border-border dark:bg-card dark:text-muted-foreground">
+          <p className="rounded-sm border border-zinc-800 bg-[#0e131f] p-8 text-center text-zinc-400">
             Listelenecek vaka yok.{" "}
-            <Link href="/iletisim" className="font-bold text-[#15803D] hover:underline dark:text-emerald-400">
+            <Link href="/iletisim" className="font-semibold text-zinc-200 underline-offset-2 hover:text-white hover:underline">
               İletişim
             </Link>{" "}
             ile referans süreci hakkında sorabilirsiniz.
           </p>
         ) : (
           caseStudies.map((c) => (
-            <article key={c.slug} className="rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-sm dark:border-border dark:bg-card">
-              <p className="mb-1 text-[11px] font-bold uppercase tracking-wide text-[#4338CA] dark:text-indigo-400">{c.sector}</p>
-              <h2 className="mb-2 text-xl font-bold text-[#0F172A] dark:text-foreground">
-                <Link href={`/vaka/${c.slug}`} className="transition-colors hover:text-[#15803D] dark:hover:text-emerald-400">
+            <article key={c.slug} className="rounded-sm border border-zinc-800 bg-[#0e131f] p-6 transition-colors hover:border-zinc-700">
+              <p className="mb-1 font-mono text-[11px] font-semibold uppercase tracking-wide text-zinc-500">{c.sector}</p>
+              <h2 className="mb-2 text-xl font-bold text-zinc-100">
+                <Link href={`/vaka/${c.slug}`} className="transition-colors hover:text-white">
                   {c.title}
                 </Link>
               </h2>
-              <p className="text-sm leading-relaxed text-[#64748B] dark:text-muted-foreground">{c.summary}</p>
-              <Link href={`/vaka/${c.slug}`} className="mt-4 inline-block text-sm font-bold text-[#15803D] hover:underline dark:text-emerald-400">
+              <p className="text-sm leading-relaxed text-zinc-400">{c.summary}</p>
+              <Link href={`/vaka/${c.slug}`} className="mt-4 inline-block text-sm font-semibold text-zinc-300 hover:text-white hover:underline">
                 Detay
               </Link>
             </article>

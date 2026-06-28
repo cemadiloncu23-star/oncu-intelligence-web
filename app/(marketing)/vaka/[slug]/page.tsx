@@ -15,25 +15,25 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
   return (
     <>
       <InnerPageHeader title={c.title} subtitle={`Sektör: ${c.sector}`} />
-      <article className="max-w-3xl mx-auto px-4 py-12 pb-24 space-y-8 text-[#475569] leading-relaxed">
+      <article className="max-w-3xl mx-auto px-4 py-12 pb-24 space-y-8 text-zinc-400 leading-relaxed">
         <section>
-          <h2 className="text-lg font-bold text-[#0F172A] mb-2">Özet</h2>
+          <h2 className="text-lg font-bold text-zinc-100 mb-2">Özet</h2>
           <p>{c.summary}</p>
         </section>
         <section>
-          <h2 className="text-lg font-bold text-[#0F172A] mb-2">Zorluk</h2>
+          <h2 className="text-lg font-bold text-zinc-100 mb-2">Zorluk</h2>
           <p>{c.challenge}</p>
         </section>
         <section>
-          <h2 className="text-lg font-bold text-[#0F172A] mb-2">Yaklaşım</h2>
+          <h2 className="text-lg font-bold text-zinc-100 mb-2">Yaklaşım</h2>
           <p>{c.approach}</p>
         </section>
         <section>
-          <h2 className="text-lg font-bold text-[#0F172A] mb-2">Sonuç</h2>
+          <h2 className="text-lg font-bold text-zinc-100 mb-2">Sonuç</h2>
           <p>{c.outcome}</p>
         </section>
         <p>
-          <Link href="/vaka" className="font-bold text-[#15803D] hover:underline">
+          <Link href="/vaka" className="font-semibold text-zinc-300 hover:text-white hover:underline">
             ← Tüm vakalar
           </Link>
         </p>
