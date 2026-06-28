@@ -2,6 +2,7 @@
 
 import FlagshipNav from "@/components/flagship/FlagshipNav";
 import FlagshipHero from "@/components/flagship/FlagshipHero";
+import LiveDashboard from "@/components/flagship/LiveDashboard";
 import Capabilities from "@/components/flagship/Capabilities";
 import LayerExplorer from "@/components/flagship/LayerExplorer";
 import ProcessFlow from "@/components/flagship/ProcessFlow";
@@ -13,6 +14,7 @@ export default function FlagshipLanding() {
     <main id="main" className="min-h-screen bg-[#070a13] text-slate-100 antialiased selection:bg-[#2563EB]/30 selection:text-white">
       <FlagshipNav />
       <FlagshipHero />
+      <LiveDashboard />
       <Capabilities />
       <LayerExplorer />
       <ProcessFlow />
