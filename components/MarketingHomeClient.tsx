@@ -5,6 +5,7 @@ import PartnerTrustSection from "@/components/PartnerTrustSection";
 import AudienceSegmentsSection from "@/components/AudienceSegmentsSection";
 import HowToStartSection from "@/components/HowToStartSection";
 import BentoGrid from "@/components/BentoGrid";
+import SatelliteShowcaseSection from "@/components/SatelliteShowcaseSection";
 import TechnologyTabs from "@/components/TechnologyTabs";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ComparisonSection from "@/components/ComparisonSection";
@@ -26,6 +27,7 @@ export default function MarketingHomeClient() {
       <AudienceSegmentsSection />
       <HowToStartSection />
       <BentoGrid />
+      <SatelliteShowcaseSection />
       <TechnologyTabs />
       <TestimonialsSection />
       <ComparisonSection />
