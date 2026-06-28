@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Satellite } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { getPanelLink } from "@/lib/site-config";
 import { useOpenDemo } from "@/components/DemoOpenContext";
 
@@ -14,12 +14,14 @@ const navItems = [
   { label: "İletişim", href: "/iletisim" },
 ];
 
+const navLinkCls =
+  "text-[12px] font-medium uppercase tracking-[0.14em] text-zinc-300 transition-colors hover:text-white";
+
 export default function FlagshipNav() {
   const panel = getPanelLink();
   const openDemo = useOpenDemo();
   const [open, setOpen] = useState(false);
 
-  // Drawer açıkken arka plan kaydırmasını kilitle + Escape ile kapat
   useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
@@ -42,31 +44,55 @@ export default function FlagshipNav() {
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         className="fixed inset-x-0 top-0 z-50 bg-transparent backdrop-blur-md [-webkit-backdrop-filter:blur(12px)]"
       >
-        <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
-          {/* Sol — logo / yazı */}
-          <a href="#tepe" className="group flex items-center gap-2.5" aria-label="ÖNCÜ Intelligence — ana sayfa">
-            <span className="flex h-8 w-8 items-center justify-center rounded-sm border border-zinc-700 bg-white/[0.03] text-zinc-300 transition-colors group-hover:border-zinc-500">
-              <Satellite className="h-4 w-4" strokeWidth={2} aria-hidden />
-            </span>
-            <span className="flex items-baseline gap-1.5 font-[family-name:var(--font-inter)] leading-none tracking-tight">
-              <span className="text-base font-bold text-zinc-100">ÖNCÜ</span>
-              <span className="text-base font-light text-zinc-500">Intelligence</span>
-            </span>
-          </a>
+        <nav className="mx-auto flex h-16 max-w-[1600px] items-center justify-between px-5 sm:px-8">
+          {/* Sol — logo + yatay menü (SpaceX dizilimi) */}
+          <div className="flex items-center gap-10">
+            <a href="#tepe" aria-label="ÖNCÜ Intelligence — ana sayfa" className="shrink-0">
+              <span className="font-[family-name:var(--font-inter)] text-[15px] font-extrabold uppercase tracking-[0.2em] text-white">
+                ÖNCÜ<span className="ml-1.5 font-light text-zinc-400">INTELLIGENCE</span>
+              </span>
+            </a>
 
-          {/* Sağ — ince çizgili burger */}
-          <button
-            type="button"
-            onClick={() => setOpen(true)}
-            aria-label="Menüyü aç"
-            aria-expanded={open}
-            aria-controls="flagship-drawer"
-            className="group flex h-10 w-10 flex-col items-center justify-center gap-[6px] rounded-lg transition-colors hover:bg-white/[0.05]"
-          >
-            <span className="h-px w-6 bg-slate-200 transition-all duration-300 group-hover:w-7 group-hover:bg-white" />
-            <span className="h-px w-6 bg-slate-200 transition-all duration-300 group-hover:bg-white" />
-            <span className="h-px w-6 bg-slate-200 transition-all duration-300 group-hover:w-4 group-hover:bg-white" />
-          </button>
+            <div className="hidden items-center gap-8 lg:flex">
+              {navItems.map((item) =>
+                item.href.startsWith("#") ? (
+                  <a key={item.href} href={item.href} className={navLinkCls}>
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link key={item.href} href={item.href} className={navLinkCls}>
+                    {item.label}
+                  </Link>
+                )
+              )}
+            </div>
+          </div>
+
+          {/* Sağ — SpaceX tarzı kutu buton + mobil burger */}
+          <div className="flex items-center gap-3">
+            <a
+              href={panel.href}
+              target={panel.openInNewTab ? "_blank" : undefined}
+              rel={panel.openInNewTab ? "noopener noreferrer" : undefined}
+              className="hidden items-center gap-2 border border-zinc-600 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-100 transition-colors hover:bg-white hover:text-zinc-900 sm:inline-flex"
+            >
+              Panele giriş
+              <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
+            </a>
+
+            <button
+              type="button"
+              onClick={() => setOpen(true)}
+              aria-label="Menüyü aç"
+              aria-expanded={open}
+              aria-controls="flagship-drawer"
+              className="group flex h-10 w-10 flex-col items-center justify-center gap-[6px] rounded-sm transition-colors hover:bg-white/[0.05] lg:hidden"
+            >
+              <span className="h-px w-6 bg-zinc-200 transition-all duration-300 group-hover:bg-white" />
+              <span className="h-px w-6 bg-zinc-200 transition-all duration-300 group-hover:bg-white" />
+              <span className="h-px w-6 bg-zinc-200 transition-all duration-300 group-hover:bg-white" />
+            </button>
+          </div>
         </nav>
       </motion.header>
 
@@ -74,41 +100,38 @@ export default function FlagshipNav() {
       <div
         onClick={() => setOpen(false)}
         aria-hidden={!open}
-        className={`fixed inset-0 z-[60] bg-black/50 transition-opacity duration-300 ${
+        className={`fixed inset-0 z-[60] bg-black/50 transition-opacity duration-300 lg:hidden ${
           open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       />
 
-      {/* Sağdan kayan buzlu cam navigasyon paneli */}
+      {/* Sağdan kayan buzlu cam navigasyon paneli (mobil) */}
       <aside
         id="flagship-drawer"
         role="dialog"
         aria-modal="true"
         aria-label="Ana navigasyon"
-        className={`fixed inset-y-0 right-0 z-[70] flex h-full w-[84%] max-w-sm transform flex-col border-l border-white/10 bg-[rgba(7,10,19,0.85)] backdrop-blur-lg transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] [-webkit-backdrop-filter:blur(20px)] ${
+        className={`fixed inset-y-0 right-0 z-[70] flex h-full w-[84%] max-w-sm transform flex-col border-l border-zinc-800 bg-[rgba(7,10,19,0.92)] backdrop-blur-lg transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] [-webkit-backdrop-filter:blur(20px)] lg:hidden ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {/* Drawer başlığı */}
         <div className="flex h-16 items-center justify-between px-6">
-          <span className="flex items-center gap-1.5 font-[family-name:var(--font-inter)] text-sm tracking-tight">
-            <span className="font-bold text-white">ÖNCÜ</span>
-            <span className="font-light text-slate-400">Intelligence</span>
+          <span className="font-[family-name:var(--font-inter)] text-[13px] font-extrabold uppercase tracking-[0.18em] text-white">
+            ÖNCÜ<span className="ml-1.5 font-light text-zinc-400">INTELLIGENCE</span>
           </span>
           <button
             type="button"
             onClick={() => setOpen(false)}
             aria-label="Menüyü kapat"
-            className="group relative flex h-10 w-10 items-center justify-center rounded-lg transition-colors hover:bg-white/[0.05]"
+            className="group relative flex h-10 w-10 items-center justify-center rounded-sm transition-colors hover:bg-white/[0.05]"
           >
-            <span className="absolute h-px w-5 rotate-45 bg-slate-200 transition-colors group-hover:bg-white" />
-            <span className="absolute h-px w-5 -rotate-45 bg-slate-200 transition-colors group-hover:bg-white" />
+            <span className="absolute h-px w-5 rotate-45 bg-zinc-200 transition-colors group-hover:bg-white" />
+            <span className="absolute h-px w-5 -rotate-45 bg-zinc-200 transition-colors group-hover:bg-white" />
           </button>
         </div>
 
-        {/* Kritik yönlendirmeler — geniş boşluklu */}
         <nav className="flex flex-1 flex-col justify-center gap-2 px-6">
-          {navItems.map((item, i) => {
+          {navItems.map((item) => {
             const isAnchor = item.href.startsWith("#");
             const cls =
               "group flex items-center justify-between border-b border-zinc-800 py-6 font-[family-name:var(--font-inter)] text-3xl font-semibold tracking-tight text-zinc-400 transition-colors hover:text-zinc-100";
@@ -130,7 +153,6 @@ export default function FlagshipNav() {
           })}
         </nav>
 
-        {/* Alt aksiyonlar */}
         <div className="flex flex-col gap-3 px-6 pb-8">
           <a
             href={panel.href}

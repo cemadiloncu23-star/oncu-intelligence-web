@@ -9,7 +9,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 export default function FlagshipHero() {
   return (
     <section id="tepe" className="relative isolate flex min-h-screen items-center overflow-hidden bg-[#070a13]">
-      {/* === Arka plan: yörüngeden uydu görüntüsü (çok koyu, nötr) === */}
+      {/* === Arka plan: yörüngeden uydu fotoğrafı (metnin arkasına gömülü) === */}
       <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden>
         <Image
           src="/showcase/ankara-rgb.png"
@@ -17,28 +17,14 @@ export default function FlagshipHero() {
           fill
           priority
           sizes="100vw"
-          className="scale-110 object-cover opacity-[0.18] grayscale"
+          className="scale-105 object-cover opacity-[0.7]"
         />
 
-        {/* çok hafif, durağan atmosfer derinliği (neon yok) */}
-        <div
-          className="absolute -right-[18%] top-[-20%] h-[55rem] w-[55rem] rounded-full opacity-60 blur-[150px]"
-          style={{ background: "radial-gradient(circle, rgba(51,65,85,0.30) 0%, transparent 70%)" }}
-        />
-
-        {/* ince yıldız alanı (düşük yoğunluk) */}
-        <div
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage:
-              "radial-gradient(1px 1px at 18% 28%, rgba(255,255,255,0.55) 50%, transparent), radial-gradient(1px 1px at 72% 62%, rgba(255,255,255,0.4) 50%, transparent), radial-gradient(1px 1px at 42% 82%, rgba(255,255,255,0.45) 50%, transparent), radial-gradient(1px 1px at 88% 18%, rgba(255,255,255,0.35) 50%, transparent)",
-            backgroundSize: "560px 560px, 400px 400px, 620px 620px, 340px 340px",
-          }}
-        />
-
-        {/* okunabilirlik / kontrast düşürme katmanları */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#070a13] via-[#070a13]/90 to-[#070a13]/55" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#070a13]/60 via-transparent to-[#070a13]" />
+        {/* okunabilirlik scrim'leri — soldan ve alttan koyu, sağ-üstte foto görünür */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#070a13] via-[#070a13]/75 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#070a13] via-[#070a13]/15 to-[#070a13]/55" />
+        {/* nav okunabilirliği için üst hafif karartma */}
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#070a13]/80 to-transparent" />
       </div>
 
       {/* === İçerik === */}
