@@ -45,12 +45,12 @@ export default function FlagshipNav() {
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
           {/* Sol — logo / yazı */}
           <a href="#tepe" className="group flex items-center gap-2.5" aria-label="ÖNCÜ Intelligence — ana sayfa">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-[#38BDF8]/30 bg-[#38BDF8]/10 text-[#38BDF8] transition-colors group-hover:bg-[#38BDF8]/20">
+            <span className="flex h-8 w-8 items-center justify-center rounded-sm border border-zinc-700 bg-white/[0.03] text-zinc-300 transition-colors group-hover:border-zinc-500">
               <Satellite className="h-4 w-4" strokeWidth={2} aria-hidden />
             </span>
             <span className="flex items-baseline gap-1.5 font-[family-name:var(--font-inter)] leading-none tracking-tight">
-              <span className="text-base font-bold text-white">ÖNCÜ</span>
-              <span className="text-base font-light text-slate-400">Intelligence</span>
+              <span className="text-base font-bold text-zinc-100">ÖNCÜ</span>
+              <span className="text-base font-light text-zinc-500">Intelligence</span>
             </span>
           </a>
 
@@ -111,11 +111,11 @@ export default function FlagshipNav() {
           {navItems.map((item, i) => {
             const isAnchor = item.href.startsWith("#");
             const cls =
-              "group flex items-center justify-between border-b border-white/[0.06] py-6 font-[family-name:var(--font-inter)] text-3xl font-semibold tracking-tight text-slate-300 transition-colors hover:text-white";
+              "group flex items-center justify-between border-b border-zinc-800 py-6 font-[family-name:var(--font-inter)] text-3xl font-semibold tracking-tight text-zinc-400 transition-colors hover:text-zinc-100";
             const inner = (
               <>
                 <span>{item.label}</span>
-                <ArrowUpRight className="h-5 w-5 text-slate-600 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#38BDF8]" aria-hidden />
+                <ArrowUpRight className="h-5 w-5 text-zinc-700 transition-all duration-300 group-hover:translate-x-1 group-hover:text-zinc-400" aria-hidden />
               </>
             );
             return isAnchor ? (
@@ -137,7 +137,7 @@ export default function FlagshipNav() {
             target={panel.openInNewTab ? "_blank" : undefined}
             rel={panel.openInNewTab ? "noopener noreferrer" : undefined}
             onClick={() => setOpen(false)}
-            className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#2563EB] px-6 py-4 text-sm font-semibold text-white shadow-[0_0_0_1px_rgba(56,189,248,0.3),0_16px_40px_-12px_rgba(37,99,235,0.8)] transition-all hover:bg-[#1d4ed8]"
+            className="group inline-flex items-center justify-center gap-2 rounded-sm border border-zinc-700 bg-zinc-100 px-6 py-3.5 text-[13px] font-semibold uppercase tracking-wide text-zinc-900 transition-colors hover:bg-white"
           >
             Panele giriş
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden />
@@ -148,11 +148,11 @@ export default function FlagshipNav() {
               setOpen(false);
               openDemo();
             }}
-            className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] px-6 py-4 text-sm font-semibold text-slate-200 transition-colors hover:border-white/20 hover:bg-white/[0.06]"
+            className="inline-flex items-center justify-center rounded-sm border border-zinc-800 bg-transparent px-6 py-3.5 text-[13px] font-semibold uppercase tracking-wide text-zinc-400 transition-colors hover:border-zinc-600 hover:text-zinc-200"
           >
             Demo talebi
           </button>
-          <p className="pt-2 text-center font-mono text-[11px] tracking-wide text-slate-600">
+          <p className="pt-2 text-center font-mono text-[11px] tracking-wide text-zinc-700">
             iletisim@oncuintelligence.com
           </p>
         </div>

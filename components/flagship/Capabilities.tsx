@@ -34,21 +34,21 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function Capabilities() {
   return (
-    <section id="yetenekler" className="relative scroll-mt-16 overflow-hidden bg-[#070a13] py-28">
+    <section id="yetenekler" className="relative overflow-hidden bg-[#070a13] py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-14 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl">
-            <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.25em] text-[#38BDF8]">// yetenekler</p>
-            <h2 className="font-[family-name:var(--font-inter)] text-3xl font-bold tracking-tight text-white sm:text-5xl">
+            <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.25em] text-zinc-600">// yetenekler</p>
+            <h2 className="font-[family-name:var(--font-inter)] text-3xl font-bold tracking-tight text-zinc-100 sm:text-5xl">
               Tek panelde uçtan uca operasyon
             </h2>
           </div>
-          <p className="max-w-sm text-[15px] leading-relaxed text-slate-400">
+          <p className="max-w-sm text-[15px] leading-relaxed text-zinc-500">
             Sahadan rapora kadar dört çekirdek modül, aynı altyapıda birleşir.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.04] sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-md border border-zinc-800 bg-zinc-800 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((it, i) => (
             <motion.div
               key={it.code}
@@ -56,19 +56,19 @@ export default function Capabilities() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.07, ease }}
-              className="group relative flex flex-col gap-4 bg-[#070a13] p-7 transition-colors hover:bg-[#0b1120]"
+              className="group relative flex flex-col gap-4 bg-[#070a13] p-7 transition-colors hover:bg-[#0a0d16]"
             >
               <div className="flex items-center justify-between">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#38BDF8]/20 bg-[#38BDF8]/[0.08] text-[#38BDF8]">
-                  <it.icon className="h-5 w-5" strokeWidth={2} aria-hidden />
+                <span className="flex h-11 w-11 items-center justify-center rounded-sm border border-zinc-800 bg-white/[0.02] text-zinc-400">
+                  <it.icon className="h-5 w-5" strokeWidth={1.75} aria-hidden />
                 </span>
-                <span className="font-mono text-xs text-slate-600">{it.code}</span>
+                <span className="font-mono text-xs text-zinc-700">{it.code}</span>
               </div>
-              <h3 className="font-[family-name:var(--font-inter)] text-lg font-bold tracking-tight text-white">
+              <h3 className="font-[family-name:var(--font-inter)] text-lg font-bold tracking-tight text-zinc-200">
                 {it.title}
               </h3>
-              <p className="text-sm leading-relaxed text-slate-400">{it.desc}</p>
-              <span className="mt-auto h-px w-0 bg-gradient-to-r from-[#38BDF8] to-transparent transition-all duration-500 group-hover:w-full" aria-hidden />
+              <p className="text-sm leading-relaxed text-zinc-500">{it.desc}</p>
+              <span className="mt-auto h-px w-0 bg-zinc-600 transition-all duration-500 group-hover:w-8" aria-hidden />
             </motion.div>
           ))}
         </div>
