@@ -10,7 +10,7 @@ export default function FlagshipCTA() {
   const openDemo = useOpenDemo();
 
   return (
-    <section id="erisim" className="relative overflow-hidden border-t border-zinc-800 bg-[#05070d] py-32">
+    <section id="erisim" className="relative py-28 sm:py-32">
       <div className="relative z-10 mx-auto max-w-3xl px-5 text-center sm:px-8">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
