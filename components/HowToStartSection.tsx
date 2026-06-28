@@ -32,20 +32,31 @@ const steps = [
 
 export default function HowToStartSection() {
   return (
-    <section id="nasil-baslar" className="py-24 bg-[#F8FAFC] relative scroll-mt-20">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="nasil-baslar" className="relative scroll-mt-20 bg-[#F8FAFC] py-24 dark:bg-card">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-[#0F172A] mb-4 tracking-tight">Nasıl başlarım?</h2>
-          <p className="text-[#64748B] max-w-xl mx-auto leading-relaxed">
-            Dört adımda erişim alıp Satenergy panelinde analizlerinizi çalıştırabilirsiniz.
+          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#15803D] dark:text-emerald-400">
+            Başlangıç
+          </p>
+          <h2 className="mb-4 text-balance text-3xl font-bold tracking-tight text-[#0F172A] dark:text-foreground md:text-5xl">
+            Dört adımda canlıya geçin
+          </h2>
+          <p className="mx-auto max-w-xl leading-relaxed text-[#64748B] dark:text-muted-foreground">
+            Erişim talebinden ilk raporunuza kadar süreç sade ve hızlı.
           </p>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div className="relative grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {/* timeline çizgisi (lg) */}
+          <div
+            className="pointer-events-none absolute left-0 right-0 top-[1.85rem] hidden h-px bg-gradient-to-r from-transparent via-[#15803D]/30 to-transparent lg:block"
+            aria-hidden
+          />
           {steps.map((item, i) => (
             <motion.div
               key={i}
@@ -53,18 +64,16 @@ export default function HowToStartSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="relative p-6 rounded-2xl bg-white border border-[#E2E8F0] shadow-[0_4px_6px_rgba(15,23,42,0.04)] hover:border-[#15803D]/35 hover:shadow-md transition-all"
+              className="relative flex flex-col items-center text-center"
             >
-              <div className="absolute -top-3 left-6 w-8 h-8 rounded-full bg-[#15803D] text-white flex items-center justify-center text-sm font-bold shadow-md shadow-[#15803D]/30">
-                {item.step}
+              <div className="relative z-10 mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-[#15803D]/25 bg-white text-[#15803D] shadow-[0_4px_14px_rgba(21,128,61,0.18)] dark:border-emerald-500/30 dark:bg-muted dark:text-emerald-400">
+                <item.icon className="h-6 w-6" />
+                <span className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-[#15803D] text-xs font-bold text-white shadow-md dark:text-primary-foreground">
+                  {item.step}
+                </span>
               </div>
-              <div className="pt-2">
-                <div className="w-12 h-12 rounded-xl bg-[#DCFCE7] border border-[#15803D]/20 flex items-center justify-center mb-4">
-                  <item.icon className="w-6 h-6 text-[#15803D]" />
-                </div>
-                <h3 className="text-lg font-bold text-[#0F172A] mb-2">{item.title}</h3>
-                <p className="text-[#64748B] text-sm leading-relaxed">{item.desc}</p>
-              </div>
+              <h3 className="mb-2 text-lg font-bold text-[#0F172A] dark:text-foreground">{item.title}</h3>
+              <p className="text-sm leading-relaxed text-[#64748B] dark:text-muted-foreground">{item.desc}</p>
             </motion.div>
           ))}
         </div>

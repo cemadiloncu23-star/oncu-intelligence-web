@@ -20,12 +20,14 @@ export default function PricingSection() {
 
       <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight text-[#0F172A] dark:text-foreground md:text-5xl">
+          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#15803D] dark:text-emerald-400">
             Erişim ve pilot
+          </p>
+          <h2 className="mb-4 text-balance text-3xl font-bold tracking-tight text-[#0F172A] dark:text-foreground md:text-5xl">
+            İhtiyacınıza göre kurgulanan erişim
           </h2>
-          <p className="text-lg leading-relaxed text-[#64748B] dark:text-muted-foreground">
-            Ücret, süre ve kapsam proje görüşmesi ve sözleşmeye göre belirlenir. Bu sayfada bağlayıcı fiyat taahhüdü veya
-            hazır kampanya rakamları yoktur.
+          <p className="mx-auto max-w-xl text-pretty text-lg leading-relaxed text-[#64748B] dark:text-muted-foreground">
+            Ücret, süre ve kapsam proje görüşmesi ve sözleşmeye göre belirlenir; standart kalıp yerine kuruluşunuza özel kurgu.
           </p>
         </div>
 
