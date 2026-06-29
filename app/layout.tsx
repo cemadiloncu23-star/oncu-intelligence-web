@@ -18,7 +18,7 @@ const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-int
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://oncuintelligence.com';
 
 export const metadata: Metadata = {
-  title: 'Satenergy | Uydu istihbaratı ve enerji verimliliği — ÖNCÜ Intelligence',
+  title: 'ÖNC',
   description:
     'Şirketler için enerji verimliliği operasyonu: tesis bazlı tüketim, sektör kıyası ve ISO 50001 uyumlu çıktılar. Uydu istihbaratı ile üretim analizi, verimlilik merkezi ve kurumsal raporlama — ÖNCÜ Intelligence.',
   keywords: [
@@ -69,21 +69,9 @@ export const metadata: Metadata = {
     creator: '@oncuintel',
   },
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/onc-logo.png',
+    shortcut: '/onc-logo.png',
+    apple: '/onc-logo.png',
   },
   manifest: '/site.webmanifest',
   other: {
