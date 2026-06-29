@@ -119,7 +119,7 @@ export default function BentoGrid() {
             Kurumsal panelde dört ana modül
           </h2>
           <p className="mx-auto max-w-2xl text-pretty text-base leading-relaxed text-[#64748B] dark:text-muted-foreground md:text-lg">
-            SolarMind ile aynı ürün ailesinden verimlilik, üretim analizi, alarmlar ve ÖNCÜ Zeka katmanları — tek oturumda
+            KutGöz ile aynı ürün ailesinden verimlilik, üretim analizi, alarmlar ve ÖNCÜ Zeka katmanları — tek oturumda
             bağlanır; bu sayfa yalnızca vitrin özeti içerir.
           </p>
 

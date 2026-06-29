@@ -45,7 +45,7 @@ const tabs = [
     content: {
       title: "Operasyon tek ekranda",
       description:
-        "Verimlilik merkezi, alarmlar, üretim analizi ve ÖNCÜ Zeka — SolarMind kullanıcı paneliyle aynı modüler düzen.",
+        "Verimlilik merkezi, alarmlar, üretim analizi ve ÖNCÜ Zeka — KutGöz kullanıcı paneliyle aynı modüler düzen.",
       stats: ["Tek oturum", "Çoklu tesis", "Rol bazlı erişim"],
     },
   },

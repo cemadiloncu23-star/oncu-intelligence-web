@@ -26,7 +26,7 @@ export default function HeroSection() {
       id="tanitim"
       className="relative min-h-[min(100vh,920px)] flex flex-col lg:flex-row overflow-hidden bg-[#F1F5F9] pt-16 text-[#0F172A]"
     >
-      {/* Sol panel — SolarMind Login.jsx ile aynı görsel dil */}
+      {/* Sol panel — KutGöz Login.jsx ile aynı görsel dil */}
       <div className="hidden lg:flex lg:w-[52%] xl:w-[55%] flex-col justify-between p-10 xl:p-14 relative bg-[#0F172A] text-[#F8FAFC] overflow-hidden min-h-[560px]">
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none" aria-hidden>
           <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628] via-[#0F172A] to-[#064e3b]/90" />

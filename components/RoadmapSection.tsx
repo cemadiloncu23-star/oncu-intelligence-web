@@ -7,7 +7,7 @@ const steps = [
   {
     title: "Enerji analizi & kurumsal panel",
     status: "active" as const,
-    desc: "Verimlilik merkezi, üretim analizi, alarmlar, ÖNCÜ Zeka ve uydu temelli raporlar — SolarMind ile uyumlu.",
+    desc: "Verimlilik merkezi, üretim analizi, alarmlar, ÖNCÜ Zeka ve uydu temelli raporlar — KutGöz ile uyumlu.",
     icon: Sun,
   },
   {

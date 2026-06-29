@@ -52,7 +52,7 @@ export default function PartnerTrustSection() {
           </h2>
           <p className="mt-3 text-pretty text-[15px] leading-relaxed text-[#64748B] dark:text-muted-foreground">
             Kurumsal enerji ekiplerinin sahadan rapora kadar ihtiyaç duyduğu dört yetkinlik,
-            SolarMind ürün ailesiyle aynı altyapıda birleşir.
+            KutGöz ürün ailesiyle aynı altyapıda birleşir.
           </p>
         </div>
 
