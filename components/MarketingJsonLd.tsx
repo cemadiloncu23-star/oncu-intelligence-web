@@ -10,7 +10,7 @@ export default function MarketingJsonLd() {
     url: siteUrl,
     logo: `${siteUrl}/oncu-intelligence-logo.png`,
     description:
-      "Uydu istihbaratı ve enerji verimliliği: Satenergy ürün hattı ile kurumsal panel, raporlama ve ISO 50001 uyumlu çıktılar.",
+      "Uydu istihbaratı ve enerji verimliliği: KutGöz ürün hattı ile kurumsal panel, raporlama ve ISO 50001 uyumlu çıktılar.",
   };
 
   const faqPage = {

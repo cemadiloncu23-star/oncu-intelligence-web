@@ -12,7 +12,7 @@ export default function PricingTiersPage() {
       <div className="mx-auto max-w-3xl px-4 py-12">
         <div className="rounded-3xl border border-[#E2E8F0] bg-white p-8 shadow-sm dark:border-border dark:bg-card md:p-10">
           <p className="mb-6 leading-relaxed text-[#64748B] dark:text-muted-foreground">
-            Satenergy kurumsal çözümü için kota, lokasyon sayısı, raporlamanın derinliği ve destek düzeyi proje görüşmesinde netleştirilir. Bu sayfa yalnızca süreç
+            KutGöz kurumsal çözümü için kota, lokasyon sayısı, raporlamanın derinliği ve destek düzeyi proje görüşmesinde netleştirilir. Bu sayfa yalnızca süreç
             için yönlendirme sağlar.
           </p>
           <Link

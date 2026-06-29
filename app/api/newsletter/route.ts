@@ -37,7 +37,7 @@ export async function POST(request: Request) {
 
   const payload = {
     email: parsed.data.email,
-    source: "satenergy-web-newsletter",
+    source: "kutgoz-web-newsletter",
     submittedAt: new Date().toISOString(),
   };
 

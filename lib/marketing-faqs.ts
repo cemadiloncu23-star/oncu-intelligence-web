@@ -1,7 +1,7 @@
 export const marketingFaqs = [
   {
-    q: "Satenergy ile ÖNCÜ Intelligence aynı mı?",
-    a: "Satenergy, uydu istihbaratı ve enerji verimliliği odaklı ürün kimliğidir; kurumsal panel ve altyapı ÖNCÜ Intelligence tarafından sunulur. Bu site, aynı projenin tanıtım vitrinidir.",
+    q: "KutGöz ile ÖNCÜ Intelligence aynı mı?",
+    a: "KutGöz, uydu istihbaratı ve enerji verimliliği odaklı ürün kimliğidir; kurumsal panel ve altyapı ÖNCÜ Intelligence tarafından sunulur. Bu site, aynı projenin tanıtım vitrinidir.",
   },
   {
     q: "Üç alan seçimi ne anlama geliyor?",

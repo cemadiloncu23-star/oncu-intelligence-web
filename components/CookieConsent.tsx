@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 
-const STORAGE_KEY = "satenergy_cookie_consent";
+const STORAGE_KEY = "kutgoz_cookie_consent";
 
 export type ConsentValue = "all" | "essential";
 
 export function dispatchConsentChange(value: ConsentValue) {
   if (typeof window === "undefined") return;
-  window.dispatchEvent(new CustomEvent("satenergy-consent", { detail: value }));
+  window.dispatchEvent(new CustomEvent("kutgoz-consent", { detail: value }));
 }
 
 export default function CookieConsent() {

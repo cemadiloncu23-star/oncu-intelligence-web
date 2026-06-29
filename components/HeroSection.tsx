@@ -124,7 +124,7 @@ export default function HeroSection() {
           </span>
           <div>
             <div className="text-xs font-bold text-[#4ADE80] tracking-[0.18em] uppercase">
-              Satenergy
+              KutGöz
             </div>
             <div className="text-[11px] text-[#94A3B8] font-medium tracking-wide">
               Uydu istihbaratı · Enerji verimliliği
@@ -200,7 +200,7 @@ export default function HeroSection() {
             <BrandLogo variant="heroMobile" priority />
           </span>
           <div>
-            <div className="text-xs font-bold text-[#4ADE80] tracking-[0.18em] uppercase">Satenergy</div>
+            <div className="text-xs font-bold text-[#4ADE80] tracking-[0.18em] uppercase">KutGöz</div>
             <div className="text-[11px] text-[#94A3B8] font-medium">Uydu istihbaratı · Enerji verimliliği</div>
           </div>
         </div>

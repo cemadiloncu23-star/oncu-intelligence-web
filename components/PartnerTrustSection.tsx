@@ -45,7 +45,7 @@ export default function PartnerTrustSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-12 max-w-2xl text-center">
           <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#4338CA] dark:text-indigo-300">
-            Neden Satenergy
+            Neden KutGöz
           </p>
           <h2 className="text-balance text-2xl font-bold tracking-tight text-[#0F172A] dark:text-foreground md:text-3xl">
             Tek panelde verimlilik, üretim analizi ve denetim

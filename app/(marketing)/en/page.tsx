@@ -12,7 +12,7 @@ const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://oncuintelligence.com";
 
 export const metadata: Metadata = {
 
-  title: "Satenergy | Satellite intelligence & energy efficiency — ÖNCÜ Intelligence",
+  title: "KutGöz | Satellite intelligence & energy efficiency — ÖNCÜ Intelligence",
 
   description:
 
@@ -40,7 +40,7 @@ export default function EnglishOverviewPage() {
 
       <InnerPageHeader
 
-        title="Satenergy product overview"
+        title="KutGöz product overview"
 
         subtitle="English summary of the ÖNCÜ Intelligence go-to-market site. For the full story and legal notices, browse the Turkish site or contact us."
 

@@ -28,7 +28,7 @@ export default function SiteFooter() {
                 ÖNCÜ<span className="ml-1.5 font-light text-zinc-400">INTELLIGENCE</span>
               </span>
             </Link>
-            <p className="text-[11px] font-semibold text-zinc-500 tracking-[0.18em] uppercase mb-2">Satenergy ürün hattı</p>
+            <p className="text-[11px] font-semibold text-zinc-500 tracking-[0.18em] uppercase mb-2">KutGöz ürün hattı</p>
             <p className="text-zinc-400 text-sm leading-relaxed max-w-md mx-auto md:mx-0">
               Uydu istihbaratı ve enerji verimliliği platformunun tanıtım sitesi. Kurumsal panel ile uyumlu içerik ve
               güven unsurları bu vitrinde toplanmıştır.

@@ -84,7 +84,7 @@ export default function TechnologyTabs() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-[#0F172A] mb-4 tracking-tight">Nasıl çalışıyor?</h2>
           <p className="text-[#64748B] max-w-xl mx-auto leading-relaxed">
-            Veriden rapora uzanan süreç — Satenergy kurumsal akışıyla uyumlu.
+            Veriden rapora uzanan süreç — KutGöz kurumsal akışıyla uyumlu.
           </p>
         </div>
 

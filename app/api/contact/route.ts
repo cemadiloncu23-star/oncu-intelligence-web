@@ -70,7 +70,7 @@ export async function POST(request: Request) {
 
   const payload = {
     ...rest,
-    source: "satenergy-web-contact",
+    source: "kutgoz-web-contact",
     submittedAt: new Date().toISOString(),
     clientIp: ip,
   };
