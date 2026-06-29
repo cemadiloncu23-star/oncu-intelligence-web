@@ -38,7 +38,7 @@ export default function FlagshipHero() {
           >
             <span className="h-1.5 w-1.5 rounded-full bg-zinc-500" />
             <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-zinc-500">
-              Uydu istihbarat platformu
+              Enerji yatırım ve takip platformları
             </span>
           </motion.div>
 
@@ -48,9 +48,9 @@ export default function FlagshipHero() {
             transition={{ duration: 0.65, delay: 0.06, ease }}
             className="font-[family-name:var(--font-inter)] text-[2.7rem] font-extrabold leading-[1.05] tracking-tight text-zinc-100 [text-wrap:balance] sm:text-6xl lg:text-[4.4rem]"
           >
-            Yeryüzünün Verisini
+            Doğru yatırım
             <br />
-            <span className="text-zinc-400">İstihbarata Dönüştürün</span>
+            <span className="text-zinc-400">gökyüzünden başlar</span>
           </motion.h1>
 
           <motion.p
