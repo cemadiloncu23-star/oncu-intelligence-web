@@ -10,7 +10,7 @@ import { useOpenDemo } from "@/components/DemoOpenContext";
 const navItems = [
   { label: "Platform", href: "#yetenekler" },
   { label: "Teknoloji", href: "#katmanlar" },
-  { label: "Çözümler", href: "#surec" },
+  { label: "Çözümlerimiz", href: "#surec" },
   { label: "İletişim", href: "/iletisim" },
 ];
 

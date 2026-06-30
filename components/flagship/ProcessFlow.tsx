@@ -8,19 +8,19 @@ const steps = [
     icon: SatelliteDish,
     code: "01 / YAKALA",
     title: "Uydu verisi alımı",
-    desc: "Seçilen alan için Sentinel uydu geçişleri ve çok bantlı görüntüler toplanır.",
+    desc: "KutGöz, seçilen alan için Sentinel uydu geçişleri ve çok bantlı görüntüleri otomatik toplar.",
   },
   {
     icon: Cpu,
     code: "02 / İŞLE",
     title: "İndeks & katman üretimi",
-    desc: "NDVI, NDWI, NDBI ve termal indeksler hesaplanır; veri kalitesi doğrulanır.",
+    desc: "NDVI, NDWI, NDBI ve termal indeksler hesaplanır; veri kalitesi panelde doğrulanır.",
   },
   {
     icon: FileText,
     code: "03 / RAPORLA",
     title: "Denetime hazır çıktı",
-    desc: "Versiyonlanmış PDF raporlar ve panel görünümleri tek oturumda hazırlanır.",
+    desc: "Versiyonlanmış PDF raporlar ve operasyon görünümleri KutGöz kullanıcı panelinde hazırlanır.",
   },
 ];
 
@@ -37,11 +37,17 @@ export default function ProcessFlow() {
   return (
     <section id="surec" className="relative overflow-hidden bg-[#070a13] py-28">
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="mb-16 max-w-2xl">
-          <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.25em] text-zinc-600">// süreç</p>
+        <div className="mb-16 max-w-3xl">
+          <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.25em] text-zinc-600">// çözümlerimiz</p>
           <h2 className="font-[family-name:var(--font-inter)] text-3xl font-bold tracking-tight text-zinc-100 sm:text-5xl">
-            Veriden rapora, üç adımda
+            KutGöz — şirketimizin ilk uygulaması
           </h2>
+          <p className="mt-5 text-[15px] leading-relaxed text-zinc-500 sm:text-base">
+            <span className="font-semibold text-zinc-300">KutGöz</span>, ÖNCÜ Intelligence&apos;ın enerji yatırım ve takip
+            alanındaki ilk ürünüdür. Uydu istihbaratı, verimlilik merkezi, üretim analizi, alarm yönetimi ve ÖNCÜ Zeka
+            katmanlarını tek kurumsal panelde birleştirir. Aşağıdaki üç adım, KutGöz&apos;ün sahadan denetime hazır rapora
+            uzanan çekirdek iş akışını özetler.
+          </p>
         </div>
 
         <div className="relative grid gap-8 md:grid-cols-3">

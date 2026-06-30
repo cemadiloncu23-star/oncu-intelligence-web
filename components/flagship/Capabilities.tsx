@@ -44,7 +44,8 @@ export default function Capabilities() {
             </h2>
           </div>
           <p className="max-w-sm text-[15px] leading-relaxed text-zinc-500">
-            Sahadan rapora kadar dört çekirdek modül, aynı altyapıda birleşir.
+            <span className="font-semibold text-zinc-400">KutGöz</span> — şirketimizin ilk uygulaması. Sahadan rapora
+            kadar dört çekirdek modül, aynı altyapıda birleşir.
           </p>
         </div>
 
