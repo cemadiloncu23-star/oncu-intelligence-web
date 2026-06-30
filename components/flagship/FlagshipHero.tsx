@@ -61,7 +61,7 @@ export default function FlagshipHero() {
           >
             Uydu görüntülerini kendi matematiksel model ve yapay zeka araçlarımızla yorumlayarak şirketinizin yatırım
             yapmak istediği veya yaptığı yerleri 7/24 takip ediyor; alanınızın o yatırıma ne kadar uygun olduğunu
-            planlıyoruz.
+            değerlendiriyoruz.
           </motion.p>
 
           <motion.div
