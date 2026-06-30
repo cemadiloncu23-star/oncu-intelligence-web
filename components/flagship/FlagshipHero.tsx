@@ -59,8 +59,9 @@ export default function FlagshipHero() {
             transition={{ duration: 0.65, delay: 0.14, ease }}
             className="mt-7 max-w-xl text-[15px] leading-relaxed text-zinc-500 sm:text-base"
           >
-            oncuintelligence.com, yüksek çözünürlüklü uydu görüntülerini yapay zeka algoritmalarıyla işleyerek
-            piksel altı analizler ve anlık değişim takibi sağlar.
+            Uydu görüntülerini kendi matematiksel model ve yapay zeka araçlarımızla yorumlayarak şirketinizin yatırım
+            yapmak istediği veya yaptığı yerleri 7/24 takip ediyor; alanınızın o yatırıma ne kadar uygun olduğunu
+            planlıyoruz.
           </motion.p>
 
           <motion.div
