@@ -13,6 +13,41 @@ const schema = z.object({
   turnstileToken: z.string().optional().or(z.literal("")),
 });
 
+/**
+ * Mesajları backend'in iletişim kutusuna da kaydet (yönetici panelinde "Mesajlar").
+ * Böylece webhook tanımlı olmasa bile hiçbir talep kaybolmaz.
+ * Override: CONTACT_BACKEND_URL (ör. https://api.oncuintelligence.com). "off" ile kapatılır.
+ */
+async function postToBackend(payload: {
+  name: string;
+  email: string;
+  company?: string;
+  phone?: string;
+  message: string;
+}): Promise<boolean> {
+  const base = (process.env.CONTACT_BACKEND_URL ?? "https://api.oncuintelligence.com").trim();
+  if (!base || base === "off") return false;
+  const extra = [payload.company && `Şirket: ${payload.company}`, payload.phone && `Telefon: ${payload.phone}`]
+    .filter(Boolean)
+    .join("\n");
+  try {
+    const r = await fetch(`${base.replace(/\/+$/, "")}/api/contact`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: payload.name,
+        email: payload.email,
+        subject: `[Web sitesi] ${payload.company || payload.name}`.slice(0, 200),
+        message: extra ? `${payload.message}\n\n---\n${extra}` : payload.message,
+      }),
+      signal: AbortSignal.timeout(10_000),
+    });
+    return r.ok;
+  } catch {
+    return false;
+  }
+}
+
 async function postToWebhooks(webhooks: string[], payload: object) {
   for (const url of webhooks) {
     const r = await fetch(url, {
@@ -79,16 +114,27 @@ export async function POST(request: Request) {
     .map((u) => (typeof u === "string" ? u.trim() : ""))
     .filter(Boolean);
 
+  let webhookOk = false;
   if (webhooks.length) {
     try {
       await postToWebhooks(webhooks, payload);
+      webhookOk = true;
     } catch {
-      return NextResponse.json(
-        { ok: false, error: "Webhook iletilemedi; daha sonra deneyin." },
-        { status: 502 },
-      );
+      webhookOk = false;
     }
   }
+  const backendOk = await postToBackend(rest);
 
-  return NextResponse.json({ ok: true, delivered: webhooks.length > 0 });
+  if (!webhookOk && !backendOk) {
+    // Hiçbir kanala ulaşılamadı: ziyaretçiye "alındı" deme, e-postayı öner.
+    return NextResponse.json(
+      {
+        ok: false,
+        error: "Mesaj şu an iletilemedi. Lütfen iletisim@oncuintelligence.com adresine e-posta gönderin.",
+      },
+      { status: 502 },
+    );
+  }
+
+  return NextResponse.json({ ok: true, delivered: true });
 }

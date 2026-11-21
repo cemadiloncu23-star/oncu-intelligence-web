@@ -91,11 +91,7 @@ export default function ContactForm({ turnstileSiteKey = "" }: Props) {
         if (widgetId.current && window.turnstile?.reset) window.turnstile.reset(widgetId.current);
         return;
       }
-      toast.success(
-        data.delivered
-          ? "Mesajınız alındı. En kısa sürede dönüş yapılacaktır."
-          : "Kayıt alındı. Üretimde webhook ekleyerek CRM’e iletebilirsiniz.",
-      );
+      toast.success("Mesajınız alındı. En kısa sürede dönüş yapılacaktır.");
       form.reset();
       setTurnstileToken("");
       if (widgetId.current && window.turnstile?.reset) window.turnstile.reset(widgetId.current);
