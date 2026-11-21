@@ -34,7 +34,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function Capabilities() {
   return (
-    <section id="yetenekler" className="relative overflow-hidden bg-[#070a13] py-28">
+    <section id="yetenekler" className="relative overflow-hidden bg-[#0a1018] py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-14 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl">
@@ -57,7 +57,7 @@ export default function Capabilities() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.07, ease }}
-              className="group relative flex flex-col gap-4 bg-[#070a13] p-7 transition-colors hover:bg-[#0a0d16]"
+              className="group relative flex flex-col gap-4 bg-[#0a1018] p-7 transition-colors hover:bg-[#0a0d16]"
             >
               <div className="flex items-center justify-between">
                 <span className="flex h-11 w-11 items-center justify-center rounded-sm border border-zinc-800 bg-white/[0.02] text-zinc-400">

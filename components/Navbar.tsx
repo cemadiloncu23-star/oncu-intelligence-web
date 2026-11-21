@@ -40,7 +40,7 @@ export default function Navbar({ onDemoClick }: { onDemoClick: () => void }) {
     <motion.nav
       initial={{ y: -24 }}
       animate={{ y: 0 }}
-      className="fixed top-0 z-50 w-full border-b border-zinc-800/80 bg-[#070a13]/80 backdrop-blur-md [-webkit-backdrop-filter:blur(12px)]"
+      className="fixed top-0 z-50 w-full border-b border-zinc-800/80 bg-[#0a1018]/80 backdrop-blur-md [-webkit-backdrop-filter:blur(12px)]"
     >
       <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-3">
@@ -122,7 +122,7 @@ export default function Navbar({ onDemoClick }: { onDemoClick: () => void }) {
       </div>
 
       {isOpen && (
-        <div className="border-b border-zinc-800 bg-[#070a13] lg:hidden">
+        <div className="border-b border-zinc-800 bg-[#0a1018] lg:hidden">
           <div className="max-h-[min(80vh,calc(100dvh-4rem))] space-y-0.5 overflow-y-auto px-3 py-3">
             {anchorNav.map((item) => (
               <a

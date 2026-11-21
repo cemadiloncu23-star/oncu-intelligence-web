@@ -12,7 +12,7 @@ export default function InnerPageHeader({
   backLabel?: string;
 }) {
   return (
-    <header className="relative overflow-hidden border-b border-zinc-800 bg-[#070a13] px-4 pt-32 pb-12">
+    <header className="relative overflow-hidden border-b border-zinc-800 bg-[#0a1018] px-4 pt-32 pb-12">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.07]"
         aria-hidden

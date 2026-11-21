@@ -19,7 +19,7 @@ export default function CTABand() {
           viewport={{ once: true }}
           className="rounded-2xl border border-[#E2E8F0] bg-white p-8 text-center shadow-[0_24px_48px_rgba(15,23,42,0.08)] dark:border-border dark:bg-card md:p-12"
         >
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#4338CA]/15 bg-[#EEF2FF] px-3 py-1 text-sm font-semibold text-[#4338CA]">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#15803d]/15 bg-[#EEF2FF] px-3 py-1 text-sm font-semibold text-[#15803d]">
             <Sparkles className="h-4 w-4" />
             Kurumsal tanıtım
           </div>
@@ -46,7 +46,7 @@ export default function CTABand() {
                 href={meetingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl border-2 border-[#4338CA]/25 bg-[#EEF2FF] px-8 py-4 font-bold text-[#3730a3] transition-colors hover:bg-[#E0E7FF] dark:bg-indigo-950/40 dark:text-indigo-200"
+                className="inline-flex items-center gap-2 rounded-xl border-2 border-[#15803d]/25 bg-[#EEF2FF] px-8 py-4 font-bold text-[#3730a3] transition-colors hover:bg-[#E0E7FF] dark:bg-indigo-950/40 dark:text-indigo-200"
               >
                 <Calendar className="h-5 w-5" />
                 Görüşme planla

@@ -35,7 +35,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function ProcessFlow() {
   return (
-    <section id="surec" className="relative overflow-hidden bg-[#070a13] py-28">
+    <section id="surec" className="relative overflow-hidden bg-[#0a1018] py-28">
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-16 max-w-3xl">
           <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.25em] text-zinc-600">// çözümlerimiz</p>
@@ -61,7 +61,7 @@ export default function ProcessFlow() {
               transition={{ duration: 0.5, delay: i * 0.1, ease }}
               className="relative"
             >
-              <div className="relative z-10 mb-5 flex h-14 w-14 items-center justify-center rounded-sm border border-zinc-800 bg-[#070a13] text-zinc-400">
+              <div className="relative z-10 mb-5 flex h-14 w-14 items-center justify-center rounded-sm border border-zinc-800 bg-[#0a1018] text-zinc-400">
                 <s.icon className="h-6 w-6" strokeWidth={1.5} aria-hidden />
               </div>
               <p className="mb-2 font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-600">{s.code}</p>
@@ -80,7 +80,7 @@ export default function ProcessFlow() {
           className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-md border border-zinc-800 bg-zinc-800 md:grid-cols-4"
         >
           {metrics.map((m) => (
-            <div key={m.k} className="flex flex-col items-center gap-1 bg-[#070a13] px-4 py-8 text-center">
+            <div key={m.k} className="flex flex-col items-center gap-1 bg-[#0a1018] px-4 py-8 text-center">
               <dt className="font-[family-name:var(--font-inter)] text-4xl font-bold tracking-tight text-zinc-200">{m.v}</dt>
               <dd className="font-mono text-[11px] uppercase tracking-[0.16em] text-zinc-600">{m.k}</dd>
             </div>

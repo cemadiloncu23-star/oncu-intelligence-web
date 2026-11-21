@@ -78,7 +78,7 @@ export default function TechnologyTabs() {
   return (
     <section id="surecler" className="py-24 bg-[#F8FAFC] relative overflow-hidden scroll-mt-20">
       <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-[#15803D]/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#4338CA]/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#15803d]/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
@@ -130,7 +130,7 @@ export default function TechnologyTabs() {
           <div className="w-full lg:w-2/3">
             <div className="relative bg-white border border-[#E2E8F0] rounded-3xl p-8 md:p-12 min-h-[400px] flex items-center shadow-[0_24px_48px_rgba(15,23,42,0.06)]">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#15803D]/10 to-transparent rounded-tr-3xl" />
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[#4338CA]/10 to-transparent rounded-bl-3xl" />
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[#15803d]/10 to-transparent rounded-bl-3xl" />
 
               <AnimatePresence mode="wait">
                 {tabs.map(

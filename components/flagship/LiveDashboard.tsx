@@ -68,7 +68,7 @@ export default function LiveDashboard() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease }}
-          className="overflow-hidden rounded-md border border-zinc-800 bg-[#070a13]"
+          className="overflow-hidden rounded-md border border-zinc-800 bg-[#0a1018]"
         >
           {/* pencere başlık çubuğu */}
           <div className="flex items-center justify-between border-b border-zinc-800 bg-[#0a0d16] px-4 py-2.5">
@@ -92,7 +92,7 @@ export default function LiveDashboard() {
             onPointerMove={onPointerMove}
             onPointerUp={onPointerUp}
             onPointerLeave={onPointerUp}
-            className="relative aspect-[16/10] w-full cursor-ew-resize touch-none select-none overflow-hidden bg-[#070a13]"
+            className="relative aspect-[16/10] w-full cursor-ew-resize touch-none select-none overflow-hidden bg-[#0a1018]"
           >
             {/* alt katman — ham RGB */}
             <Image

@@ -109,7 +109,7 @@ export default function HeroSection() {
         />
         <div
           className="absolute bottom-[-15%] left-[-5%] w-[22rem] h-[22rem] rounded-full opacity-15 blur-3xl pointer-events-none z-[1]"
-          style={{ background: "radial-gradient(circle, #4338CA 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, #15803d 0%, transparent 70%)" }}
           aria-hidden
         />
 
@@ -234,7 +234,7 @@ export default function HeroSection() {
           <div className="rounded-2xl border border-[#E2E8F0] bg-white/95 backdrop-blur-sm shadow-[0_4px_6px_rgba(15,23,42,0.04),0_24px_48px_rgba(15,23,42,0.08)] overflow-hidden">
             <div className="h-1 w-full bg-gradient-to-r from-[#15803D] via-[#166534] to-[#0E7490]" />
             <div className="p-8 sm:p-9">
-              <p className="text-[11px] font-semibold text-[#4338CA] uppercase tracking-widest mb-2">
+              <p className="text-[11px] font-semibold text-[#15803d] uppercase tracking-widest mb-2">
                 Üretim & izleme
               </p>
               <h2 className="text-2xl sm:text-[1.65rem] font-bold text-[#0F172A] tracking-tight">
@@ -261,10 +261,10 @@ export default function HeroSection() {
                   href={panel.href}
                   target={panel.openInNewTab ? "_blank" : undefined}
                   rel={panel.openInNewTab ? "noopener noreferrer" : undefined}
-                  className="w-full min-h-[3rem] rounded-xl font-bold text-sm flex items-center justify-center gap-2 border-2 border-[#4338CA]/20 bg-[#EEF2FF] text-[#312e81] hover:border-[#4338CA]/45 hover:bg-[#E0E7FF] transition-colors"
+                  className="w-full min-h-[3rem] rounded-xl font-bold text-sm flex items-center justify-center gap-2 border-2 border-[#15803d]/20 bg-[#EEF2FF] text-[#312e81] hover:border-[#15803d]/45 hover:bg-[#E0E7FF] transition-colors"
                 >
                   <span>{panelButtonLabel(panel.isConfigured)}</span>
-                  <ChevronRight className="w-5 h-5 text-[#4338CA]" aria-hidden />
+                  <ChevronRight className="w-5 h-5 text-[#15803d]" aria-hidden />
                 </a>
 
                 <a
@@ -281,7 +281,7 @@ export default function HeroSection() {
                   Üretim analizi
                 </span>
                 <span className="inline-flex items-center gap-1.5 font-medium">
-                  <Sparkles className="w-4 h-4 text-[#4338CA]" />
+                  <Sparkles className="w-4 h-4 text-[#15803d]" />
                   ÖNCÜ Zeka
                 </span>
               </div>

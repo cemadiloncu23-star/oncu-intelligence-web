@@ -17,7 +17,7 @@
   --secondary-foreground: #0f172a;
   --muted: #f1f5f9;
   --muted-foreground: #64748b;
-  --accent: #4338ca;
+  --accent: #15803d;
   --accent-foreground: #ffffff;
   --destructive: #b91c1c;
   --destructive-foreground: #fef2f2;
@@ -44,7 +44,7 @@
 
 .dark {
   /* Flagship koyu paleti — iç sayfalar ana sayfayla aynı kimliği paylaşır */
-  --background: #070a13;
+  --background: #0a1018;
   --foreground: #e4e4e7;
   --card: #0e131f;
   --card-foreground: #e4e4e7;

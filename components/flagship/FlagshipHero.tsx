@@ -8,7 +8,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function FlagshipHero() {
   return (
-    <section id="tepe" className="relative isolate flex min-h-screen items-center overflow-hidden bg-[#070a13]">
+    <section id="tepe" className="relative isolate flex min-h-screen items-center overflow-hidden bg-[#0a1018]">
       {/* === Arka plan: yörüngeden uydu fotoğrafı (metnin arkasına gömülü) === */}
       <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden>
         <Image
@@ -21,10 +21,10 @@ export default function FlagshipHero() {
         />
 
         {/* okunabilirlik scrim'leri — soldan ve alttan koyu, sağ-üstte foto görünür */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#070a13] via-[#070a13]/75 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#070a13] via-[#070a13]/15 to-[#070a13]/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1018] via-[#0a1018]/75 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a1018] via-[#0a1018]/15 to-[#0a1018]/55" />
         {/* nav okunabilirliği için üst hafif karartma */}
-        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#070a13]/80 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0a1018]/80 to-transparent" />
       </div>
 
       {/* === İçerik === */}

@@ -59,13 +59,13 @@ const items = [
     description:
       "Kuruluş verinize bağlamda soru sorun; oturum ve rapor çıktılarını bağlayın. Denetim geçmişi ve versiyonlanmış çıktılar panelde saklanır.",
     headerClass:
-      "from-indigo-100/90 via-violet-50/80 to-indigo-50/60 border-indigo-400/25 dark:from-indigo-950/60 dark:to-violet-950/35 dark:border-indigo-500/30",
+      "from-indigo-100/90 via-violet-50/80 to-indigo-50/60 border-indigo-400/25 dark:from-indigo-950/60 dark:to-violet-950/35 dark:border-emerald-500/30",
     headerIcon: Sparkles,
-    headerIconColor: "text-[#4338CA] dark:text-indigo-400",
+    headerIconColor: "text-[#15803d] dark:text-indigo-400",
     accent: "Sohbet · içgörü",
     icon: (
       <span className="flex items-center gap-1">
-        <Sparkles className="h-4 w-4 text-[#4338CA] dark:text-indigo-400" />
+        <Sparkles className="h-4 w-4 text-[#15803d] dark:text-indigo-400" />
         <Radar className="h-4 w-4 text-[#7C3AED] dark:text-violet-400" />
       </span>
     ),
@@ -111,7 +111,7 @@ export default function BentoGrid() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-14 text-center md:mb-16">
-          <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#4338CA]/20 bg-white/80 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#4338CA] shadow-sm backdrop-blur-sm dark:border-indigo-500/30 dark:bg-card/90 dark:text-indigo-300">
+          <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#15803d]/20 bg-white/80 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#15803d] shadow-sm backdrop-blur-sm dark:border-emerald-500/30 dark:bg-card/90 dark:text-indigo-300">
             <Layers className="h-3.5 w-3.5" aria-hidden />
             Platform
           </p>

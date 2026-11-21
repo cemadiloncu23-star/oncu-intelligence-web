@@ -72,7 +72,7 @@ export default function TestimonialsSection() {
           </Link>
           <a
             href="mailto:iletisim@oncuintelligence.com"
-            className="inline-flex items-center justify-center rounded-xl border-2 border-[#4338CA]/25 bg-[#EEF2FF] px-6 py-3 font-bold text-[#3730a3] transition-colors hover:bg-[#E0E7FF]"
+            className="inline-flex items-center justify-center rounded-xl border-2 border-[#15803d]/25 bg-[#EEF2FF] px-6 py-3 font-bold text-[#3730a3] transition-colors hover:bg-[#E0E7FF]"
           >
             iletisim@oncuintelligence.com
           </a>

@@ -44,7 +44,7 @@ export default function LayerExplorer() {
 
         <div className="grid gap-6 lg:grid-cols-[1.3fr_1fr]">
           {/* görüntü */}
-          <div className="relative overflow-hidden rounded-md border border-zinc-800 bg-[#070a13] p-2">
+          <div className="relative overflow-hidden rounded-md border border-zinc-800 bg-[#0a1018] p-2">
             <div className="relative aspect-[4/3] overflow-hidden rounded-sm sm:aspect-square lg:aspect-[5/4]">
               <AnimatePresence mode="wait">
                 <motion.div

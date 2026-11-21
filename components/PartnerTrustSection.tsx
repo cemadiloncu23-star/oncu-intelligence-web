@@ -22,8 +22,8 @@ const pillars = [
     icon: FileCheck2,
     title: "Denetime hazır rapor",
     desc: "ISO 50001 / EVD odaklı PDF şablonları ve versiyonlanmış denetim izi.",
-    accent: "text-[#4338CA] dark:text-indigo-400",
-    ring: "border-[#4338CA]/20 bg-[#4338CA]/[0.06] dark:border-indigo-500/25 dark:bg-indigo-500/10",
+    accent: "text-[#15803d] dark:text-indigo-400",
+    ring: "border-[#15803d]/20 bg-[#15803d]/[0.06] dark:border-emerald-500/25 dark:bg-emerald-500/10",
   },
   {
     icon: Bell,
@@ -44,7 +44,7 @@ export default function PartnerTrustSection() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-12 max-w-2xl text-center">
-          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#4338CA] dark:text-indigo-300">
+          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#15803d] dark:text-indigo-300">
             Neden KutGöz
           </p>
           <h2 className="text-balance text-2xl font-bold tracking-tight text-[#0F172A] dark:text-foreground md:text-3xl">

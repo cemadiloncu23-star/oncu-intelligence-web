@@ -15,8 +15,8 @@ const segments = [
   {
     title: "ESCO",
     icon: LineChart,
-    color: "from-[#4338CA]/10 to-[#7C3AED]/10 border-[#4338CA]/25 dark:from-indigo-500/10 dark:to-violet-500/10 dark:border-indigo-500/25",
-    iconColor: "text-[#4338CA] dark:text-indigo-400",
+    color: "from-[#15803d]/10 to-[#7C3AED]/10 border-[#15803d]/25 dark:from-emerald-500/10 dark:to-violet-500/10 dark:border-emerald-500/25",
+    iconColor: "text-[#15803d] dark:text-indigo-400",
     body: "Portföy müşterilerinde standart rapor, şeffaf iş akışı ve müşteri ile paylaşılabilir özetler.",
     points: ["Çoklu müşteri portföyü", "Standart rapor şablonu", "Paylaşılabilir özet"],
   },
@@ -40,7 +40,7 @@ export default function AudienceSegmentsSection() {
           viewport={{ once: true }}
           className="mb-14 text-center"
         >
-          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#4338CA] dark:text-indigo-300">
+          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#15803d] dark:text-indigo-300">
             Kimler için
           </p>
           <h2 className="mb-4 text-balance text-3xl font-bold tracking-tight text-[#0F172A] dark:text-foreground md:text-5xl">

@@ -31,7 +31,7 @@ export default function ComplianceBadges() {
           viewport={{ once: true }}
           className="mb-12 text-center"
         >
-          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#4338CA] dark:text-indigo-300">
+          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#15803d] dark:text-indigo-300">
             Uyumluluk ve güven
           </p>
           <h2 className="mb-2 text-2xl font-bold tracking-tight text-[#0F172A] dark:text-foreground md:text-3xl">
@@ -49,10 +49,10 @@ export default function ComplianceBadges() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.06 }}
-              className="flex gap-4 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-6 transition-colors hover:border-[#4338CA]/25 dark:border-border dark:bg-muted/30 dark:hover:border-indigo-500/30"
+              className="flex gap-4 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-6 transition-colors hover:border-[#15803d]/25 dark:border-border dark:bg-muted/30 dark:hover:border-emerald-500/30"
             >
               <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#E2E8F0] bg-white dark:border-border dark:bg-card">
-                <b.icon className="h-5 w-5 text-[#4338CA] dark:text-indigo-400" />
+                <b.icon className="h-5 w-5 text-[#15803d] dark:text-indigo-400" />
               </div>
               <div>
                 <h3 className="mb-1 font-bold text-[#0F172A] dark:text-foreground">{b.title}</h3>

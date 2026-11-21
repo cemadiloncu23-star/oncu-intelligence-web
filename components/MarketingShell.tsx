@@ -2,7 +2,7 @@
 
 import { useState, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
-import Navbar from "@/components/Navbar";
+import { KurumsalNav } from "@/components/kurumsal/KurumsalLanding";
 import SiteFooter from "@/components/SiteFooter";
 import DemoModal from "@/components/DemoModal";
 import FloatingCTA from "@/components/FloatingCTA";
@@ -18,8 +18,8 @@ export default function MarketingShell({ children }: { children: ReactNode }) {
 
   return (
     <DemoOpenContext.Provider value={openDemo}>
-      {!isFlagship && <Navbar onDemoClick={openDemo} />}
-      {children}
+      {!isFlagship && <KurumsalNav />}
+      {isFlagship ? children : <div className="min-h-screen bg-[#0a1018] pt-16">{children}</div>}
       {!isFlagship && <SiteFooter />}
       {!isFlagship && <FloatingCTA />}
       <DemoModal isOpen={showDemo} onClose={() => setShowDemo(false)} />
