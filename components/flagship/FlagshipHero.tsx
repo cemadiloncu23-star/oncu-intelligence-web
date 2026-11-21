@@ -38,7 +38,7 @@ export default function FlagshipHero() {
           >
             <span className="h-1.5 w-1.5 rounded-full bg-zinc-500" />
             <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-zinc-500">
-              Enerji yatırım ve takip platformları
+              GES saha izleme ve fizibilite
             </span>
           </motion.div>
 
@@ -59,9 +59,9 @@ export default function FlagshipHero() {
             transition={{ duration: 0.65, delay: 0.14, ease }}
             className="mt-7 max-w-xl text-[15px] leading-relaxed text-zinc-500 sm:text-base"
           >
-            Uydu görüntülerini kendi matematiksel model ve yapay zeka araçlarımızla yorumlayarak şirketinizin yatırım
-            yapmak istediği veya yaptığı yerleri 7/24 takip ediyor; alanınızın o yatırıma ne kadar uygun olduğunu
-            değerlendiriyoruz.
+            KutGöz, güneş enerjisi santrallerinizi ve yatırım düşündüğünüz arazileri Sentinel-2 uydularıyla yaklaşık her
+            5 günde bir tarar. Tozlanma, bitki istilası ve su birikintisini sahanın kendi geçmişine göre işaretler;
+            yatırım öncesinde arazi için ışınım ve saha raporu üretir.
           </motion.p>
 
           <motion.div

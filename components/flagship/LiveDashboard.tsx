@@ -17,7 +17,7 @@ type RevealLayer = {
 
 const reveals: RevealLayer[] = [
   { id: "yapi", label: "Yapılaşma", code: "NDBI", src: "/showcase/ankara-yapi.png", icon: Building2 },
-  { id: "termal", label: "Termal", code: "LST", src: "/showcase/ankara-termal.png", icon: Thermometer },
+  { id: "termal", label: "Termal", code: "S3 SLSTR", src: "/showcase/ankara-termal.png", icon: Thermometer },
   { id: "su", label: "Su", code: "NDWI", src: "/showcase/ankara-su.png", icon: Droplets },
   { id: "tarim", label: "Tarım", code: "NDVI", src: "/showcase/ankara-tarim.png", icon: Sprout },
 ];

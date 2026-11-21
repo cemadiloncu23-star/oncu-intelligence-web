@@ -4,14 +4,11 @@ import NewsletterForm from "@/components/NewsletterForm";
 import { getStatusPageUrl } from "@/lib/site-config";
 
 const footerNav = [
-  { label: "Platform", href: "/#platform" },
-  { label: "Süreçler", href: "/#surecler" },
-  { label: "SSS", href: "/#sss" },
+  { label: "Platform", href: "/#yetenekler" },
+  { label: "Teknoloji", href: "/#katmanlar" },
+  { label: "Süreç", href: "/#surec" },
   { label: "Paketler", href: "/paketler" },
   { label: "Teknik güven", href: "/guven" },
-  { label: "Blog", href: "/blog" },
-  { label: "Vaka çalışmaları", href: "/vaka" },
-  { label: "Kaynaklar", href: "/kaynaklar" },
   { label: "İletişim formu", href: "/iletisim" },
 ];
 
@@ -30,8 +27,7 @@ export default function SiteFooter() {
             </Link>
             <p className="text-[11px] font-semibold text-zinc-500 tracking-[0.18em] uppercase mb-2">KutGöz ürün hattı</p>
             <p className="text-zinc-400 text-sm leading-relaxed max-w-md mx-auto md:mx-0">
-              Uydu istihbaratı ve enerji verimliliği platformunun tanıtım sitesi. Kurumsal panel ile uyumlu içerik ve
-              güven unsurları bu vitrinde toplanmıştır.
+              Güneş enerjisi santralleri ve yatırım arazileri için uydu tabanlı saha izleme ve fizibilite.
             </p>
             <NewsletterForm />
           </div>
@@ -90,13 +86,6 @@ export default function SiteFooter() {
         </div>
       </div>
 
-      <div className="border-t border-zinc-800/70 bg-black/40" role="contentinfo" aria-label="ÖNCÜ Intelligence credits">
-        <div className="flex flex-wrap items-center justify-center gap-3 px-4 py-3">
-          <p className="text-center text-[11px] font-medium tracking-wide text-zinc-600">
-            Credit by the <span className="font-semibold text-zinc-400">Öncü Intelligence</span>
-          </p>
-        </div>
-      </div>
     </footer>
   );
 }

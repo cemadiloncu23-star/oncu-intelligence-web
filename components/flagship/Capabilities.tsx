@@ -1,32 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Gauge, MapPinned, BellRing, Sparkles } from "lucide-react";
+import { Sun, MapPinned, BellRing, FileText } from "lucide-react";
 
 const items = [
   {
-    icon: Gauge,
+    icon: MapPinned,
     code: "01",
-    title: "Verimlilik merkezi",
-    desc: "Tesis bazlı tüketim, sektör kıyası ve ekipman kırılımı tek panoda.",
+    title: "Yatırım öncesi saha raporu",
+    desc: "Arazi için son 12 ayın ışınımı, bitki örtüsü, su ve yapılaşma durumu, tahmini üretim ve geri ödeme.",
   },
   {
-    icon: MapPinned,
+    icon: Sun,
     code: "02",
-    title: "Üretim analizi",
-    desc: "Güneş, rüzgâr, hidro ve madencilik potansiyeli için uydu destekli analiz.",
+    title: "GES saha izleme",
+    desc: "Bulutsuz her Sentinel-2 çekiminde saha sağlığı: albedo, bitki istilası, su birikintisi, saha homojenliği.",
   },
   {
     icon: BellRing,
     code: "03",
     title: "Alarm merkezi",
-    desc: "Eşik ve kural bazlı bildirimler; rol bazlı önceliklendirme.",
+    desc: "Bulgular sahanın kendi geçmişiyle karşılaştırılır; yalnızca anlamlı sapmalar alarma dönüşür.",
   },
   {
-    icon: Sparkles,
+    icon: FileText,
     code: "04",
-    title: "ÖNCÜ Zeka",
-    desc: "Kuruluş verinize bağlamda soru sorun; denetim izli içgörü.",
+    title: "Haftalık rapor ve API",
+    desc: "Saha bazlı PDF raporlar ve kendi sistemlerinize bağlanabilen REST API.",
   },
 ];
 
@@ -44,8 +44,8 @@ export default function Capabilities() {
             </h2>
           </div>
           <p className="max-w-sm text-[15px] leading-relaxed text-zinc-500">
-            <span className="font-semibold text-zinc-400">KutGöz</span> — şirketimizin ilk uygulaması. Sahadan rapora
-            kadar dört çekirdek modül, aynı altyapıda birleşir.
+            <span className="font-semibold text-zinc-400">KutGöz</span> — şirketimizin ilk uygulaması. Arazi seçiminden
+            işletmeye kadar güneş santralinin uydudan görülebilen her şeyi tek panelde toplar.
           </p>
         </div>
 

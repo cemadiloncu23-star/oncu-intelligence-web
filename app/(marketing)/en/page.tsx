@@ -12,11 +12,11 @@ const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://oncuintelligence.com";
 
 export const metadata: Metadata = {
 
-  title: "KutGöz | Satellite intelligence & energy efficiency — ÖNCÜ Intelligence",
+  title: "KutGöz | Satellite site monitoring and feasibility for solar plants — ÖNCÜ Intelligence",
 
   description:
 
-    "Corporate dashboards for energy efficiency benchmarks, satellite intelligence overlays, audit-ready ISO 50001-style reporting — powered by ÖNCÜ Intelligence.",
+    "KutGöz monitors solar power plants and candidate sites with Sentinel-2 satellite data: soiling, vegetation encroachment and ponding alerts, plus pre-investment site and irradiance reports.",
 
   alternates: { canonical: `${base}/en`, languages: { tr: base, en: `${base}/en`, "x-default": base } },
 
@@ -56,11 +56,11 @@ export default function EnglishOverviewPage() {
 
         <ul className="list-disc space-y-3 ps-6 text-[#475569] dark:text-muted-foreground">
 
-          <li>Fleet-ready panel for consumption baselines and sector benchmarking.</li>
+          <li>Pre-investment site report: last 12 months of irradiance, land cover, water and built-up indicators, estimated yield and payback.</li>
 
-          <li>Satellite intelligence workflows for renewables and operational visibility.</li>
+          <li>Operational monitoring of solar plants on every cloud-free Sentinel-2 pass (~5 days), compared against each site's own history.</li>
 
-          <li>Audit-oriented exports aligned with ISO 50001 narratives (scoped per deployment).</li>
+          <li>Weekly PDF reports and a REST API for integration with your own systems.</li>
 
         </ul>
 

@@ -17,8 +17,8 @@ type Layer = {
 
 const layers: Layer[] = [
   { id: "rgb", label: "Gerçek renk", code: "RGB / TCI", hint: "Doğal renk uydu görüntüsü.", src: "/showcase/ankara-rgb.png", icon: Satellite, dot: "#94a3b8" },
-  { id: "termal", label: "Termal", code: "LST", hint: "Yüzey sıcaklığı görselleştirmesi.", src: "/showcase/ankara-termal.png", icon: Thermometer, dot: "#b58457" },
-  { id: "su", label: "Su", code: "NDWI", hint: "Su kaynakları ve nem indeksi.", src: "/showcase/ankara-su.png", icon: Droplets, dot: "#5b86b0" },
+  { id: "termal", label: "Termal", code: "S3 SLSTR", hint: "Bölgesel yüzey sıcaklığı (Sentinel-3, ~1 km).", src: "/showcase/ankara-termal.png", icon: Thermometer, dot: "#b58457" },
+  { id: "su", label: "Su", code: "NDWI", hint: "Açık su yüzeyleri (NDWI).", src: "/showcase/ankara-su.png", icon: Droplets, dot: "#5b86b0" },
   { id: "tarim", label: "Tarım", code: "NDVI", hint: "Bitki örtüsü yoğunluğu.", src: "/showcase/ankara-tarim.png", icon: Sprout, dot: "#6f9e7e" },
   { id: "yapi", label: "Yapılaşma", code: "NDBI", hint: "Kentsel doku çıkarımı.", src: "/showcase/ankara-yapi.png", icon: Building2, dot: "#b06a6a" },
 ];
@@ -37,7 +37,8 @@ export default function LayerExplorer() {
             Tek pas, beş analiz katmanı
           </h2>
           <p className="mt-4 text-[15px] leading-relaxed text-zinc-500">
-            Aynı uydu geçişinden türetilen katmanlar — gerçek renkten termal, su, tarım ve yapılaşma çıkarımına kadar.
+            Sentinel-2 geçişinden türetilen katmanlar: gerçek renk, su, bitki örtüsü ve yapılaşma. Termal katman Sentinel-3
+            verisinden (~1 km) gelir ve bölgesel bağlam içindir.
           </p>
         </div>
 

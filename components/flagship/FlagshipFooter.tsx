@@ -27,7 +27,7 @@ export default function FlagshipFooter() {
 
       <div className="border-t border-white/[0.04]">
         <p className="mx-auto max-w-7xl px-5 py-4 text-center font-mono text-[11px] tracking-wide text-slate-600 sm:px-8">
-          © 2026 ÖNCÜ Intelligence · Credit by the Öncü Intelligence
+          © 2026 ÖNCÜ Intelligence
         </p>
       </div>
     </footer>

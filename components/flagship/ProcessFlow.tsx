@@ -8,27 +8,27 @@ const steps = [
     icon: SatelliteDish,
     code: "01 / YAKALA",
     title: "Uydu verisi alımı",
-    desc: "KutGöz, seçilen alan için Sentinel uydu geçişleri ve çok bantlı görüntüleri otomatik toplar.",
+    desc: "KutGöz, sahanız için her Sentinel-2 geçişini otomatik çeker; bulut ve gölge pikselleri ayıklanır.",
   },
   {
     icon: Cpu,
     code: "02 / İŞLE",
     title: "İndeks & katman üretimi",
-    desc: "NDVI, NDWI, NDBI ve termal indeksler hesaplanır; veri kalitesi panelde doğrulanır.",
+    desc: "NDVI, NDWI, NDBI ve NDMI hesaplanır; her ölçüm, çekim tarihi ve bulutsuz piksel oranıyla birlikte saklanır.",
   },
   {
     icon: FileText,
     code: "03 / RAPORLA",
     title: "Denetime hazır çıktı",
-    desc: "Versiyonlanmış PDF raporlar ve operasyon görünümleri KutGöz kullanıcı panelinde hazırlanır.",
+    desc: "Saha raporları ve haftalık özetler panelde hazırlanır; ölçülemeyen değer rapora yazılmaz.",
   },
 ];
 
 const metrics = [
-  { v: "5", k: "analiz katmanı" },
-  { v: "10m", k: "çözünürlük / px" },
-  { v: "12", k: "spektral bant" },
-  { v: "PDF", k: "denetim çıktısı" },
+  { v: "~5 gün", k: "yeniden çekim" },
+  { v: "10 m", k: "piksel çözünürlüğü" },
+  { v: "12", k: "spektral bant (L2A)" },
+  { v: "PDF", k: "saha raporu" },
 ];
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -43,10 +43,9 @@ export default function ProcessFlow() {
             KutGöz — şirketimizin ilk uygulaması
           </h2>
           <p className="mt-5 text-[15px] leading-relaxed text-zinc-500 sm:text-base">
-            <span className="font-semibold text-zinc-300">KutGöz</span>, ÖNCÜ Intelligence&apos;ın enerji yatırım ve takip
-            alanındaki ilk ürünüdür. Uydu istihbaratı, verimlilik merkezi, üretim analizi, alarm yönetimi ve ÖNCÜ Zeka
-            katmanlarını tek kurumsal panelde birleştirir. Aşağıdaki üç adım, KutGöz&apos;ün sahadan denetime hazır rapora
-            uzanan çekirdek iş akışını özetler.
+            <span className="font-semibold text-zinc-300">KutGöz</span>, ÖNCÜ Intelligence&apos;ın ilk ürünüdür: güneş
+            enerjisi santralleri ve yatırım arazileri için uydu tabanlı izleme ve fizibilite. Aşağıdaki üç adım, uydu
+            geçişinden saha raporuna uzanan iş akışını özetler.
           </p>
         </div>
 

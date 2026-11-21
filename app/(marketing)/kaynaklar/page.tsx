@@ -1,6 +1,9 @@
 import InnerPageHeader from "@/components/InnerPageHeader";
 import { resources } from "@/lib/content/resources";
 
+// İçerik yayınlanana kadar arama motorlarında listelenmesin
+export const metadata = { robots: { index: false, follow: true } };
+
 export default function ResourcesPage() {
   return (
     <>

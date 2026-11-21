@@ -2,6 +2,9 @@ import Link from "next/link";
 import InnerPageHeader from "@/components/InnerPageHeader";
 import { caseStudies } from "@/lib/content/cases";
 
+// İçerik yayınlanana kadar arama motorlarında listelenmesin
+export const metadata = { robots: { index: false, follow: true } };
+
 export default function CasesIndexPage() {
   return (
     <>

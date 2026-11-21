@@ -18,23 +18,25 @@ const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-int
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://oncuintelligence.com';
 
 export const metadata: Metadata = {
-  title: 'ÖNC',
+  title: {
+    default: 'KutGöz | GES için uydu tabanlı saha izleme ve fizibilite — ÖNCÜ Intelligence',
+    template: '%s | KutGöz — ÖNCÜ Intelligence',
+  },
   description:
-    'Şirketler için enerji verimliliği operasyonu: tesis bazlı tüketim, sektör kıyası ve ISO 50001 uyumlu çıktılar. Uydu istihbaratı ile üretim analizi, verimlilik merkezi ve kurumsal raporlama — ÖNCÜ Intelligence.',
+    'KutGöz, güneş enerjisi santrallerini ve yatırım arazilerini Sentinel-2 uydu verisiyle izler: tozlanma, bitki istilası ve su birikintisi uyarıları, yatırım öncesi saha ve ışınım raporu.',
   keywords: [
     'KutGöz',
-    'enerji verimliliği',
-    'ISO 50001',
-    'uydu istihbaratı',
-    'enerji analizi',
-    'kurumsal raporlama',
+    'GES izleme',
+    'güneş enerjisi santrali',
+    'GES fizibilite',
+    'uydu görüntüsü',
+    'Sentinel-2',
+    'tozlanma',
     'ÖNCÜ Intelligence',
-    'ESCO',
   ],
   authors: [{ name: 'Cem Adil Öncü' }],
   creator: 'ÖNCÜ Intelligence',
   category: 'Technology',
-  classification: 'Technology',
   referrer: 'strict-origin-when-cross-origin',
   robots: {
     index: true,
@@ -48,9 +50,9 @@ export const metadata: Metadata = {
     locale: 'tr_TR',
     url: siteUrl,
     siteName: 'KutGöz — ÖNCÜ Intelligence',
-    title: 'KutGöz | Uydu istihbaratı ve enerji verimliliği',
+    title: 'KutGöz | GES için uydu tabanlı saha izleme ve fizibilite',
     description:
-      'Kurumsal denetim ve raporlama: tesis skoru, sektör karşılaştırması, karbon ve tasarruf görünürlüğü, ISO 50001 uyumlu şablonlar.',
+      'Güneş santrallerinizi ve yatırım arazilerinizi uydudan izleyin: saha sağlığı uyarıları ve yatırım öncesi saha raporu.',
     images: [
       {
         url: `${siteUrl}/oncu-intelligence-logo.png`,
@@ -63,9 +65,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'KutGöz | Uydu istihbaratı ve enerji verimliliği',
+    title: 'KutGöz | GES için uydu tabanlı saha izleme ve fizibilite',
     description:
-      'Tesis bazlı tüketim, sektör kıyası ve ISO 50001 uyumlu çıktılar — tek oturumda. ÖNCÜ Intelligence.',
+      'Güneş santrallerinizi ve yatırım arazilerinizi uydudan izleyin — ÖNCÜ Intelligence.',
     creator: '@oncuintel',
   },
   icons: {

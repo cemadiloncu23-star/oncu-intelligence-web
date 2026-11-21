@@ -2,6 +2,9 @@ import Link from "next/link";
 import InnerPageHeader from "@/components/InnerPageHeader";
 import { blogPosts } from "@/lib/content/blog";
 
+// İçerik yayınlanana kadar arama motorlarında listelenmesin
+export const metadata = { robots: { index: false, follow: true } };
+
 export default function BlogIndexPage() {
   const sorted = [...blogPosts].sort((a, b) => (a.date < b.date ? 1 : -1));
 

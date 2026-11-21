@@ -3,11 +3,10 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { getPanelLink } from "@/lib/site-config";
-import { useOpenDemo } from "@/components/DemoOpenContext";
+import Link from "next/link";
 
 export default function FlagshipCTA() {
   const panel = getPanelLink();
-  const openDemo = useOpenDemo();
 
   return (
     <section id="erisim" className="relative py-28 sm:py-32">
@@ -36,7 +35,7 @@ export default function FlagshipCTA() {
           transition={{ duration: 0.6, delay: 0.08 }}
           className="mx-auto mt-5 max-w-md text-[15px] leading-relaxed text-zinc-500"
         >
-          Kurumsal panele erişin ya da kuruluşunuza özel bir demo planlayalım. Kapsam ve koşullar yazılı netleştirilir.
+          Kurumsal panele erişin ya da santraliniz için ücretsiz bir uydu saha özeti isteyin.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,13 +53,12 @@ export default function FlagshipCTA() {
             Panele giriş
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden />
           </a>
-          <button
-            type="button"
-            onClick={openDemo}
+          <Link
+            href="/iletisim"
             className="inline-flex items-center gap-2 rounded-sm border border-zinc-800 bg-transparent px-7 py-3.5 text-[13px] font-semibold uppercase tracking-wide text-zinc-400 transition-colors hover:border-zinc-600 hover:text-zinc-200"
           >
             Demo talebi
-          </button>
+          </Link>
         </motion.div>
         <p className="mt-6 font-mono text-[11px] text-zinc-700">iletisim@oncuintelligence.com</p>
       </div>

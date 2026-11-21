@@ -1,7 +1,9 @@
-import { marketingFaqs } from "@/lib/marketing-faqs";
-
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://oncuintelligence.com";
 
+/**
+ * Yapılandırılmış veri. Not: Ana sayfada görünür bir SSS bölümü olmadığı için
+ * FAQPage şeması kaldırıldı (Google, sayfada görünmeyen SSS işaretlemesini kabul etmez).
+ */
 export default function MarketingJsonLd() {
   const organization = {
     "@context": "https://schema.org",
@@ -10,26 +12,10 @@ export default function MarketingJsonLd() {
     url: siteUrl,
     logo: `${siteUrl}/oncu-intelligence-logo.png`,
     description:
-      "Uydu istihbaratı ve enerji verimliliği: KutGöz ürün hattı ile kurumsal panel, raporlama ve ISO 50001 uyumlu çıktılar.",
-  };
-
-  const faqPage = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: marketingFaqs.map((item) => ({
-      "@type": "Question",
-      name: item.q,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.a,
-      },
-    })),
+      "KutGöz: güneş enerjisi santralleri ve yatırım arazileri için uydu tabanlı saha izleme ve fizibilite.",
   };
 
   return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPage) }} />
-    </>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }} />
   );
 }

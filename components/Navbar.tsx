@@ -13,17 +13,16 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+// Ana sayfadaki (flagship) gerçek bölüm kimlikleri
 const anchorNav = [
-  { label: "Platform", id: "platform" },
-  { label: "Süreçler", id: "surecler" },
-  { label: "Nasıl başlarım", id: "nasil-baslar" },
+  { label: "Platform", id: "yetenekler" },
+  { label: "Teknoloji", id: "katmanlar" },
+  { label: "Süreç", id: "surec" },
   { label: "Erişim", id: "erisim" },
 ];
 
+// Blog / vaka / kaynaklar içerik gelene kadar menüde gösterilmez
 const groupedPageLinks = [
-  { label: "Blog", href: "/blog" },
-  { label: "Vakalar", href: "/vaka" },
-  { label: "Kaynaklar", href: "/kaynaklar" },
   { label: "Paketler", href: "/paketler" },
   { label: "Teknik güven", href: "/guven" },
 ];
