@@ -57,7 +57,7 @@ export default function FlagshipHero() {
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.14, ease }}
-            className="mt-7 max-w-xl text-[15px] leading-relaxed text-zinc-500 sm:text-base"
+            className="mt-7 max-w-xl text-[15px] leading-relaxed text-zinc-400 sm:text-base"
           >
             KutGöz, güneş enerjisi santrallerinizi ve yatırım düşündüğünüz arazileri Sentinel-2 uydularıyla yaklaşık her
             5 günde bir tarar. Tozlanma, bitki istilası ve su birikintisini sahanın kendi geçmişine göre işaretler;
