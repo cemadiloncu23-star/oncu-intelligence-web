@@ -16,7 +16,7 @@ export default function SiteFooter() {
   const statusUrl = getStatusPageUrl();
 
   return (
-    <footer className="relative z-10 border-t border-zinc-800 bg-[#0a1018] pb-0">
+    <footer className="relative z-10 border-t border-zinc-800 bg-[#030712] pb-0">
       <div className="max-w-7xl mx-auto px-4 py-14">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10 text-center md:text-left">
           <div className="md:col-span-2">

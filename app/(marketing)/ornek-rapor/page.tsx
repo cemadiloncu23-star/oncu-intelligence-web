@@ -47,8 +47,8 @@ export default function SampleReportPage() {
         <div>
           <ol className="space-y-5">
             {BOLUMLER.map((b) => (
-              <li key={b.t} className="rounded-[3px] border border-[#223047] bg-[#101826] p-5">
-                <h2 className="text-[16px] font-semibold text-[#e6ecf3]">{b.t}</h2>
+              <li key={b.t} className="rounded-[3px] border border-[#1e293b] bg-[#071124] p-5">
+                <h2 className="text-[16px] font-semibold text-[#f1f5f9]">{b.t}</h2>
                 <p className="mt-1.5 text-[14.5px] leading-relaxed text-[#a3b1c4]">{b.d}</p>
               </li>
             ))}
@@ -59,7 +59,7 @@ export default function SampleReportPage() {
           </p>
           <Link
             href="/iletisim"
-            className="mt-6 inline-flex items-center rounded-[3px] bg-[#e9a23b] px-5 py-3 text-[15px] font-semibold text-[#0a0f17] hover:bg-[#f0b452]"
+            className="mt-6 inline-flex items-center rounded-[3px] bg-[#D97706] px-5 py-3 text-[15px] font-semibold text-[#030712] hover:bg-[#EAB308]"
           >
             Kendi sahanız için karne isteyin
           </Link>

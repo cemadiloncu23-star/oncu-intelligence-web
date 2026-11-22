@@ -92,3 +92,14 @@ Türkçe, kısa, bildirme kipinde, önce ölçüm. İkinci tekil değil, kurumsa
 - [ ] Görüntüde ölçek, kuzey, tarih, kaynak var
 - [ ] Emoji, gradyan, gölge, spinner yok
 - [ ] Klavyeyle kullanılabilir; odak halkası görünür (`--kg-kut`, 2px)
+
+---
+
+## Güncelleme (22 Kasım 2026): web sitesi paleti
+
+Web sitesi (ana sayfa ve iç sayfalar) kurumsal landing paletine geçti: lacivert zemin
+(`#030712`, `#071124`, `#0B172E`), mavi teknik vurgu (`#2563EB` / `#3B82F6`), mat kehribar
+yalnızca birincil eylem ve enerji vurgusu (`#D97706` / `#EAB308`). Yazı tipleri: Space Grotesk
+(başlık), Inter (gövde), JetBrains Mono (veri). Bu güncelleme yalnızca **web sitesi** içindir;
+yukarıdaki Pafta kuralları (tek imza rengi, 3px köşe, süssüz yüzey) **KutGöz panelinde**
+geçerliliğini korur. Panel ile site arasındaki uyum ayrı bir karardır.

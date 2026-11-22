@@ -4,7 +4,7 @@ import MarketingShell from "@/components/MarketingShell";
 export default function NotFound() {
   return (
     <MarketingShell>
-      <main className="flex min-h-[60vh] flex-col items-center justify-center bg-[#0a1018] px-4 py-32 text-zinc-100">
+      <main className="flex min-h-[60vh] flex-col items-center justify-center bg-[#030712] px-4 py-32 text-zinc-100">
         <p className="mb-2 font-mono text-[11px] font-semibold uppercase tracking-[0.3em] text-zinc-500">404</p>
         <h1 className="mb-3 text-center font-[family-name:var(--font-inter)] text-2xl font-extrabold tracking-tight md:text-3xl">
           Sayfa bulunamadı

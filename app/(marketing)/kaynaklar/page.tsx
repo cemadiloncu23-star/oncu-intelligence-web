@@ -16,7 +16,7 @@ export default function ResourcesPage() {
           <a
             key={r.title}
             href={r.href}
-            className="block rounded-sm border border-zinc-800 bg-[#0e131f] p-6 transition-colors hover:border-zinc-700"
+            className="block rounded-sm border border-zinc-800 bg-[#071124] p-6 transition-colors hover:border-zinc-700"
           >
             <span className="font-mono text-[10px] font-semibold uppercase tracking-wide text-zinc-500">{r.tag}</span>
             <h2 className="mb-2 mt-1 text-lg font-bold text-zinc-100">{r.title}</h2>

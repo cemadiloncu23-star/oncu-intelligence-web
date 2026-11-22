@@ -39,7 +39,7 @@ export default function NewsletterForm() {
   }
 
   const input =
-    "min-w-0 flex-1 rounded-sm border border-zinc-700 bg-[#0e131f] px-3 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-600 outline-none transition-colors focus:border-zinc-500";
+    "min-w-0 flex-1 rounded-sm border border-zinc-700 bg-[#071124] px-3 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-600 outline-none transition-colors focus:border-zinc-500";
 
   return (
     <form onSubmit={onSubmit} className="relative mt-8 w-full max-w-md">

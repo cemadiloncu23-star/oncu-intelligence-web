@@ -1,15 +1,15 @@
 import React from "react"
 import type { Metadata, Viewport } from 'next'
-import { IBM_Plex_Sans, IBM_Plex_Mono, Space_Grotesk, JetBrains_Mono } from 'next/font/google'
+import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google'
 import { ToasterSonner } from '@/components/toaster-sonner'
 import CookieConsent from '@/components/CookieConsent'
 import ConsentAwareAnalytics from '@/components/ConsentAwareAnalytics'
 import AppThemeProvider from '@/components/AppThemeProvider'
 import './globals.css'
 
-const plusJakarta = IBM_Plex_Sans({ subsets: ["latin", "latin-ext"], weight: ["400", "500", "600", "700"], display: "swap", variable: "--font-plus-jakarta" });
-const robotoMono = IBM_Plex_Mono({ subsets: ["latin", "latin-ext"], weight: ["400", "500"], display: "swap", variable: "--font-roboto-mono" });
-const inter = IBM_Plex_Sans({ subsets: ["latin", "latin-ext"], weight: ["400", "500", "600", "700"], display: "swap", variable: "--font-inter" });
+const plusJakarta = Inter({ subsets: ["latin", "latin-ext"], display: "swap", variable: "--font-plus-jakarta" });
+const robotoMono = JetBrains_Mono({ subsets: ["latin", "latin-ext"], display: "swap", variable: "--font-roboto-mono" });
+const inter = Inter({ subsets: ["latin", "latin-ext"], display: "swap", variable: "--font-inter" });
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin", "latin-ext"], display: "swap", variable: "--font-space-grotesk" });
 const jetbrains = JetBrains_Mono({ subsets: ["latin", "latin-ext"], display: "swap", variable: "--font-jetbrains" });
 

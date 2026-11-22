@@ -41,7 +41,7 @@ export default function FloatingCTA() {
         >
           <Link
             href="/iletisim"
-            className="flex items-center justify-center gap-2 rounded-sm border border-zinc-700 bg-[#0e131f]/95 px-4 py-3 text-sm font-semibold uppercase tracking-wide text-zinc-200 shadow-lg backdrop-blur-md transition-colors hover:border-zinc-500 hover:text-white motion-reduce:transition-none"
+            className="flex items-center justify-center gap-2 rounded-sm border border-zinc-700 bg-[#071124]/95 px-4 py-3 text-sm font-semibold uppercase tracking-wide text-zinc-200 shadow-lg backdrop-blur-md transition-colors hover:border-zinc-500 hover:text-white motion-reduce:transition-none"
           >
             İletişim
           </Link>

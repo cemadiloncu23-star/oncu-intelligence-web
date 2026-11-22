@@ -103,7 +103,7 @@ export default function ContactForm({ turnstileSiteKey = "" }: Props) {
   }
 
   const input =
-    "w-full rounded-sm border border-zinc-700 bg-[#0e131f] px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-600 outline-none transition-colors focus:border-zinc-500 focus:ring-[3px] focus:ring-white/10";
+    "w-full rounded-sm border border-zinc-700 bg-[#071124] px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-600 outline-none transition-colors focus:border-zinc-500 focus:ring-[3px] focus:ring-white/10";
 
   return (
     <form onSubmit={onSubmit} className="max-w-lg space-y-5" autoComplete="on">

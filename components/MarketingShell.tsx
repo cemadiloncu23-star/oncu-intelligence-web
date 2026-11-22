@@ -19,7 +19,7 @@ export default function MarketingShell({ children }: { children: ReactNode }) {
   return (
     <DemoOpenContext.Provider value={openDemo}>
       {!isFlagship && <KurumsalNav />}
-      {isFlagship ? children : <div className="min-h-screen bg-[#0a1018] pt-16">{children}</div>}
+      {isFlagship ? children : <div className="min-h-screen bg-[#030712] pt-16">{children}</div>}
       {!isFlagship && <SiteFooter />}
       {!isFlagship && <FloatingCTA />}
       <DemoModal isOpen={showDemo} onClose={() => setShowDemo(false)} />

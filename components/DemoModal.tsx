@@ -20,7 +20,7 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
       onClick={onClose}
     >
       <div
-        className="w-full max-w-md rounded-sm border border-zinc-800 bg-[#0e131f] p-6 shadow-[0_24px_48px_rgba(0,0,0,0.5)] md:p-8"
+        className="w-full max-w-md rounded-sm border border-zinc-800 bg-[#071124] p-6 shadow-[0_24px_48px_rgba(0,0,0,0.5)] md:p-8"
         onClick={(e) => e.stopPropagation()}
       >
         <h2 className="mb-2 font-[family-name:var(--font-inter)] text-xl font-bold text-zinc-100">Demo / Erişim Talebi</h2>

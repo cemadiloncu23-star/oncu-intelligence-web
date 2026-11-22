@@ -16,7 +16,7 @@ export default function BlogIndexPage() {
       />
       <div className="mx-auto max-w-3xl space-y-8 px-4 py-12 pb-24">
         {sorted.length === 0 ? (
-          <p className="rounded-sm border border-zinc-800 bg-[#0e131f] p-8 text-center text-zinc-400">
+          <p className="rounded-sm border border-zinc-800 bg-[#071124] p-8 text-center text-zinc-400">
             Henüz yayınlanmış yazı yok.{" "}
             <Link href="/iletisim" className="font-semibold text-zinc-200 underline-offset-2 hover:text-white hover:underline">
               İletişim
@@ -27,7 +27,7 @@ export default function BlogIndexPage() {
           sorted.map((post) => (
             <article
               key={post.slug}
-              className="rounded-sm border border-zinc-800 bg-[#0e131f] p-6 transition-colors hover:border-zinc-700"
+              className="rounded-sm border border-zinc-800 bg-[#071124] p-6 transition-colors hover:border-zinc-700"
             >
               <p className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-zinc-500">
                 {post.date}

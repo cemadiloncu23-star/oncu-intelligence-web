@@ -42,7 +42,7 @@ export default function CookieConsent() {
       aria-label="Çerez tercihleri"
       className="fixed bottom-0 left-0 right-0 z-[250] p-4 md:p-6 pointer-events-none"
     >
-      <div className="pointer-events-auto max-w-3xl mx-auto rounded-sm border border-zinc-800 bg-[#0e131f]/95 backdrop-blur-md shadow-[0_-8px_40px_rgba(0,0,0,0.5)] p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4">
+      <div className="pointer-events-auto max-w-3xl mx-auto rounded-sm border border-zinc-800 bg-[#071124]/95 backdrop-blur-md shadow-[0_-8px_40px_rgba(0,0,0,0.5)] p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4">
         <div className="flex-1 text-sm text-zinc-400 leading-relaxed">
           <p className="font-semibold text-zinc-100 mb-1">Çerezler ve ölçüm</p>
           <p>
