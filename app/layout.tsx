@@ -1,6 +1,6 @@
 import React from "react"
 import type { Metadata, Viewport } from 'next'
-import { IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'
+import { IBM_Plex_Sans, IBM_Plex_Mono, Space_Grotesk, JetBrains_Mono } from 'next/font/google'
 import { ToasterSonner } from '@/components/toaster-sonner'
 import CookieConsent from '@/components/CookieConsent'
 import ConsentAwareAnalytics from '@/components/ConsentAwareAnalytics'
@@ -10,6 +10,8 @@ import './globals.css'
 const plusJakarta = IBM_Plex_Sans({ subsets: ["latin", "latin-ext"], weight: ["400", "500", "600", "700"], display: "swap", variable: "--font-plus-jakarta" });
 const robotoMono = IBM_Plex_Mono({ subsets: ["latin", "latin-ext"], weight: ["400", "500"], display: "swap", variable: "--font-roboto-mono" });
 const inter = IBM_Plex_Sans({ subsets: ["latin", "latin-ext"], weight: ["400", "500", "600", "700"], display: "swap", variable: "--font-inter" });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin", "latin-ext"], display: "swap", variable: "--font-space-grotesk" });
+const jetbrains = JetBrains_Mono({ subsets: ["latin", "latin-ext"], display: "swap", variable: "--font-jetbrains" });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://oncuintelligence.com';
 
@@ -103,7 +105,7 @@ export default function RootLayout({
         <link rel="alternate" hrefLang="tr" href={siteUrl} />
         <link rel="alternate" hrefLang="en" href={`${siteUrl}/en`} />
       </head>
-      <body className={`${plusJakarta.variable} ${robotoMono.variable} ${inter.variable} font-sans antialiased`}>
+      <body className={`${plusJakarta.variable} ${robotoMono.variable} ${inter.variable} ${spaceGrotesk.variable} ${jetbrains.variable} font-sans antialiased`}>
         <AppThemeProvider>
         <a
           href="#main"
