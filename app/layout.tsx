@@ -1,19 +1,21 @@
 import React from "react"
 import type { Metadata, Viewport } from 'next'
-import { Plus_Jakarta_Sans, Roboto_Mono, Inter } from 'next/font/google'
+import { Plus_Jakarta_Sans, Roboto_Mono, Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google'
 import { ToasterSonner } from '@/components/toaster-sonner'
 import CookieConsent from '@/components/CookieConsent'
 import ConsentAwareAnalytics from '@/components/ConsentAwareAnalytics'
 import AppThemeProvider from '@/components/AppThemeProvider'
 import './globals.css'
 
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin", "latin-ext"], display: "swap", variable: "--font-space-grotesk" });
+const jetbrains = JetBrains_Mono({ subsets: ["latin", "latin-ext"], display: "swap", variable: "--font-jetbrains" });
 const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   display: "swap",
   variable: "--font-plus-jakarta",
 });
-const robotoMono = Roboto_Mono({ subsets: ["latin"], display: "swap", variable: "--font-roboto-mono" });
-const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
+const robotoMono = Roboto_Mono({ subsets: ["latin", "latin-ext"], display: "swap", variable: "--font-roboto-mono" });
+const inter = Inter({ subsets: ["latin", "latin-ext"], display: "swap", variable: "--font-inter" });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://oncuintelligence.com';
 
@@ -105,7 +107,7 @@ export default function RootLayout({
         <link rel="alternate" hrefLang="tr" href={siteUrl} />
         <link rel="alternate" hrefLang="en" href={`${siteUrl}/en`} />
       </head>
-      <body className={`${plusJakarta.variable} ${robotoMono.variable} ${inter.variable} font-sans antialiased`}>
+      <body className={`${plusJakarta.variable} ${robotoMono.variable} ${inter.variable} ${spaceGrotesk.variable} ${jetbrains.variable} font-sans antialiased`}>
         <AppThemeProvider>
         <a
           href="#main"

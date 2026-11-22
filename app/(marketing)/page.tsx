@@ -1,11 +1,11 @@
-import FlagshipLanding from "@/components/flagship/FlagshipLanding";
+import OncuLanding from "@/components/oncu/OncuLanding";
 import MarketingJsonLd from "@/components/MarketingJsonLd";
 
 export default function HomePage() {
   return (
     <>
       <MarketingJsonLd />
-      <FlagshipLanding />
+      <OncuLanding />
     </>
   );
 }
