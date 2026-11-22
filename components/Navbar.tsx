@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X, ArrowUpRight } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PanelNavLink from "@/components/PanelNavLink";
 import {
   DropdownMenu,
@@ -27,8 +27,11 @@ const groupedPageLinks = [
   { label: "Teknik güven", href: "/guven" },
 ];
 
+const focusRing =
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#030712]";
+
 const navLinkClass =
-  "whitespace-nowrap rounded-sm px-2.5 py-2 text-[12px] font-medium uppercase tracking-[0.12em] text-zinc-400 transition-colors hover:text-white";
+  `whitespace-nowrap rounded-sm px-2.5 py-2 text-[12px] font-medium uppercase tracking-[0.12em] text-zinc-400 transition-colors hover:text-white ${focusRing}`;
 
 export default function Navbar({ onDemoClick }: { onDemoClick: () => void }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,8 +39,20 @@ export default function Navbar({ onDemoClick }: { onDemoClick: () => void }) {
   const hashHref = (id: string) => (pathname === "/" ? `#${id}` : `/#${id}`);
   const isEn = pathname.startsWith("/en");
 
+  // Mobil menü açıkken Escape ile kapat; sayfa değişince de kapat
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [isOpen]);
+  useEffect(() => setIsOpen(false), [pathname]);
+
   return (
     <motion.nav
+      aria-label="Ana gezinme"
       initial={{ y: -24 }}
       animate={{ y: 0 }}
       className="fixed top-0 z-50 w-full border-b border-zinc-800/80 bg-[#030712]/80 backdrop-blur-md [-webkit-backdrop-filter:blur(12px)]"
@@ -46,7 +61,7 @@ export default function Navbar({ onDemoClick }: { onDemoClick: () => void }) {
         <div className="flex h-16 items-center justify-between gap-3">
           <Link
             href="/"
-            className="flex shrink-0 items-center py-1"
+            className={`flex shrink-0 items-center rounded-sm py-1 ${focusRing}`}
             aria-label="ÖNCÜ Intelligence — ana sayfa"
           >
             <span className="font-[family-name:var(--font-inter)] text-[15px] font-extrabold uppercase tracking-[0.2em] text-white">
@@ -63,8 +78,7 @@ export default function Navbar({ onDemoClick }: { onDemoClick: () => void }) {
               ))}
               <DropdownMenu modal={false}>
                 <DropdownMenuTrigger
-                  className={`inline-flex shrink-0 items-center gap-0.5 border-0 bg-transparent outline-none ring-0 ${navLinkClass} data-[state=open]:text-white`}
-                  aria-label="Keşfet menüsünü aç"
+                  className={`inline-flex shrink-0 items-center gap-0.5 border-0 bg-transparent ${navLinkClass} data-[state=open]:text-white`}
                 >
                   Keşfet
                   <ChevronDown className="h-3.5 w-3.5 opacity-70" aria-hidden />
@@ -92,15 +106,15 @@ export default function Navbar({ onDemoClick }: { onDemoClick: () => void }) {
           <div className="hidden shrink-0 items-center gap-2 lg:flex">
             <Link
               href={isEn ? "/" : "/en"}
-              className="shrink-0 rounded-sm border border-zinc-700 px-2.5 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-100"
+              className={`shrink-0 rounded-sm border border-zinc-700 px-2.5 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-400 transition-colors hover:border-zinc-500 hover:text-zinc-100 ${focusRing}`}
             >
               {isEn ? "TR" : "EN"}
             </Link>
-            <PanelNavLink className="inline-flex shrink-0 items-center gap-1.5 rounded-sm border border-zinc-700 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-200 transition-colors hover:bg-white hover:text-zinc-900" />
+            <PanelNavLink className={`inline-flex shrink-0 items-center gap-1.5 rounded-sm border border-zinc-700 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-200 transition-colors hover:bg-white hover:text-zinc-900 ${focusRing}`} />
             <button
               type="button"
               onClick={onDemoClick}
-              className="inline-flex shrink-0 items-center gap-2 rounded-sm bg-zinc-100 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-900 transition-colors hover:bg-white"
+              className={`inline-flex shrink-0 items-center gap-2 rounded-sm bg-zinc-100 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-900 transition-colors hover:bg-white ${focusRing}`}
             >
               Erişim talep et
               <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
@@ -111,25 +125,26 @@ export default function Navbar({ onDemoClick }: { onDemoClick: () => void }) {
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center rounded-sm p-2 text-zinc-300 transition-colors hover:bg-white/[0.06] hover:text-white"
+              className={`inline-flex items-center justify-center rounded-sm p-2.5 text-zinc-300 transition-colors hover:bg-white/[0.06] hover:text-white ${focusRing}`}
               aria-expanded={isOpen}
+              aria-controls="mobil-menu"
               aria-label={isOpen ? "Menüyü kapat" : "Menüyü aç"}
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? <X className="h-6 w-6" aria-hidden /> : <Menu className="h-6 w-6" aria-hidden />}
             </button>
           </div>
         </div>
       </div>
 
       {isOpen && (
-        <div className="border-b border-zinc-800 bg-[#030712] lg:hidden">
+        <div id="mobil-menu" className="border-b border-zinc-800 bg-[#030712] lg:hidden">
           <div className="max-h-[min(80vh,calc(100dvh-4rem))] space-y-0.5 overflow-y-auto px-3 py-3">
             {anchorNav.map((item) => (
               <a
                 key={item.id}
                 href={hashHref(item.id)}
                 onClick={() => setIsOpen(false)}
-                className="block rounded-sm px-3 py-3 text-sm font-medium uppercase tracking-wide text-zinc-400 hover:bg-white/[0.05] hover:text-white"
+                className={`block rounded-sm px-3 py-3 text-sm font-medium uppercase tracking-wide text-zinc-400 hover:bg-white/[0.05] hover:text-white ${focusRing}`}
               >
                 {item.label}
               </a>
@@ -139,7 +154,7 @@ export default function Navbar({ onDemoClick }: { onDemoClick: () => void }) {
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="block rounded-sm px-3 py-3 text-sm font-medium uppercase tracking-wide text-zinc-400 hover:bg-white/[0.05] hover:text-white"
+                className={`block rounded-sm px-3 py-3 text-sm font-medium uppercase tracking-wide text-zinc-400 hover:bg-white/[0.05] hover:text-white ${focusRing}`}
               >
                 {item.label}
               </Link>
@@ -147,7 +162,7 @@ export default function Navbar({ onDemoClick }: { onDemoClick: () => void }) {
             <Link
               href="/iletisim"
               onClick={() => setIsOpen(false)}
-              className="block rounded-sm px-3 py-3 text-sm font-medium uppercase tracking-wide text-zinc-400 hover:bg-white/[0.05] hover:text-white"
+              className={`block rounded-sm px-3 py-3 text-sm font-medium uppercase tracking-wide text-zinc-400 hover:bg-white/[0.05] hover:text-white ${focusRing}`}
             >
               İletişim
             </Link>
@@ -155,7 +170,7 @@ export default function Navbar({ onDemoClick }: { onDemoClick: () => void }) {
               <Link
                 href={isEn ? "/" : "/en"}
                 onClick={() => setIsOpen(false)}
-                className="inline-flex shrink-0 rounded-sm border border-zinc-700 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-zinc-300"
+                className={`inline-flex shrink-0 rounded-sm border border-zinc-700 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-zinc-300 ${focusRing}`}
               >
                 {isEn ? "Türkçe" : "English"}
               </Link>
@@ -163,7 +178,7 @@ export default function Navbar({ onDemoClick }: { onDemoClick: () => void }) {
             <div className="mt-2 space-y-2 border-t border-zinc-800 pt-3">
               <PanelNavLink
                 onNavigate={() => setIsOpen(false)}
-                className="flex items-center gap-2 rounded-sm border border-zinc-700 px-3 py-3 text-sm font-semibold uppercase tracking-wide text-zinc-200"
+                className={`flex items-center gap-2 rounded-sm border border-zinc-700 px-3 py-3 text-sm font-semibold uppercase tracking-wide text-zinc-200 ${focusRing}`}
               />
               <button
                 type="button"
@@ -171,7 +186,7 @@ export default function Navbar({ onDemoClick }: { onDemoClick: () => void }) {
                   setIsOpen(false);
                   onDemoClick();
                 }}
-                className="w-full rounded-sm bg-zinc-100 px-4 py-3 text-sm font-semibold uppercase tracking-wide text-zinc-900 transition-colors hover:bg-white"
+                className={`w-full rounded-sm bg-zinc-100 px-4 py-3 text-sm font-semibold uppercase tracking-wide text-zinc-900 transition-colors hover:bg-white ${focusRing}`}
               >
                 Erişim talep et
               </button>
