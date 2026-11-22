@@ -104,7 +104,7 @@ export function Sectors() {
   const { L } = useLang();
   const items = [
     { i: SunMedium, t: L("Güneş Enerjisi (GES)", "Solar (PV)"), d: L("Yatırım öncesi fizibilite puanlaması, panel tozlanması ve bitki istilası takibi.", "Pre-investment feasibility scoring, panel soiling and vegetation encroachment monitoring."), img: IMG.ges, k: "SOLAR", span: "md:col-span-2" },
-    { i: Wind, t: L("Rüzgar Enerjisi (RES)", "Wind"), d: L("Arazi/eğim analizi, çevre kullanım takibi ve erişim yolu bütünlüğü izleme.", "Terrain/slope analysis, land-use tracking and access-road integrity monitoring."), img: IMG.veg, k: "WIND", span: "" },
+    { i: Wind, t: L("Rüzgar Enerjisi (RES)", "Wind"), d: L("Arazi/eğim analizi, çevre kullanım takibi ve erişim yolu bütünlüğü izleme.", "Terrain/slope analysis, land-use tracking and access-road integrity monitoring."), img: IMG.res, k: "WIND", span: "" },
     { i: Droplets, t: L("Hidroelektrik (HES)", "Hydropower"), d: L("Rezervuar su seviyesi, sediment takibi ve havza anomali tespiti.", "Reservoir level, sediment tracking and basin anomaly detection."), img: IMG.hes, k: "HYDRO", span: "" },
     { i: Flame, t: L("Petrol, Gaz ve Kritik Altyapı", "Oil, Gas & Critical Infrastructure"), d: L("Boru hattı koridor güvenliği, izinsiz yaklaşım ve çevresel risk analizi.", "Pipeline corridor safety, unauthorised encroachment and environmental risk analysis."), img: IMG.infra, k: "O&G", span: "md:col-span-2" },
   ];
@@ -272,7 +272,7 @@ export function CtaFooter() {
           ))}
         </div>
         <div className="mx-auto mt-12 flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-white/[0.08] px-5 pt-6 sm:px-8 md:flex-row">
-          <p className={`${mono} text-[11px] text-slate-500`}>© 2026 ÖNCÜ Intelligence. {L("Tüm hakları saklıdır.", "All rights reserved.")}</p>
+          <p className={`${mono} text-[11px] text-slate-500`}>Contains modified Copernicus Sentinel data (2026). © 2026 ÖNCÜ Intelligence. {L("Tüm hakları saklıdır.", "All rights reserved.")}</p>
           <div className="flex gap-4 text-slate-500">
             <a href="https://www.linkedin.com" aria-label="LinkedIn" className="hover:text-white"><Linkedin className="h-4 w-4" strokeWidth={1.5} /></a>
             <a href="https://x.com/oncuintel" aria-label="X" className="hover:text-white"><Twitter className="h-4 w-4" strokeWidth={1.5} /></a>

@@ -126,7 +126,7 @@ function FeasibilityCard() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true });
   const tabs = [
-    { id: "optik", label: L("Optik", "Optical"), img: IMG.ges, filter: "", note: L("Sentinel-2 • 10 m", "Sentinel-2 • 10 m") },
+    { id: "optik", label: L("Optik", "Optical"), img: IMG.ges, filter: "", note: L("Sentinel-2 • 10 m • 20 Ağu 2026", "Sentinel-2 • 10 m • 20 Aug 2026") },
     { id: "termal", label: L("Termal", "Thermal"), img: IMG.thermal, filter: "", note: L("Landsat • yüzey sıcaklığı", "Landsat • surface temp.") },
     { id: "toz", label: L("Tozlanma", "Soiling"), img: IMG.veg, filter: "", note: L("NDVI + toz indeksi", "NDVI + dust index") },
   ];
@@ -146,14 +146,14 @@ function FeasibilityCard() {
       <div className="relative h-52 overflow-hidden bg-[#071124]">
         <AnimatePresence mode="wait">
           <motion.div key={tab} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.45 }} className="absolute inset-0">
-            <Sat src={tabs[tab].img} overlay={0.25} />
+            <Sat src={tabs[tab].img} overlay={0.25} pos={tab === 0 ? "right top" : "center"} />
             {tab === 1 && <div className="absolute inset-0 mix-blend-color" style={{ background: "linear-gradient(120deg,#1e3a8a88,#d9770688)" }} />}
             {tab === 2 && <div className="absolute inset-0 mix-blend-overlay" style={{ background: "linear-gradient(180deg,#eab30855,transparent)" }} />}
           </motion.div>
         </AnimatePresence>
         <svg className="absolute inset-0 h-full w-full" viewBox="0 0 400 208" preserveAspectRatio="none" aria-hidden>
           <motion.polygon
-            points="110,52 300,40 322,138 128,160"
+            points="314,6 394,4 397,78 318,82"
             fill="rgba(37,99,235,0.12)"
             stroke="#3B82F6"
             strokeWidth="1.5"
@@ -163,7 +163,7 @@ function FeasibilityCard() {
             transition={{ duration: 1.8, ease: "easeInOut" }}
           />
         </svg>
-        <div className={`${mono} absolute bottom-2 left-3 rounded bg-[#030712]/70 px-2 py-1 text-[10px] text-slate-200`}>37.8746° K, 32.4932° D • KONYA</div>
+        <div className={`${mono} absolute bottom-2 left-3 rounded bg-[#030712]/70 px-2 py-1 text-[10px] text-slate-200`}>37.7360° K, 33.5560° D • KARAPINAR / KONYA</div>
         <div className={`${mono} absolute right-3 top-2 rounded bg-[#030712]/70 px-2 py-1 text-[10px] text-slate-300`}>{tabs[tab].note}</div>
       </div>
       <div className="flex border-b border-white/[0.08]" role="tablist">

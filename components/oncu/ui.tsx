@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 import { useRef, useState, type ReactNode, type MouseEvent } from "react";
 
 export const IMG = {
-  hero: "/showcase/ankara-rgb.png",
-  ges: "/showcase/ankara-rgb.png",
+  hero: "/images/satellite/hero-earth-orbit.jpg", // Sentinel-2 L2A, Konya ovası, 2 Eyl 2026
+  ges: "/images/satellite/ges-nadir.jpg", // Sentinel-2 L2A, Karapınar GES bölgesi, 20 Ağu 2026
+  res: "/images/satellite/res-terrain.jpg", // Sentinel-2 L2A, Konya ovası kuzeybatı yamaçları, 2 Eyl 2026
   thermal: "/showcase/ankara-termal.png",
   veg: "/showcase/ankara-tarim.png",
-  hes: "/showcase/ankara-su.png",
-  infra: "/showcase/ankara-yapi.png",
+  hes: "/images/satellite/hes-reservoir.jpg", // Sentinel-2 L2A, Atatürk Barajı, 4 Ağu 2026
+  infra: "/images/satellite/pipeline-corridor.jpg", // Sentinel-2 L2A, Çeşme karayolu ve baraj gölü, 26 Ağu 2026
 };
 
 export const ease = [0.22, 1, 0.36, 1] as const;
@@ -29,7 +30,7 @@ export function Reveal({ children, delay = 0, className = "" }: { children: Reac
 }
 
 /** Koyu jeodezik renk derecelemesi uygulanmış uydu görüntüsü (yüklenemezse lacivert degrade kalır). */
-export function Sat({ src, className = "", zoom = false, overlay = 0.55 }: { src: string; className?: string; zoom?: boolean; overlay?: number }) {
+export function Sat({ src, className = "", zoom = false, overlay = 0.55, pos = "center" }: { src: string; className?: string; zoom?: boolean; overlay?: number; pos?: string }) {
   const [bad, setBad] = useState(false);
   return (
     <div className={`absolute inset-0 overflow-hidden bg-gradient-to-br from-[#0B172E] to-[#030712] ${className}`} aria-hidden>
@@ -40,6 +41,7 @@ export function Sat({ src, className = "", zoom = false, overlay = 0.55 }: { src
           alt=""
           loading="lazy"
           onError={() => setBad(true)}
+          style={{ objectPosition: pos }}
           className={`h-full w-full object-cover contrast-110 saturate-90 transition-transform duration-[1400ms] ease-out ${zoom ? "group-hover:scale-110" : ""}`}
         />
       )}
