@@ -39,11 +39,11 @@ export default function NewsletterForm() {
   }
 
   const input =
-    "min-w-0 flex-1 rounded-sm border border-zinc-700 bg-[#071124] px-3 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-600 outline-none transition-colors focus:border-zinc-500";
+    "min-w-0 flex-1 rounded-sm border border-zinc-700 bg-[#071124] px-3 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-400 outline-none transition-colors focus-visible:border-blue-400 focus-visible:ring-[3px] focus-visible:ring-blue-500/40";
 
   return (
     <form onSubmit={onSubmit} className="relative mt-8 w-full max-w-md">
-      <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500">Bülten</p>
+      <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-400">Bülten</p>
       <div className="absolute left-[-9999px] h-px w-px overflow-hidden opacity-0" aria-hidden tabIndex={-1}>
         <label htmlFor="nl_full_name">Tam ad</label>
         <input id="nl_full_name" name="full_name" tabIndex={-1} autoComplete="off" />
