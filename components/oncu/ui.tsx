@@ -7,8 +7,8 @@ export const IMG = {
   hero: "/images/satellite/hero-earth-orbit.jpg", // Sentinel-2 L2A, Konya ovası, 2 Eyl 2026
   ges: "/images/satellite/ges-nadir.jpg", // Sentinel-2 L2A, Karapınar GES bölgesi, 20 Ağu 2026
   res: "/images/satellite/res-terrain.jpg", // Sentinel-2 L2A, Bozcaada (rüzgar santrali adası), 21 Eyl 2026
-  thermal: "/showcase/ankara-termal.png",
-  veg: "/showcase/ankara-tarim.png",
+  thermal: "/images/satellite/ges-termal.jpg", // Landsat 8 C2 L2 yüzey sıcaklığı (lwir11), Karapınar, 8 Eyl 2026
+  veg: "/images/satellite/ges-ndvi.jpg", // Sentinel-2 L2A NDVI, Karapınar, 20 Ağu 2026
   hes: "/images/satellite/hes-reservoir.jpg", // Sentinel-2 L2A, Atatürk Barajı, 4 Ağu 2026
   infra: "/images/satellite/pipeline-corridor.jpg", // Sentinel-2 L2A, Ceyhan enerji terminali (tank sahası ve iskeleler), 23 Eki 2026
 };

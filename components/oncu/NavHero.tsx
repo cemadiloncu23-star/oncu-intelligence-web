@@ -127,8 +127,8 @@ function FeasibilityCard() {
   const inView = useInView(ref, { once: true });
   const tabs = [
     { id: "optik", label: L("Optik", "Optical"), img: IMG.ges, filter: "", note: L("Sentinel-2 • 10 m • 20 Ağu 2026", "Sentinel-2 • 10 m • 20 Aug 2026") },
-    { id: "termal", label: L("Termal", "Thermal"), img: IMG.thermal, filter: "", note: L("Landsat • yüzey sıcaklığı", "Landsat • surface temp.") },
-    { id: "toz", label: L("Tozlanma", "Soiling"), img: IMG.veg, filter: "", note: L("NDVI + toz indeksi", "NDVI + dust index") },
+    { id: "termal", label: L("Termal", "Thermal"), img: IMG.thermal, filter: "", note: L("Landsat 8 • yüzey sıcaklığı • 8 Eyl 2026", "Landsat 8 • surface temp. • 8 Sep 2026") },
+    { id: "toz", label: L("Tozlanma", "Soiling"), img: IMG.veg, filter: "", note: L("Sentinel-2 • NDVI • 20 Ağu 2026", "Sentinel-2 • NDVI • 20 Aug 2026") },
   ];
   const [tab, setTab] = useState(0);
   const bars = [
@@ -146,9 +146,7 @@ function FeasibilityCard() {
       <div className="relative h-52 overflow-hidden bg-[#071124]">
         <AnimatePresence mode="wait">
           <motion.div key={tab} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.45 }} className="absolute inset-0">
-            <Sat src={tabs[tab].img} overlay={0.25} pos={tab === 0 ? "right top" : "center"} />
-            {tab === 1 && <div className="absolute inset-0 mix-blend-color" style={{ background: "linear-gradient(120deg,#1e3a8a88,#d9770688)" }} />}
-            {tab === 2 && <div className="absolute inset-0 mix-blend-overlay" style={{ background: "linear-gradient(180deg,#eab30855,transparent)" }} />}
+            <Sat src={tabs[tab].img} overlay={tab === 0 ? 0.25 : 0.1} pos="right top" />
           </motion.div>
         </AnimatePresence>
         <svg className="absolute inset-0 h-full w-full" viewBox="0 0 400 208" preserveAspectRatio="none" aria-hidden>
