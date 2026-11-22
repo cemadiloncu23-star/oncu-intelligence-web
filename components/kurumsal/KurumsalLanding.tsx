@@ -30,7 +30,7 @@ import LayerExplorer from "@/components/flagship/LayerExplorer";
 import FlagshipFooter from "@/components/flagship/FlagshipFooter";
 
 /* KutGöz Kurumsal — panel ile aynı palet:
-   zemin #0a1018 · yüzey #101826 · kenarlık #223047 · metin #e6ecf3 · ikincil #94a3b8 · vurgu #1f9d5c / #4cc38a */
+   zemin #0a1018 · yüzey #101826 · çizgi #223047 · metin #e6ecf3 · ikincil #94a3b8 · imza (Kut kehribarı) #e9a23b — "Pafta" tasarım sistemi */
 
 const NAV = [
   { label: "Çözümler", href: "#cozumler" },
@@ -42,7 +42,7 @@ const NAV = [
 
 function Kicker({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-[#4cc38a]">{children}</p>
+    <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-[#e9a23b]">{children}</p>
   );
 }
 
@@ -78,7 +78,7 @@ export function KurumsalNav() {
     >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8" aria-label="Ana menü">
         <a href={pathname === "/" ? "#tepe" : "/"} className="flex items-center gap-2.5" aria-label="ÖNCÜ Intelligence — ana sayfa">
-          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-[#1f9d5c] text-[15px] font-bold text-white">K</span>
+          <span className="flex h-8 w-8 items-center justify-center rounded-[3px] bg-[#e9a23b] text-[15px] font-bold text-[#0a0f17]">K</span>
           <span className="leading-tight">
             <span className="block text-[15px] font-bold text-[#e6ecf3]">KutGöz</span>
             <span className="block text-[10.5px] font-medium tracking-wide text-[#94a3b8]">ÖNCÜ Intelligence</span>
@@ -100,21 +100,21 @@ export function KurumsalNav() {
         <div className="hidden items-center gap-3 lg:flex">
           <a
             href={panel.href}
-            className="rounded-md border border-[#2e3f5a] px-4 py-2 text-[13.5px] font-semibold text-[#e6ecf3] transition-colors hover:border-[#4cc38a]"
+            className="rounded-[3px] border border-[#2e3f5a] px-4 py-2 text-[13.5px] font-semibold text-[#e6ecf3] transition-colors hover:border-[#e9a23b]"
           >
             Panel girişi
           </a>
           <button
             type="button"
             onClick={openDemo}
-            className="rounded-md bg-[#1f9d5c] px-4 py-2 text-[13.5px] font-semibold text-white transition-colors hover:bg-[#23ad67]"
+            className="rounded-[3px] bg-[#e9a23b] px-4 py-2 text-[13.5px] font-semibold text-[#0a0f17] transition-colors hover:bg-[#f0b452]"
           >
             Demo talep edin
           </button>
         </div>
         <button
           type="button"
-          className="rounded-md p-2 text-[#e6ecf3] lg:hidden"
+          className="rounded-[3px] p-2 text-[#e6ecf3] lg:hidden"
           aria-label={open ? "Menüyü kapat" : "Menüyü aç"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -130,8 +130,8 @@ export function KurumsalNav() {
             </a>
           ))}
           <div className="mt-4 grid grid-cols-2 gap-3">
-            <a href={panel.href} className="rounded-md border border-[#2e3f5a] py-2.5 text-center text-[14px] font-semibold text-[#e6ecf3]">Panel girişi</a>
-            <button type="button" onClick={() => { setOpen(false); openDemo(); }} className="rounded-md bg-[#1f9d5c] py-2.5 text-[14px] font-semibold text-white">Demo talep edin</button>
+            <a href={panel.href} className="rounded-[3px] border border-[#2e3f5a] py-2.5 text-center text-[14px] font-semibold text-[#e6ecf3]">Panel girişi</a>
+            <button type="button" onClick={() => { setOpen(false); openDemo(); }} className="rounded-[3px] bg-[#e9a23b] py-2.5 text-[14px] font-semibold text-[#0a0f17]">Demo talep edin</button>
           </div>
         </div>
       ) : null}
@@ -150,7 +150,7 @@ function Hero() {
       </div>
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.15fr_1fr] lg:py-28">
         <div>
-          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#1d4d34] bg-[#0f2a1e] px-3 py-1 text-[12.5px] font-semibold text-[#4cc38a]">
+          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#e9a23b]/30 bg-[#e9a23b]/10 px-3 py-1 text-[12.5px] font-semibold text-[#e9a23b]">
             <SunMedium size={14} /> Güneş enerjisi santralleri için uydu analitiği
           </p>
           <h1 className="text-[38px] font-bold leading-[1.1] tracking-tight text-[#e6ecf3] sm:text-[52px]">
@@ -165,13 +165,13 @@ function Hero() {
             <button
               type="button"
               onClick={openDemo}
-              className="inline-flex items-center gap-2 rounded-md bg-[#1f9d5c] px-5 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#23ad67]"
+              className="inline-flex items-center gap-2 rounded-[3px] bg-[#e9a23b] px-5 py-3 text-[15px] font-semibold text-[#0a0f17] transition-colors hover:bg-[#f0b452]"
             >
               Ücretsiz saha ön değerlendirmesi <ArrowRight size={17} />
             </button>
             <a
               href="#karne"
-              className="inline-flex items-center gap-2 rounded-md border border-[#2e3f5a] px-5 py-3 text-[15px] font-semibold text-[#e6ecf3] transition-colors hover:border-[#4cc38a]"
+              className="inline-flex items-center gap-2 rounded-[3px] border border-[#2e3f5a] px-5 py-3 text-[15px] font-semibold text-[#e6ecf3] transition-colors hover:border-[#e9a23b]"
             >
               Örnek raporu inceleyin
             </a>
@@ -210,7 +210,7 @@ function VeriSeridi() {
       <div className="mx-auto grid max-w-7xl gap-6 px-5 py-8 sm:grid-cols-2 sm:px-8 lg:grid-cols-4">
         {items.map(({ icon: I, t, d }) => (
           <div key={t} className="flex items-start gap-3">
-            <I size={20} className="mt-0.5 shrink-0 text-[#4cc38a]" />
+            <I size={20} className="mt-0.5 shrink-0 text-[#e9a23b]" />
             <div>
               <p className="text-[14px] font-semibold text-[#e6ecf3]">{t}</p>
               <p className="text-[13px] text-[#94a3b8]">{d}</p>
@@ -234,8 +234,8 @@ function KimlerIcin() {
       <SectionTitle kicker="Kimler için" title="Karar verenlerin aynı veriye bakmasını sağlar" />
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {items.map(({ icon: I, t, d }) => (
-          <div key={t} className="rounded-xl border border-[#223047] bg-[#101826] p-6">
-            <I size={22} className="text-[#4cc38a]" />
+          <div key={t} className="rounded-[3px] border border-[#223047] bg-[#101826] p-6">
+            <I size={22} className="text-[#e9a23b]" />
             <h3 className="mt-4 text-[16px] font-semibold text-[#e6ecf3]">{t}</h3>
             <p className="mt-2 text-[14px] leading-relaxed text-[#94a3b8]">{d}</p>
           </div>
@@ -284,9 +284,9 @@ function Cozumler() {
         />
         <div className="grid gap-6 lg:grid-cols-2">
           {urunler.map(({ icon: I, etiket, baslik, metin, maddeler }) => (
-            <article key={baslik} className="rounded-xl border border-[#223047] bg-[#101826] p-7">
+            <article key={baslik} className="rounded-[3px] border border-[#223047] bg-[#101826] p-7">
               <div className="flex items-center gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0f2a1e] text-[#4cc38a]"><I size={20} /></span>
+                <span className="flex h-10 w-10 items-center justify-center rounded-[3px] bg-[#e9a23b]/10 text-[#e9a23b]"><I size={20} /></span>
                 <span className="text-[12px] font-semibold uppercase tracking-[0.14em] text-[#94a3b8]">{etiket}</span>
               </div>
               <h3 className="mt-5 text-[22px] font-bold text-[#e6ecf3]">{baslik}</h3>
@@ -294,7 +294,7 @@ function Cozumler() {
               <ul className="mt-5 space-y-2.5">
                 {maddeler.map((m) => (
                   <li key={m} className="flex items-start gap-2.5 text-[14.5px] text-[#c3cddb]">
-                    <CheckCircle2 size={17} className="mt-0.5 shrink-0 text-[#4cc38a]" /> {m}
+                    <CheckCircle2 size={17} className="mt-0.5 shrink-0 text-[#e9a23b]" /> {m}
                   </li>
                 ))}
               </ul>
@@ -318,8 +318,8 @@ function NasilCalisir() {
       <SectionTitle kicker="Nasıl çalışır" title="Dört adımda ön değerlendirme" />
       <ol className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
         {adimlar.map((a) => (
-          <li key={a.n} className="relative rounded-xl border border-[#223047] bg-[#101826] p-6">
-            <span className="text-[13px] font-bold text-[#4cc38a]">Adım {a.n}</span>
+          <li key={a.n} className="relative rounded-[3px] border border-[#223047] bg-[#101826] p-6">
+            <span className="text-[13px] font-bold text-[#e9a23b]">Adım {a.n}</span>
             <h3 className="mt-2 text-[16px] font-semibold text-[#e6ecf3]">{a.t}</h3>
             <p className="mt-2 text-[14px] leading-relaxed text-[#94a3b8]">{a.d}</p>
           </li>
@@ -351,9 +351,9 @@ const ORNEK = {
 
 export function KarneOnizleme({ compact = false }: { compact?: boolean }) {
   return (
-    <div className="rounded-xl border border-[#223047] bg-[#101826]/95 p-6 shadow-2xl shadow-black/40">
+    <div className="rounded-[3px] border border-[#223047] bg-[#101826]/95 p-6 shadow-2xl shadow-black/40">
       <div className="flex items-center gap-4">
-        <span className="flex h-14 w-14 items-center justify-center rounded-lg bg-[#2f6fd6] text-[28px] font-bold text-white">{ORNEK.not}</span>
+        <span className="flex h-14 w-14 items-center justify-center rounded-[3px] bg-[#7fa7d9] text-[28px] font-bold text-[#0a0f17]">{ORNEK.not}</span>
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#94a3b8]">GES fizibilite karnesi · örnek</p>
           <p className="text-[17px] font-bold text-[#e6ecf3]">{ORNEK.hukum}</p>
@@ -370,7 +370,7 @@ export function KarneOnizleme({ compact = false }: { compact?: boolean }) {
             <div className="mt-1.5 h-1.5 overflow-hidden rounded bg-[#162133]">
               <span
                 className="block h-full rounded"
-                style={{ width: `${f.puan}%`, background: f.puan >= 70 ? "#4cc38a" : "#e5a50a" }}
+                style={{ width: `${f.puan}%`, background: f.puan >= 70 ? "#5fbf8a" : "#d9b84a" }}
               />
             </div>
             {!compact ? (
@@ -413,8 +413,8 @@ function KarneBolumu() {
               { i: ListChecks, t: "Yapılacaklar listesi", d: "Bağlantı görüşü, zemin etüdü, DSİ görüşü gibi bir sonraki somut adımlar." },
               { i: FileText, t: "Kurumsal PDF", d: "Logonuz ve renginizle; varsayımlar ve yöntem raporun içinde." },
             ].map(({ i: I, t, d }) => (
-              <li key={t} className="flex gap-3 rounded-lg border border-[#223047] bg-[#101826] p-4">
-                <I size={19} className="mt-0.5 shrink-0 text-[#4cc38a]" />
+              <li key={t} className="flex gap-3 rounded-[3px] border border-[#223047] bg-[#101826] p-4">
+                <I size={19} className="mt-0.5 shrink-0 text-[#e9a23b]" />
                 <div>
                   <p className="text-[15px] font-semibold text-[#e6ecf3]">{t}</p>
                   <p className="text-[14px] text-[#94a3b8]">{d}</p>
@@ -425,7 +425,7 @@ function KarneBolumu() {
           <button
             type="button"
             onClick={openDemo}
-            className="mt-8 inline-flex items-center gap-2 rounded-md bg-[#1f9d5c] px-5 py-3 text-[15px] font-semibold text-white hover:bg-[#23ad67]"
+            className="mt-8 inline-flex items-center gap-2 rounded-[3px] bg-[#e9a23b] px-5 py-3 text-[15px] font-semibold text-[#0a0f17] hover:bg-[#f0b452]"
           >
             Kendi sahanız için karne isteyin <ArrowRight size={17} />
           </button>
@@ -452,7 +452,7 @@ function Metodoloji() {
         title="Yöntem açık, varsayımlar görünür"
         desc="Ön fizibilite, sahaya gitmeden önce doğru soruları sormak içindir; saha etüdü ve resmî görüşlerin yerini tutmaz."
       />
-      <div className="overflow-hidden rounded-xl border border-[#223047]">
+      <div className="overflow-hidden rounded-[3px] border border-[#223047]">
         {satirlar.map(([k, v], i) => (
           <div key={k} className={`grid gap-2 p-5 sm:grid-cols-[200px_1fr] ${i % 2 ? "bg-[#0d1420]" : "bg-[#101826]"}`}>
             <p className="text-[14.5px] font-semibold text-[#e6ecf3]">{k}</p>
@@ -461,7 +461,7 @@ function Metodoloji() {
         ))}
       </div>
       <div className="mt-6 flex flex-wrap gap-4 text-[13px] text-[#94a3b8]">
-        <span className="inline-flex items-center gap-1.5"><Leaf size={15} className="text-[#4cc38a]" /> NDVI: bitki örtüsü</span>
+        <span className="inline-flex items-center gap-1.5"><Leaf size={15} className="text-[#e9a23b]" /> NDVI: bitki örtüsü</span>
         <span className="inline-flex items-center gap-1.5"><Droplets size={15} className="text-[#6ea8fe]" /> MNDWI: su / ıslak alan</span>
         <span className="inline-flex items-center gap-1.5"><Building2 size={15} className="text-[#a3b1c4]" /> NDBI: yapılaşma</span>
       </div>
@@ -482,10 +482,10 @@ function KapanisCTA() {
           </p>
         </div>
         <div className="flex flex-wrap gap-3">
-          <button type="button" onClick={openDemo} className="inline-flex items-center gap-2 rounded-md bg-[#1f9d5c] px-5 py-3 text-[15px] font-semibold text-white hover:bg-[#23ad67]">
+          <button type="button" onClick={openDemo} className="inline-flex items-center gap-2 rounded-[3px] bg-[#e9a23b] px-5 py-3 text-[15px] font-semibold text-[#0a0f17] hover:bg-[#f0b452]">
             Demo talep edin <ArrowRight size={17} />
           </button>
-          <a href={panel.href} className="inline-flex items-center gap-2 rounded-md border border-[#2e3f5a] px-5 py-3 text-[15px] font-semibold text-[#e6ecf3] hover:border-[#4cc38a]">
+          <a href={panel.href} className="inline-flex items-center gap-2 rounded-[3px] border border-[#2e3f5a] px-5 py-3 text-[15px] font-semibold text-[#e6ecf3] hover:border-[#e9a23b]">
             Panel girişi <ArrowUpRight size={16} />
           </a>
         </div>
@@ -496,7 +496,7 @@ function KapanisCTA() {
 
 export default function KurumsalLanding() {
   return (
-    <main id="main" className="min-h-screen bg-[#0a1018] text-[#e6ecf3] antialiased selection:bg-[#1f9d5c]/30">
+    <main id="main" className="min-h-screen bg-[#0a1018] text-[#e6ecf3] antialiased selection:bg-[#e9a23b]/30">
       <KurumsalNav />
       <Hero />
       <VeriSeridi />

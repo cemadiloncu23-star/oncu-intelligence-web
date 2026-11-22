@@ -1,19 +1,15 @@
 import React from "react"
 import type { Metadata, Viewport } from 'next'
-import { Plus_Jakarta_Sans, Roboto_Mono, Inter } from 'next/font/google'
+import { IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'
 import { ToasterSonner } from '@/components/toaster-sonner'
 import CookieConsent from '@/components/CookieConsent'
 import ConsentAwareAnalytics from '@/components/ConsentAwareAnalytics'
 import AppThemeProvider from '@/components/AppThemeProvider'
 import './globals.css'
 
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-plus-jakarta",
-});
-const robotoMono = Roboto_Mono({ subsets: ["latin"], display: "swap", variable: "--font-roboto-mono" });
-const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
+const plusJakarta = IBM_Plex_Sans({ subsets: ["latin", "latin-ext"], weight: ["400", "500", "600", "700"], display: "swap", variable: "--font-plus-jakarta" });
+const robotoMono = IBM_Plex_Mono({ subsets: ["latin", "latin-ext"], weight: ["400", "500"], display: "swap", variable: "--font-roboto-mono" });
+const inter = IBM_Plex_Sans({ subsets: ["latin", "latin-ext"], weight: ["400", "500", "600", "700"], display: "swap", variable: "--font-inter" });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://oncuintelligence.com';
 
