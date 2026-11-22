@@ -103,7 +103,7 @@ export default function ContactForm({ turnstileSiteKey = "" }: Props) {
   }
 
   const input =
-    "w-full rounded-sm border border-zinc-700 bg-[#071124] px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-600 outline-none transition-colors focus:border-zinc-500 focus:ring-[3px] focus:ring-white/10";
+    "w-full rounded-sm border border-zinc-700 bg-[#071124] px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-600 outline-none transition-colors focus-visible:border-blue-400 focus-visible:ring-[3px] focus-visible:ring-blue-500/40";
 
   return (
     <form onSubmit={onSubmit} className="max-w-lg space-y-5" autoComplete="on">
@@ -155,7 +155,7 @@ export default function ContactForm({ turnstileSiteKey = "" }: Props) {
       >
         {pending ? "Gönderiliyor…" : "Gönder"}
       </button>
-      <p className="text-[11px] leading-relaxed text-zinc-500">
+      <p className="text-xs leading-relaxed text-zinc-400">
         İsterseniz doğrudan{" "}
         <a href="mailto:iletisim@oncuintelligence.com" className="font-semibold text-zinc-300 underline underline-offset-2 hover:text-white">
           iletisim@oncuintelligence.com
