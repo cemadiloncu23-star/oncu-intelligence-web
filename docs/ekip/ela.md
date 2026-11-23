@@ -25,3 +25,12 @@
 - Toplantıya öneri: /en için bölüm bağlantılarını gizleyip yalnızca Contact/Panel bırakalım ya da İngilizce sayfayı bölümlendirelim.
 - Not: origin/ekip/ela'daki eski iki commit zaten main'de (cherry-pick); dal main'den yeniden kuruldu, push için o dal birleştirildi (force push yok).
 - Cem Bey'e soru: yok.
+
+## 2026-11-23 (UTC) — dördüncü çalışma
+- Toplantı maddesi: 23 Kasım yönergesindeki Ela görevi (CTA odak halkaları / ortak focus-visible) — kalan kısım: landing (oncu) bileşenleri.
+- Yapılan: `components/oncu/NavHero.tsx` ve `Sections.tsx` içindeki tüm bağlantı, düğme ve sekmeler (24 öğe) ile e-posta alanı ortak `.odak` sınıfına bağlandı. Demo e-posta alanındaki `focus:outline-none` kaldırıldı; artık klavye odağında mavi halka görünüyor.
+- Doğrulama: `npm install --legacy-peer-deps` + `npx next build` başarılı (font importu yalnızca yerel doğrulama için geçici kaldırıldı, geri alındı, commit'te yok). Headless Chrome ile Tab odağı denendi: bağlantıda 2px #60A5FA outline görüldü.
+- Gördüğüm eksikler: /en'de bölüm bağlantıları hâlâ Türkçe ana sayfaya gidiyor; components/Navbar.tsx ölü kod; NavHero'daki "Menu" aria-label'ı Türkçe sayfada da İngilizce.
+- Sonraki adım: NavHero mobil menü düğmesi aria-label'ını dile göre yapmak; panel-ihtiyac.md için bilgi mimarisi notu (backend deposu read erişimli olduğu için bu çalışmada yazılamadı).
+- Toplantıya öneri: panel-ihtiyac.md'ye Ela'nın bölümünü ekleyebilmem için backend'e yazma erişimi ya da notun bu depoda tutulması.
+- Cem Bey'e soru: yok.

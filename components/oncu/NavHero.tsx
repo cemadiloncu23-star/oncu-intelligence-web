@@ -20,11 +20,11 @@ export function AnnouncementBar() {
           "KutGöz v2 Yayında: Büyük Ölçekli Enerji Santralleri İçin Otomatik Sentinel-2 ve Termal Anomali Tespiti — ",
           "KutGöz v2 is live: Automated Sentinel-2 and thermal anomaly detection for utility-scale energy plants — "
         )}
-        <a href="#platform" className="text-white underline-offset-4 hover:underline">
+        <a href="#platform" className="odak text-white underline-offset-4 hover:underline">
           {L("İncele →", "Explore →")}
         </a>
       </span>
-      <button aria-label={L("Bandı kapat", "Dismiss")} onClick={() => setOpen(false)} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white">
+      <button aria-label={L("Bandı kapat", "Dismiss")} onClick={() => setOpen(false)} className="odak absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white">
         <X className="h-4 w-4" strokeWidth={1.5} />
       </button>
     </div>
@@ -44,7 +44,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/[0.08] bg-[#030712]/70 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
-        <a href="#" className="flex items-center gap-3" aria-label="ÖNCÜ Intelligence">
+        <a href="#" className="odak flex items-center gap-3" aria-label="ÖNCÜ Intelligence">
           <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#fff" strokeWidth="1.5" aria-hidden>
             <path d="M13 2 24 8v10l-11 6L2 18V8z" />
             <path d="M13 8v10M8 11l5 3 5-3" stroke="#3B82F6" />
@@ -56,7 +56,7 @@ export function Navbar() {
         </a>
         <nav className="hidden items-center gap-7 lg:flex">
           {links.map(([t, h]) => (
-            <a key={h} href={h} className="text-sm text-slate-400 transition-colors hover:text-white">
+            <a key={h} href={h} className="odak text-sm text-slate-400 transition-colors hover:text-white">
               {t}
             </a>
           ))}
@@ -68,20 +68,20 @@ export function Navbar() {
                 key={l}
                 onClick={() => setLang(l)}
                 aria-pressed={lang === l}
-                className={`px-2.5 py-1.5 uppercase transition-colors ${lang === l ? "bg-[#2563EB] text-white" : "text-slate-400 hover:text-white"}`}
+                className={`odak px-2.5 py-1.5 uppercase transition-colors ${lang === l ? "bg-[#2563EB] text-white" : "text-slate-400 hover:text-white"}`}
               >
                 {l}
               </button>
             ))}
           </div>
-          <a href={PANEL} className="rounded-md border border-white/[0.14] px-4 py-2 text-sm text-slate-200 transition-colors hover:bg-white/[0.05]">
+          <a href={PANEL} className="odak rounded-md border border-white/[0.14] px-4 py-2 text-sm text-slate-200 transition-colors hover:bg-white/[0.05]">
             {L("Panel Girişi", "Sign in")}
           </a>
-          <a href={DEMO} className="rounded-md bg-[#D97706] px-4 py-2 text-sm font-semibold text-[#030712] transition-colors hover:bg-[#EAB308]">
+          <a href={DEMO} className="odak rounded-md bg-[#D97706] px-4 py-2 text-sm font-semibold text-[#030712] transition-colors hover:bg-[#EAB308]">
             {L("Demo Talep Edin", "Request a demo")}
           </a>
         </div>
-        <button className="text-white lg:hidden" onClick={() => setMob((v) => !v)} aria-label="Menu" aria-expanded={mob}>
+        <button className="odak text-white lg:hidden" onClick={() => setMob((v) => !v)} aria-label="Menu" aria-expanded={mob}>
           {mob ? <X className="h-6 w-6" strokeWidth={1.5} /> : <Menu className="h-6 w-6" strokeWidth={1.5} />}
         </button>
       </div>
@@ -90,18 +90,18 @@ export function Navbar() {
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden border-t border-white/[0.08] bg-[#030712]/95 lg:hidden">
             <div className="flex flex-col gap-1 px-5 py-4">
               {links.map(([t, h]) => (
-                <a key={h} href={h} onClick={() => setMob(false)} className="rounded px-2 py-2.5 text-slate-300 hover:bg-white/[0.04]">
+                <a key={h} href={h} onClick={() => setMob(false)} className="odak rounded px-2 py-2.5 text-slate-300 hover:bg-white/[0.04]">
                   {t}
                 </a>
               ))}
               <div className="mt-2 flex items-center gap-2">
                 {(["tr", "en"] as const).map((l) => (
-                  <button key={l} onClick={() => setLang(l)} className={`${mono} rounded border px-3 py-1.5 text-xs uppercase ${lang === l ? "border-[#2563EB] bg-[#2563EB] text-white" : "border-white/15 text-slate-400"}`}>
+                  <button key={l} onClick={() => setLang(l)} className={`odak ${mono} rounded border px-3 py-1.5 text-xs uppercase ${lang === l ? "border-[#2563EB] bg-[#2563EB] text-white" : "border-white/15 text-slate-400"}`}>
                     {l}
                   </button>
                 ))}
-                <a href={PANEL} className="ml-auto rounded border border-white/15 px-3 py-1.5 text-sm text-slate-200">{L("Panel Girişi", "Sign in")}</a>
-                <a href={DEMO} onClick={() => setMob(false)} className="rounded bg-[#D97706] px-3 py-1.5 text-sm font-semibold text-[#030712]">{L("Demo", "Demo")}</a>
+                <a href={PANEL} className="odak ml-auto rounded border border-white/15 px-3 py-1.5 text-sm text-slate-200">{L("Panel Girişi", "Sign in")}</a>
+                <a href={DEMO} onClick={() => setMob(false)} className="odak rounded bg-[#D97706] px-3 py-1.5 text-sm font-semibold text-[#030712]">{L("Demo", "Demo")}</a>
               </div>
             </div>
           </motion.div>
@@ -171,7 +171,7 @@ function FeasibilityCard() {
             role="tab"
             aria-selected={tab === i}
             onClick={() => setTab(i)}
-            className={`${mono} flex-1 border-b-2 px-3 py-2.5 text-[11px] uppercase tracking-[0.14em] transition-colors ${tab === i ? "border-[#3B82F6] text-white" : "border-transparent text-slate-500 hover:text-slate-300"}`}
+            className={`odak ${mono} flex-1 border-b-2 px-3 py-2.5 text-[11px] uppercase tracking-[0.14em] transition-colors ${tab === i ? "border-[#3B82F6] text-white" : "border-transparent text-slate-500 hover:text-slate-300"}`}
           >
             {t.label}
           </button>
@@ -251,10 +251,10 @@ export function Hero() {
             )}
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3, ease }} className="mt-8 flex flex-wrap gap-3">
-            <a href={DEMO} className="inline-flex items-center gap-2 rounded-md bg-[#D97706] px-5 py-3 text-sm font-semibold text-[#030712] transition-colors hover:bg-[#EAB308]">
+            <a href={DEMO} className="odak inline-flex items-center gap-2 rounded-md bg-[#D97706] px-5 py-3 text-sm font-semibold text-[#030712] transition-colors hover:bg-[#EAB308]">
               {L("Ücretsiz Saha Ön Değerlendirmesi", "Free Site Pre-assessment")} <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
             </a>
-            <a href="#rapor" className="inline-flex items-center gap-2 rounded-md border border-white/[0.16] px-5 py-3 text-sm text-slate-100 transition-colors hover:bg-white/[0.05]">
+            <a href="#rapor" className="odak inline-flex items-center gap-2 rounded-md border border-white/[0.16] px-5 py-3 text-sm text-slate-100 transition-colors hover:bg-white/[0.05]">
               <Satellite className="h-4 w-4" strokeWidth={1.5} /> {L("Örnek Raporu İnceleyin", "View a Sample Report")}
             </a>
           </motion.div>
