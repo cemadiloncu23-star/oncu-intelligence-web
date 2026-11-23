@@ -33,11 +33,11 @@ import FlagshipFooter from "@/components/flagship/FlagshipFooter";
    zemin #0a1018 · yüzey #101826 · çizgi #223047 · metin #e6ecf3 · ikincil #94a3b8 · imza (Kut kehribarı) #e9a23b — "Pafta" tasarım sistemi */
 
 const NAV = [
-  { label: "Çözümler", href: "#cozumler" },
-  { label: "Nasıl çalışır", href: "#nasil" },
-  { label: "Örnek rapor", href: "#karne" },
-  { label: "Metodoloji", href: "#metodoloji" },
-  { label: "İletişim", href: "/iletisim" },
+  { label: "Çözümler", en: "Solutions", href: "#cozumler" },
+  { label: "Nasıl çalışır", en: "How it works", href: "#nasil" },
+  { label: "Örnek rapor", en: "Sample report", href: "#karne" },
+  { label: "Metodoloji", en: "Methodology", href: "#metodoloji" },
+  { label: "İletişim", en: "Contact", href: "/iletisim" },
 ];
 
 function Kicker({ children }: { children: React.ReactNode }) {
@@ -62,8 +62,20 @@ export function KurumsalNav() {
   // Alt sayfalarda bölüm bağlantıları ana sayfaya gider
   const h = (href: string) => (href.startsWith("#") && pathname !== "/" ? `/${href}` : href);
   const openDemo = useOpenDemo();
+  const isEn = pathname.startsWith("/en");
+  const t = (tr: string, en: string) => (isEn ? en : tr);
   const [solid, setSolid] = useState(false);
   const [open, setOpen] = useState(false);
+  // Mobil menü açıkken Escape ile kapat; sayfa değişince de kapat
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
+  useEffect(() => setOpen(false), [pathname]);
   useEffect(() => {
     const on = () => setSolid(window.scrollY > 24);
     on();
@@ -76,8 +88,8 @@ export function KurumsalNav() {
         solid || open ? "border-b border-[#223047] bg-[#0a1018]/95 backdrop-blur" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8" aria-label="Ana menü">
-        <a href={pathname === "/" ? "#tepe" : "/"} className="flex items-center gap-2.5" aria-label="ÖNCÜ Intelligence — ana sayfa">
+      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8" aria-label={t("Ana menü", "Main menu")}>
+        <a href={pathname === "/" ? "#tepe" : "/"} className="odak flex items-center gap-2.5" aria-label={t("ÖNCÜ Intelligence — ana sayfa", "ÖNCÜ Intelligence — home")}>
           <span className="flex h-8 w-8 items-center justify-center rounded-[3px] bg-[#e9a23b] text-[15px] font-bold text-[#0a0f17]">K</span>
           <span className="leading-tight">
             <span className="block text-[15px] font-bold text-[#e6ecf3]">KutGöz</span>
@@ -87,12 +99,12 @@ export function KurumsalNav() {
         <div className="hidden items-center gap-7 lg:flex">
           {NAV.map((n) =>
             n.href.startsWith("#") ? (
-              <a key={n.href} href={h(n.href)} className="text-[14px] font-medium text-[#c3cddb] transition-colors hover:text-white">
-                {n.label}
+              <a key={n.href} href={h(n.href)} className="odak text-[14px] font-medium text-[#c3cddb] transition-colors hover:text-white">
+                {isEn ? n.en : n.label}
               </a>
             ) : (
-              <Link key={n.href} href={n.href} className="text-[14px] font-medium text-[#c3cddb] transition-colors hover:text-white">
-                {n.label}
+              <Link key={n.href} href={n.href} className="odak text-[14px] font-medium text-[#c3cddb] transition-colors hover:text-white">
+                {isEn ? n.en : n.label}
               </Link>
             ),
           )}
@@ -100,38 +112,39 @@ export function KurumsalNav() {
         <div className="hidden items-center gap-3 lg:flex">
           <a
             href={panel.href}
-            className="rounded-[3px] border border-[#2e3f5a] px-4 py-2 text-[13.5px] font-semibold text-[#e6ecf3] transition-colors hover:border-[#e9a23b]"
+            className="odak rounded-[3px] border border-[#2e3f5a] px-4 py-2 text-[13.5px] font-semibold text-[#e6ecf3] transition-colors hover:border-[#e9a23b]"
           >
-            Panel girişi
+            {t("Panel girişi", "Panel sign-in")}
           </a>
           <button
             type="button"
             onClick={openDemo}
-            className="rounded-[3px] bg-[#e9a23b] px-4 py-2 text-[13.5px] font-semibold text-[#0a0f17] transition-colors hover:bg-[#f0b452]"
+            className="odak rounded-[3px] bg-[#e9a23b] px-4 py-2 text-[13.5px] font-semibold text-[#0a0f17] transition-colors hover:bg-[#f0b452]"
           >
-            Demo talep edin
+            {t("Demo talep edin", "Request a demo")}
           </button>
         </div>
         <button
           type="button"
-          className="rounded-[3px] p-2 text-[#e6ecf3] lg:hidden"
-          aria-label={open ? "Menüyü kapat" : "Menüyü aç"}
+          className="odak rounded-[3px] p-2 text-[#e6ecf3] lg:hidden"
+          aria-label={open ? t("Menüyü kapat", "Close menu") : t("Menüyü aç", "Open menu")}
           aria-expanded={open}
+          aria-controls="kurumsal-mobil-menu"
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? <X size={22} /> : <Menu size={22} />}
+          {open ? <X size={22} aria-hidden /> : <Menu size={22} aria-hidden />}
         </button>
       </nav>
       {open ? (
-        <div className="border-t border-[#223047] bg-[#0a1018] px-5 pb-6 pt-2 lg:hidden">
+        <div id="kurumsal-mobil-menu" className="border-t border-[#223047] bg-[#0a1018] px-5 pb-6 pt-2 lg:hidden">
           {NAV.map((n) => (
-            <a key={n.href} href={h(n.href)} onClick={() => setOpen(false)} className="block border-b border-[#223047] py-3 text-[15px] text-[#e6ecf3]">
-              {n.label}
+            <a key={n.href} href={h(n.href)} onClick={() => setOpen(false)} className="odak block border-b border-[#223047] py-3 text-[15px] text-[#e6ecf3]">
+              {isEn ? n.en : n.label}
             </a>
           ))}
           <div className="mt-4 grid grid-cols-2 gap-3">
-            <a href={panel.href} className="rounded-[3px] border border-[#2e3f5a] py-2.5 text-center text-[14px] font-semibold text-[#e6ecf3]">Panel girişi</a>
-            <button type="button" onClick={() => { setOpen(false); openDemo(); }} className="rounded-[3px] bg-[#e9a23b] py-2.5 text-[14px] font-semibold text-[#0a0f17]">Demo talep edin</button>
+            <a href={panel.href} className="odak rounded-[3px] border border-[#2e3f5a] py-2.5 text-center text-[14px] font-semibold text-[#e6ecf3]">{t("Panel girişi", "Panel sign-in")}</a>
+            <button type="button" onClick={() => { setOpen(false); openDemo(); }} className="odak rounded-[3px] bg-[#e9a23b] py-2.5 text-[14px] font-semibold text-[#0a0f17]">{t("Demo talep edin", "Request a demo")}</button>
           </div>
         </div>
       ) : null}
@@ -165,13 +178,13 @@ function Hero() {
             <button
               type="button"
               onClick={openDemo}
-              className="inline-flex items-center gap-2 rounded-[3px] bg-[#e9a23b] px-5 py-3 text-[15px] font-semibold text-[#0a0f17] transition-colors hover:bg-[#f0b452]"
+              className="odak inline-flex items-center gap-2 rounded-[3px] bg-[#e9a23b] px-5 py-3 text-[15px] font-semibold text-[#0a0f17] transition-colors hover:bg-[#f0b452]"
             >
               Ücretsiz saha ön değerlendirmesi <ArrowRight size={17} />
             </button>
             <a
               href="#karne"
-              className="inline-flex items-center gap-2 rounded-[3px] border border-[#2e3f5a] px-5 py-3 text-[15px] font-semibold text-[#e6ecf3] transition-colors hover:border-[#e9a23b]"
+              className="odak inline-flex items-center gap-2 rounded-[3px] border border-[#2e3f5a] px-5 py-3 text-[15px] font-semibold text-[#e6ecf3] transition-colors hover:border-[#e9a23b]"
             >
               Örnek raporu inceleyin
             </a>
@@ -425,7 +438,7 @@ function KarneBolumu() {
           <button
             type="button"
             onClick={openDemo}
-            className="mt-8 inline-flex items-center gap-2 rounded-[3px] bg-[#e9a23b] px-5 py-3 text-[15px] font-semibold text-[#0a0f17] hover:bg-[#f0b452]"
+            className="odak mt-8 inline-flex items-center gap-2 rounded-[3px] bg-[#e9a23b] px-5 py-3 text-[15px] font-semibold text-[#0a0f17] hover:bg-[#f0b452]"
           >
             Kendi sahanız için karne isteyin <ArrowRight size={17} />
           </button>
@@ -482,10 +495,10 @@ function KapanisCTA() {
           </p>
         </div>
         <div className="flex flex-wrap gap-3">
-          <button type="button" onClick={openDemo} className="inline-flex items-center gap-2 rounded-[3px] bg-[#e9a23b] px-5 py-3 text-[15px] font-semibold text-[#0a0f17] hover:bg-[#f0b452]">
+          <button type="button" onClick={openDemo} className="odak inline-flex items-center gap-2 rounded-[3px] bg-[#e9a23b] px-5 py-3 text-[15px] font-semibold text-[#0a0f17] hover:bg-[#f0b452]">
             Demo talep edin <ArrowRight size={17} />
           </button>
-          <a href={panel.href} className="inline-flex items-center gap-2 rounded-[3px] border border-[#2e3f5a] px-5 py-3 text-[15px] font-semibold text-[#e6ecf3] hover:border-[#e9a23b]">
+          <a href={panel.href} className="odak inline-flex items-center gap-2 rounded-[3px] border border-[#2e3f5a] px-5 py-3 text-[15px] font-semibold text-[#e6ecf3] hover:border-[#e9a23b]">
             Panel girişi <ArrowUpRight size={16} />
           </a>
         </div>

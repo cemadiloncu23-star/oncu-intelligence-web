@@ -15,6 +15,7 @@ export default function FloatingCTA() {
   const openDemo = useOpenDemo();
   const pathname = usePathname();
   const [visible, setVisible] = useState(false);
+  const isEn = pathname.startsWith("/en");
 
   useEffect(() => {
     if (HIDE_PATHS.some((p) => pathname.startsWith(p))) setVisible(false);
@@ -41,17 +42,17 @@ export default function FloatingCTA() {
         >
           <Link
             href="/iletisim"
-            className="flex items-center justify-center gap-2 rounded-sm border border-zinc-700 bg-[#071124]/95 px-4 py-3 text-sm font-semibold uppercase tracking-wide text-zinc-200 shadow-lg backdrop-blur-md transition-colors hover:border-zinc-500 hover:text-white motion-reduce:transition-none"
+            className="odak flex items-center justify-center gap-2 rounded-sm border border-zinc-700 bg-[#071124]/95 px-4 py-3 text-sm font-semibold uppercase tracking-wide text-zinc-200 shadow-lg backdrop-blur-md transition-colors hover:border-zinc-500 hover:text-white motion-reduce:transition-none"
           >
-            İletişim
+            {isEn ? "Contact" : "İletişim"}
           </Link>
           <button
             type="button"
             onClick={openDemo}
-            className="flex items-center gap-2 rounded-sm bg-zinc-100 px-5 py-3 text-sm font-semibold uppercase tracking-wide text-zinc-900 shadow-lg transition-colors hover:bg-white motion-reduce:transition-none"
+            className="odak flex items-center gap-2 rounded-sm bg-zinc-100 px-5 py-3 text-sm font-semibold uppercase tracking-wide text-zinc-900 shadow-lg transition-colors hover:bg-white motion-reduce:transition-none"
           >
-            <Mail className="h-4 w-4" />
-            Erişim talep et
+            <Mail className="h-4 w-4" aria-hidden />
+            {isEn ? "Request access" : "Erişim talep et"}
           </button>
         </motion.div>
       )}

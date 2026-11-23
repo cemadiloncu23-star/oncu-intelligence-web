@@ -15,3 +15,31 @@
 - Sonraki adım: kurumsal/oncu landing bileşenlerinde CTA odak halkaları; /en sayfasında navbar metinlerinin İngilizce olması (şu an Türkçe).
 - Toplantıya öneri: Ortak `focus-visible` sınıfı (globals.css) — Navbar'da yerel `focusRing` sabiti şimdilik.
 - Cem Bey'e soru: yok.
+
+## 2026-11-22 (UTC) — üçüncü çalışma
+- Toplantı maddesi: 23 Kasım yönergesindeki Ela görevi — "Kurumsal/landing bileşenlerinde CTA odak halkaları; /en sayfasında navbar metinleri; ortak focus-visible sınıfı".
+- Yapılan: `app/globals.css`'e ortak `.odak` sınıfı (focus-visible, 2px #60A5FA çerçeve) eklendi. Canlı navbar `KurumsalNav` ile Kurumsal sayfadaki tüm CTA/bağlantı/düğmelere (masaüstü + mobil menü) ve FloatingCTA'ya uygulandı. /en'de navbar metinleri ve yüzen CTA İngilizce (Solutions, How it works, Sample report, Methodology, Contact, Panel sign-in, Request a demo). Mobil menüye aria-controls, Escape ile kapanma ve sayfa değişince kapanma, ikonlara aria-hidden eklendi.
+- Doğrulama: `npm install --legacy-peer-deps` + `npx next build` başarılı (font importu yalnızca yerel doğrulama için geçici kaldırıldı, geri alındı, commit'te yok). Headless Chrome ile /en ekran görüntüsü alındı: etiketler İngilizce, Tab odağında mavi halka görünüyor.
+- Gördüğüm eksikler: (1) /en'de navbar bölüm bağlantıları (#cozumler vb.) Türkçe ana sayfaya gidiyor, çünkü İngilizce sayfada bu bölümler yok. (2) components/Navbar.tsx kullanılmıyor görünüyor (canlı olan KurumsalNav); ölü kod. (3) components/oncu/Sections.tsx e-posta alanında `focus:outline-none` var, yalnızca kenar rengi değişiyor.
+- Sonraki adım: oncu/Sections.tsx ve NavHero'daki odak halkalarını `.odak` ile bütünleştirmek; Navbar.tsx ölü kodunun kaldırılmasını önermek.
+- Toplantıya öneri: /en için bölüm bağlantılarını gizleyip yalnızca Contact/Panel bırakalım ya da İngilizce sayfayı bölümlendirelim.
+- Not: origin/ekip/ela'daki eski iki commit zaten main'de (cherry-pick); dal main'den yeniden kuruldu, push için o dal birleştirildi (force push yok).
+- Cem Bey'e soru: yok.
+
+## 2026-11-23 (UTC) — dördüncü çalışma
+- Toplantı maddesi: 23 Kasım yönergesindeki Ela görevi (CTA odak halkaları / ortak focus-visible) — kalan kısım: landing (oncu) bileşenleri.
+- Yapılan: `components/oncu/NavHero.tsx` ve `Sections.tsx` içindeki tüm bağlantı, düğme ve sekmeler (24 öğe) ile e-posta alanı ortak `.odak` sınıfına bağlandı. Demo e-posta alanındaki `focus:outline-none` kaldırıldı; artık klavye odağında mavi halka görünüyor.
+- Doğrulama: `npm install --legacy-peer-deps` + `npx next build` başarılı (font importu yalnızca yerel doğrulama için geçici kaldırıldı, geri alındı, commit'te yok). Headless Chrome ile Tab odağı denendi: bağlantıda 2px #60A5FA outline görüldü.
+- Gördüğüm eksikler: /en'de bölüm bağlantıları hâlâ Türkçe ana sayfaya gidiyor; components/Navbar.tsx ölü kod; NavHero'daki "Menu" aria-label'ı Türkçe sayfada da İngilizce.
+- Sonraki adım: NavHero mobil menü düğmesi aria-label'ını dile göre yapmak; panel-ihtiyac.md için bilgi mimarisi notu (backend deposu read erişimli olduğu için bu çalışmada yazılamadı).
+- Toplantıya öneri: panel-ihtiyac.md'ye Ela'nın bölümünü ekleyebilmem için backend'e yazma erişimi ya da notun bu depoda tutulması.
+- Cem Bey'e soru: yok.
+
+## 2026-11-23 (UTC) — beşinci çalışma
+- Toplantı maddesi: 23 Kasım yönergesindeki Ela görevi (odak halkaları / navbar) — kalan kısım: landing NavHero mobil menüsü; önceki günlükteki "sonraki adım".
+- Yapılan: `components/oncu/NavHero.tsx` Navbar: mobil menü düğmesi `aria-label` artık dile göre ve duruma göre ("Menüyü aç/kapat" / "Open/Close menu"; eskiden sabit "Menu"), `aria-controls="mobil-menu"` eklendi, mobil panel `<nav aria-label>` oldu, masaüstü `<nav>` ve dil grubu etiketleri yerelleştirildi, mobil dil düğmelerine `aria-pressed`, Escape ile menü kapanıyor.
+- Doğrulama: `npm install --legacy-peer-deps` + `npx next build` başarılı (font importu yalnızca yerel doğrulama için geçici kaldırıldı, layout geri alındı, commit'te yok). Ekran görüntüsü alınmadı.
+- Gördüğüm eksikler: /en'de bölüm bağlantıları hâlâ Türkçe ana sayfaya gidiyor; components/Navbar.tsx ölü kod; backend deposuna yazma erişimi yok, panel-ihtiyac.md'ye bilgi mimarisi notu eklenemedi.
+- Sonraki adım: components/Navbar.tsx ölü kodunun kaldırılması için öneri; panelde (user-panel) tek görsel hata düzeltmesi.
+- Toplantıya öneri: Ela'nın panel-ihtiyac.md bölümü için backend'e yazma erişimi ya da notun bu depoda (docs/ekip/) tutulması.
+- Cem Bey'e soru: yok.

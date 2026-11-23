@@ -69,7 +69,7 @@ export function Platform() {
         <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="flex flex-col gap-2" role="tablist">
             {tabs.map((t, k) => (
-              <button key={t.tag} role="tab" aria-selected={i === k} onClick={() => setI(k)} className={`rounded-xl border px-5 py-4 text-left transition-colors ${i === k ? "border-[#3B82F6]/60 bg-[#0B172E]" : "border-white/[0.08] bg-white/[0.02] hover:bg-white/[0.04]"}`}>
+              <button key={t.tag} role="tab" aria-selected={i === k} onClick={() => setI(k)} className={`odak rounded-xl border px-5 py-4 text-left transition-colors ${i === k ? "border-[#3B82F6]/60 bg-[#0B172E]" : "border-white/[0.08] bg-white/[0.02] hover:bg-white/[0.04]"}`}>
                 <span className={`${mono} text-[10px] tracking-[0.2em] ${i === k ? "text-[#3B82F6]" : "text-slate-500"}`}>0{k + 1} • {t.tag}</span>
                 <span className={`${display} mt-1 block text-base ${i === k ? "text-white" : "text-slate-300"}`}>{t.t}</span>
               </button>
@@ -146,7 +146,7 @@ export function SampleReport() {
                 <h2 className={`${display} text-2xl font-semibold text-white sm:text-3xl`}>{L("Yörünge analitiğini canlı verilerle deneyimleyin.", "Experience orbital analytics with live data.")}</h2>
                 <p className="mt-3 text-slate-300">{L("Gerçek Sentinel-2 görüntileriyle oluşturulmuş örnek saha fizibilite raporunu inceleyin.", "Review a sample site feasibility report built from real Sentinel-2 imagery.")}</p>
               </div>
-              <a href="/ornek-rapor" className="inline-flex shrink-0 items-center gap-2 rounded-md bg-[#D97706] px-6 py-3 text-sm font-semibold text-[#030712] transition-colors hover:bg-[#EAB308]">
+              <a href="/ornek-rapor" className="odak inline-flex shrink-0 items-center gap-2 rounded-md bg-[#D97706] px-6 py-3 text-sm font-semibold text-[#030712] transition-colors hover:bg-[#EAB308]">
                 {L("Örnek Raporu Aç", "Open Sample Report")} <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
               </a>
             </div>
@@ -195,7 +195,7 @@ export function Insights() {
         <div className="grid gap-5 md:grid-cols-3">
           {posts.map((p, k) => (
             <Reveal key={p.c} delay={k * 0.08}>
-              <a href="/blog" className="block h-full">
+              <a href="/blog" className="odak block h-full">
                 <SpotCard className="h-full p-6 transition-colors hover:border-white/20">
                   <div className={`${mono} mb-8 flex justify-between text-[10px] tracking-[0.18em] text-slate-500`}><span className="text-[#3B82F6]">{p.c.toUpperCase()}</span><span>{p.m}</span></div>
                   <h3 className={`${display} text-lg font-semibold leading-snug text-white`}>{p.t}</h3>
@@ -246,8 +246,8 @@ export function CtaFooter() {
               <p className="mt-8 inline-flex items-center gap-2 text-[#EAB308]"><Check className="h-5 w-5" strokeWidth={1.5} /> {L("Talebiniz alındı, en kısa sürede dönüş yapacağız.", "Request received, we will get back to you shortly.")}</p>
             ) : (
               <form onSubmit={submit} className="mx-auto mt-8 flex max-w-lg flex-col gap-3 sm:flex-row">
-                <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={L("kurumsal@sirketiniz.com", "name@company.com")} aria-label="E-posta" className="flex-1 rounded-md border border-white/[0.14] bg-[#030712]/60 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-[#3B82F6] focus:outline-none" />
-                <button disabled={busy} className="rounded-md bg-[#D97706] px-6 py-3 text-sm font-semibold text-[#030712] transition-colors hover:bg-[#EAB308] disabled:opacity-60">{busy ? "…" : L("Demo Talep Edin", "Request a demo")}</button>
+                <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={L("kurumsal@sirketiniz.com", "name@company.com")} aria-label="E-posta" className="odak flex-1 rounded-md border border-white/[0.14] bg-[#030712]/60 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus-visible:border-[#3B82F6]" />
+                <button disabled={busy} className="odak rounded-md bg-[#D97706] px-6 py-3 text-sm font-semibold text-[#030712] transition-colors hover:bg-[#EAB308] disabled:opacity-60">{busy ? "…" : L("Demo Talep Edin", "Request a demo")}</button>
               </form>
             )}
             {err && <p className="mt-3 text-sm text-red-300">{err}</p>}
@@ -265,7 +265,7 @@ export function CtaFooter() {
               <div className={`${mono} mb-4 text-[10px] tracking-[0.2em] text-slate-500`}>{h.toUpperCase()}</div>
               <ul className="space-y-2.5">
                 {names.map((n, k) => (
-                  <li key={n}><a href={hrefs[k]} className="text-sm text-slate-400 hover:text-white">{n}</a></li>
+                  <li key={n}><a href={hrefs[k]} className="odak text-sm text-slate-400 hover:text-white">{n}</a></li>
                 ))}
               </ul>
             </div>
@@ -274,9 +274,9 @@ export function CtaFooter() {
         <div className="mx-auto mt-12 flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-white/[0.08] px-5 pt-6 sm:px-8 md:flex-row">
           <p className={`${mono} text-[11px] text-slate-500`}>Contains modified Copernicus Sentinel data (2026). © 2026 ÖNCÜ Intelligence. {L("Tüm hakları saklıdır.", "All rights reserved.")}</p>
           <div className="flex gap-4 text-slate-500">
-            <a href="https://www.linkedin.com" aria-label="LinkedIn" className="hover:text-white"><Linkedin className="h-4 w-4" strokeWidth={1.5} /></a>
-            <a href="https://x.com/oncuintel" aria-label="X" className="hover:text-white"><Twitter className="h-4 w-4" strokeWidth={1.5} /></a>
-            <a href="https://github.com/cemadiloncu23-star" aria-label="GitHub" className="hover:text-white"><Github className="h-4 w-4" strokeWidth={1.5} /></a>
+            <a href="https://www.linkedin.com" aria-label="LinkedIn" className="odak hover:text-white"><Linkedin className="h-4 w-4" strokeWidth={1.5} /></a>
+            <a href="https://x.com/oncuintel" aria-label="X" className="odak hover:text-white"><Twitter className="h-4 w-4" strokeWidth={1.5} /></a>
+            <a href="https://github.com/cemadiloncu23-star" aria-label="GitHub" className="odak hover:text-white"><Github className="h-4 w-4" strokeWidth={1.5} /></a>
           </div>
         </div>
       </footer>
