@@ -34,3 +34,12 @@
 - Sonraki adım: NavHero mobil menü düğmesi aria-label'ını dile göre yapmak; panel-ihtiyac.md için bilgi mimarisi notu (backend deposu read erişimli olduğu için bu çalışmada yazılamadı).
 - Toplantıya öneri: panel-ihtiyac.md'ye Ela'nın bölümünü ekleyebilmem için backend'e yazma erişimi ya da notun bu depoda tutulması.
 - Cem Bey'e soru: yok.
+
+## 2026-11-23 (UTC) — beşinci çalışma
+- Toplantı maddesi: 23 Kasım yönergesindeki Ela görevi (odak halkaları / navbar) — kalan kısım: landing NavHero mobil menüsü; önceki günlükteki "sonraki adım".
+- Yapılan: `components/oncu/NavHero.tsx` Navbar: mobil menü düğmesi `aria-label` artık dile göre ve duruma göre ("Menüyü aç/kapat" / "Open/Close menu"; eskiden sabit "Menu"), `aria-controls="mobil-menu"` eklendi, mobil panel `<nav aria-label>` oldu, masaüstü `<nav>` ve dil grubu etiketleri yerelleştirildi, mobil dil düğmelerine `aria-pressed`, Escape ile menü kapanıyor.
+- Doğrulama: `npm install --legacy-peer-deps` + `npx next build` başarılı (font importu yalnızca yerel doğrulama için geçici kaldırıldı, layout geri alındı, commit'te yok). Ekran görüntüsü alınmadı.
+- Gördüğüm eksikler: /en'de bölüm bağlantıları hâlâ Türkçe ana sayfaya gidiyor; components/Navbar.tsx ölü kod; backend deposuna yazma erişimi yok, panel-ihtiyac.md'ye bilgi mimarisi notu eklenemedi.
+- Sonraki adım: components/Navbar.tsx ölü kodunun kaldırılması için öneri; panelde (user-panel) tek görsel hata düzeltmesi.
+- Toplantıya öneri: Ela'nın panel-ihtiyac.md bölümü için backend'e yazma erişimi ya da notun bu depoda (docs/ekip/) tutulması.
+- Cem Bey'e soru: yok.

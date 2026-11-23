@@ -34,6 +34,12 @@ export function AnnouncementBar() {
 export function Navbar() {
   const { lang, setLang, L } = useLang();
   const [mob, setMob] = useState(false);
+  useEffect(() => {
+    if (!mob) return;
+    const kapat = (e: KeyboardEvent) => e.key === "Escape" && setMob(false);
+    window.addEventListener("keydown", kapat);
+    return () => window.removeEventListener("keydown", kapat);
+  }, [mob]);
   const links = [
     [L("Platform", "Platform"), "#platform"],
     [L("Sektörler", "Industries"), "#sektorler"],
@@ -54,7 +60,7 @@ export function Navbar() {
             <span className={`${mono} block text-[10px] tracking-[0.2em] text-slate-400`}>KutGöz</span>
           </span>
         </a>
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-7 lg:flex" aria-label={L("Ana gezinme", "Main navigation")}>
           {links.map(([t, h]) => (
             <a key={h} href={h} className="odak text-sm text-slate-400 transition-colors hover:text-white">
               {t}
@@ -62,7 +68,7 @@ export function Navbar() {
           ))}
         </nav>
         <div className="hidden items-center gap-3 lg:flex">
-          <div className={`${mono} flex overflow-hidden rounded-md border border-white/[0.12] text-[11px]`} role="group" aria-label="Language">
+          <div className={`${mono} flex overflow-hidden rounded-md border border-white/[0.12] text-[11px]`} role="group" aria-label={L("Dil", "Language")}>
             {(["tr", "en"] as const).map((l) => (
               <button
                 key={l}
@@ -81,14 +87,14 @@ export function Navbar() {
             {L("Demo Talep Edin", "Request a demo")}
           </a>
         </div>
-        <button className="odak text-white lg:hidden" onClick={() => setMob((v) => !v)} aria-label="Menu" aria-expanded={mob}>
+        <button className="odak text-white lg:hidden" onClick={() => setMob((v) => !v)} aria-label={mob ? L("Menüyü kapat", "Close menu") : L("Menüyü aç", "Open menu")} aria-expanded={mob} aria-controls="mobil-menu">
           {mob ? <X className="h-6 w-6" strokeWidth={1.5} /> : <Menu className="h-6 w-6" strokeWidth={1.5} />}
         </button>
       </div>
       <AnimatePresence>
         {mob && (
-          <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden border-t border-white/[0.08] bg-[#030712]/95 lg:hidden">
-            <div className="flex flex-col gap-1 px-5 py-4">
+          <motion.div id="mobil-menu" initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden border-t border-white/[0.08] bg-[#030712]/95 lg:hidden">
+            <nav className="flex flex-col gap-1 px-5 py-4" aria-label={L("Mobil gezinme", "Mobile navigation")}>
               {links.map(([t, h]) => (
                 <a key={h} href={h} onClick={() => setMob(false)} className="odak rounded px-2 py-2.5 text-slate-300 hover:bg-white/[0.04]">
                   {t}
@@ -96,14 +102,14 @@ export function Navbar() {
               ))}
               <div className="mt-2 flex items-center gap-2">
                 {(["tr", "en"] as const).map((l) => (
-                  <button key={l} onClick={() => setLang(l)} className={`odak ${mono} rounded border px-3 py-1.5 text-xs uppercase ${lang === l ? "border-[#2563EB] bg-[#2563EB] text-white" : "border-white/15 text-slate-400"}`}>
+                  <button key={l} onClick={() => setLang(l)} aria-pressed={lang === l} className={`odak ${mono} rounded border px-3 py-1.5 text-xs uppercase ${lang === l ? "border-[#2563EB] bg-[#2563EB] text-white" : "border-white/15 text-slate-400"}`}>
                     {l}
                   </button>
                 ))}
                 <a href={PANEL} className="odak ml-auto rounded border border-white/15 px-3 py-1.5 text-sm text-slate-200">{L("Panel Girişi", "Sign in")}</a>
                 <a href={DEMO} onClick={() => setMob(false)} className="odak rounded bg-[#D97706] px-3 py-1.5 text-sm font-semibold text-[#030712]">{L("Demo", "Demo")}</a>
               </div>
-            </div>
+            </nav>
           </motion.div>
         )}
       </AnimatePresence>
